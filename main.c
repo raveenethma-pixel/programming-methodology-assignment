@@ -2,48 +2,24 @@
 #include<stdlib.h>
 #include<math.h>
 #include<time.h>
+#include "structures.h"
+
 #define MAX_ESCORTS 100
 
-typedef struct {
-    int id;
-    char type[3];
 
-    double x;
-    double y;
 
-    double vMin;
-    double vMax;
-
-    double angleMin;
-    double angleMax;
-
-    double impactPower;
-} EscortShip;
-
-typedef struct {
-    char type;
-
-    double x;
-    double y;
-
-    double vMin;
-    double vMax;
-
-    double angleMin;
-    double angleMax;
-
-    double impactPower;
-} Battleship;
 int main(){
     Battleship B;
     EscortShip E[MAX_ESCORTS];
-    int N;
-    double D;
-    
+    int N;//Number of escort ships
+    double D;//the upper limit of the canvas
+
+    //Get the user inputs
     printf("Enter battlefield size D: ");
     scanf("%lf",&D);
     printf("Enter the number of escort ships N(less than 100) ");
     scanf("%d",&N);
+    //Make sure the inputes are valid
     if(D<=0){
         printf("Invalid battlefield size D. It must be greater than 0.\n");
         return 1;
