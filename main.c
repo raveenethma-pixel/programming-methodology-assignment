@@ -30,7 +30,7 @@ int main(){
         printf("Invalid number of escort ships N. It must be between 1 and %d.\n", MAX_ESCORTS);
         return 1;
     }
-    initializeBattleship(&B);
+    initializeBattleship(&B,D);
     return 0;
 
 
