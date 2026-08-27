@@ -4,6 +4,7 @@
 #include<time.h>
 #include "structures.h"
 #include "battleship.h"
+#include "escort.h"
 
 
 #define MAX_ESCORTS 100
@@ -31,6 +32,7 @@ int main(){
         return 1;
     }
     initializeBattleship(&B,D);
+    initializeEscortShips(E,N,D,B.vMax);
     return 0;
 
 
