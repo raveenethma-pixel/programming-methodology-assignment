@@ -3,6 +3,8 @@
 #include<math.h>
 #include<time.h>
 #include "structures.h"
+#include "battleship.h"
+
 
 #define MAX_ESCORTS 100
 
@@ -28,6 +30,7 @@ int main(){
         printf("Invalid number of escort ships N. It must be between 1 and %d.\n", MAX_ESCORTS);
         return 1;
     }
+    initializeBattleship(&B);
     return 0;
 
 
