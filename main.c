@@ -7,6 +7,7 @@
 #include "escort.h"
 #include "projectile.h"
 #include "battle.h"
+#include "files.h"
 
 #define MAX_ESCORTS 100
 
@@ -68,6 +69,7 @@ int main(){
             printf("The battleship cannot hit Escort %d (Type: %s).\n",E[i].id,E[i].type);
         }
     }
+    saveInitialConditions(&B, E, N, D);
     simulateBattle(&B, E, N);
     return 0;
 

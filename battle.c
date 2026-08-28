@@ -5,9 +5,11 @@
 void simulateBattle(Battleship *B, EscortShip E[], int N)
 {
     double earliestEscortHitTime = -1.0;
-    int sinkingEscort = -1;
+    int sinkingEscort = -1;//no sinking escort has been found yet
+    double battleEndTime = 0.0;
 
-    // Find the escort whose shell reaches B first
+
+    // Find the escort whose shell reaches B first/who sinks B
     for(int i = 0; i < N; i++)
     {
         if(canEscortHitBattleship(&E[i], B))
@@ -18,11 +20,12 @@ void simulateBattle(Battleship *B, EscortShip E[], int N)
 
             if(hitTime >= 0)
             {
-                if(earliestEscortHitTime < 0 ||
-                   hitTime < earliestEscortHitTime)
+                if(earliestEscortHitTime < 0 || hitTime < earliestEscortHitTime)/*if  earliestEscortHitTime < 0 is true it means earliestEscortHitTime is -1(initialized)
+                but in the 2nd iteration we have the hitTime of the first escort ship
+                So earliestEscortHitTime < 0 becomes false and we compare whether hitTime < earliestEscortHitTime */
                 {
-                    earliestEscortHitTime = hitTime;
-                    sinkingEscort = i;
+                    earliestEscortHitTime = hitTime;//if so it is the fastest hit time
+                    sinkingEscort = i;//get the index of the escort that sink B
                 }
             }
         }
@@ -30,7 +33,8 @@ void simulateBattle(Battleship *B, EscortShip E[], int N)
 
     if(sinkingEscort != -1)
     {
-        printf("\nBattleship was sunk by Escort %d (Type: %s).\n",E[sinkingEscort].id,E[sinkingEscort].type);
+        printf("\nBattleship %c was sunk by Escort %d (Type: %s).\n",B->type,E[sinkingEscort].id,E[sinkingEscort].type);
+        printf("Battle ende at %.2f seconds.\n",earliestEscortHitTime);
     }
     else
     {
@@ -46,21 +50,32 @@ void simulateBattle(Battleship *B, EscortShip E[], int N)
         if(canBattleshipHitEscort(B, &E[i]))
         {
             double distance = calculate_distance(B->x,B->y,E[i].x,E[i].y);
-
+            //hitTime = the time it takes to a shell from an battleship to hit the escort ship 
             double hitTime = calculateMinimumHitTime(distance,B->vMin,B->vMax,B->angleMin,B->angleMax);
 
             if(hitTime >= 0)
             {
-                if(earliestEscortHitTime < 0 || hitTime < earliestEscortHitTime)
+                if(earliestEscortHitTime < 0 || hitTime < earliestEscortHitTime) //if the escort didn't hit or battleship hit escort before it sunk the battleship
                 {
                     printf("Escort %d (Type: %s) was sunk.\n",E[i].id,E[i].type);
 
                     sunkCount++;
+                
+                    if(hitTime > battleEndTime)
+                    {
+                        battleEndTime=hitTime;
+                    }
                 }
             }
         }
     }
-
+    if(sunkCount == 0){  //sunkCount=how many escort ships the battleship has destroyed
+        printf("None\n");
+    }
     printf("Total escort ships sunk: %d\n", sunkCount);
+    if(sinkingEscort == -1){  //if no escort ship was sunken and the battleship i
+        printf("Battle Ended at .%2f\n",battleEndTime);
+    }
+
     printf("Battleship sinks at %.2f seconds\n",earliestEscortHitTime);
 }
