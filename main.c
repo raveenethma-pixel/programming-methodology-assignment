@@ -5,6 +5,7 @@
 #include "structures.h"
 #include "battleship.h"
 #include "escort.h"
+#include "projectile.h"
 
 
 #define MAX_ESCORTS 100
@@ -12,6 +13,7 @@
 
 
 int main(){
+    srand(time(NULL));//make sure that random numbers are given using the current time
     Battleship B;
     EscortShip E[MAX_ESCORTS];
     int N;//Number of escort ships
@@ -33,6 +35,29 @@ int main(){
     }
     initializeBattleship(&B,D);
     initializeEscortShips(E,N,D,B.vMax);
+
+    //Print the initialized escort ships
+    printf("\n---Escort Ships---\n");
+    for(int i=0;i<N;i++){
+        printf("ID: %d | Type: %s | Position: (%.2f,%.2f) | Velocity: (%.2f-%.2f) | Angle: (%.2f-%.2f) | Impact Power: %.2f\n",E[i].id,E[i].type,E[i].x,E[i].y,E[i].vMin,E[i].vMax,E[i].angleMin,E[i].angleMax,E[i].impactPower);
+    }
+
+    //print the distance of each escort ship from the battleship
+    printf("\n---Distances from the battleship---\n");
+    for(int i=0;i<N;i++){
+        double distance = calculate_distance(B.x,B.y,E[i].x,E[i].y);
+        printf("Escort %d (Type: %s): %.2f\n",E[i].id,E[i].type,distance);
+    }
+
+    printf("\n---Can Escort Ships Hit the Battleship?---\n");
+    for(int i=0;i<N;i++){
+        if(canEscortHitBattleship(&E[i],&B)){
+            printf("Escort %d (Type: %s) can hit the battleship.\n",E[i].id,E[i].type);
+        }
+        else{
+            printf("Escort %d (Type: %s) cannot hit the battleship.\n",E[i].id,E[i].type);
+        }
+    }
     return 0;
 
 
