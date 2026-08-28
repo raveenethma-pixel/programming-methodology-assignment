@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "battle.h"
 #include "projectile.h"
+#include "files.h"
 
 void simulateBattle(Battleship *B, EscortShip E[], int N)
 {
@@ -69,6 +70,7 @@ void simulateBattle(Battleship *B, EscortShip E[], int N)
             }
         }
     }
+
     if(sunkCount == 0){  //sunkCount=how many escort ships the battleship has destroyed
         printf("None\n");
     }
@@ -76,6 +78,7 @@ void simulateBattle(Battleship *B, EscortShip E[], int N)
     if(sinkingEscort == -1){  //if no escort ship was sunken and the battleship i
         printf("Battle Ended at .%2f\n",battleEndTime);
     }
+    saveFinalConditions(B,E,N,sinkingEscort,earliestEscortHitTime,sunkCount);
 
     printf("Battleship sinks at %.2f seconds\n",earliestEscortHitTime);
 }

@@ -1,21 +1,21 @@
 --- Initial Battlefield Conditions ---
 
-Battlefield size: 3000.00 x 3000.00
+Battlefield size: 4000.00 x 4000.00
 
 Battleship
 Type: M
-Position: (467.00, 2889.00)
+Position: (2000.00, 435.00)
 Minimum Velocity: 0.00
-Maximum Velocity: 1120.00
+Maximum Velocity: 120.00
 Minimum Angle: 0.00
 Maximum Angle: 90.00
 
 Escort Ships
-ID: 1 | Type: EA | Position: (664.76, 205.91) | Velocity: (823.73 - 1344.00) | Angle: (20.00 - 34.41) | Impact Power: 0.08
-ID: 2 | Type: EA | Position: (908.06, 48.18) | Velocity: (579.46 - 1344.00) | Angle: (20.00 - 69.59) | Impact Power: 0.08
-ID: 3 | Type: EB | Position: (1313.31, 2690.66) | Velocity: (456.31 - 741.54) | Angle: (30.00 - 38.98) | Impact Power: 0.06
-ID: 4 | Type: EC | Position: (2799.70, 2207.42) | Velocity: (417.76 - 469.15) | Angle: (25.00 - 47.42) | Impact Power: 0.07
-ID: 5 | Type: EB | Position: (772.94, 1647.97) | Velocity: (15.97 - 751.15) | Angle: (30.00 - 43.16) | Impact Power: 0.06
-ID: 6 | Type: EA | Position: (848.46, 2750.37) | Velocity: (152.49 - 1344.00) | Angle: (20.00 - 23.85) | Impact Power: 0.08
-ID: 7 | Type: EB | Position: (2657.21, 2734.29) | Velocity: (34.39 - 117.48) | Angle: (30.00 - 46.50) | Impact Power: 0.06
-ID: 8 | Type: EE | Position: (2420.02, 657.20) | Velocity: (763.25 - 966.95) | Angle: (70.00 - 73.15) | Impact Power: 0.04
+ID: 1 | Type: EB | Position: (3449.70, 3321.97) | Velocity: (104.01 - 109.39) | Angle: (30.00 - 37.67) | Impact Power: 0.06
+ID: 2 | Type: EB | Position: (1892.70, 1772.48) | Velocity: (4.36 - 34.00) | Angle: (30.00 - 50.13) | Impact Power: 0.06
+ID: 3 | Type: EB | Position: (2694.25, 87.06) | Velocity: (95.91 - 114.74) | Angle: (30.00 - 56.14) | Impact Power: 0.06
+ID: 4 | Type: EA | Position: (206.46, 2883.49) | Velocity: (68.86 - 144.00) | Angle: (20.00 - 24.88) | Impact Power: 0.08
+ID: 5 | Type: EB | Position: (3384.84, 645.44) | Velocity: (13.30 - 44.98) | Angle: (30.00 - 74.18) | Impact Power: 0.06
+ID: 6 | Type: EB | Position: (69.14, 1789.02) | Velocity: (67.35 - 109.77) | Angle: (30.00 - 31.42) | Impact Power: 0.06
+ID: 7 | Type: EE | Position: (1354.68, 2621.68) | Velocity: (111.70 - 118.87) | Angle: (70.00 - 77.36) | Impact Power: 0.04
+ID: 8 | Type: EB | Position: (1840.51, 114.37) | Velocity: (69.57 - 83.55) | Angle: (30.00 - 59.08) | Impact Power: 0.06

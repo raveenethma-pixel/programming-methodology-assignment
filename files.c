@@ -43,3 +43,27 @@ void saveInitialConditions(Battleship *B, EscortShip E[], int N, double D)
 
     printf("Initial conditions saved to initial_conditions.txt\n");
 }
+void saveFinalConditions(Battleship *B,EscortShip E[],int N,int sinkingEscort,double earliestEscortHitTime,int sunkCount){
+    FILE *fp = fopen("final_conditions.txt", "w");
+    if(fp == NULL)
+    {
+        printf("Error creating final_conditions.txt\n");
+        return;
+    }
+    fprintf(fp, "--- Final Battlefield Conditions ---\n");
+    fprintf(fp, "\nBattleship\n");
+    fprintf(fp, "Type: %c\n", B->type);
+    fprintf(fp, "Position: (%.2f, %.2f)\n", B->x, B->y);
+    if(sinkingEscort != -1)
+    {
+        fprintf(fp, "Status: SUNK\n");
+        fprintf(fp,"Sunk by Escort %d (Type: %s)\n",E[sinkingEscort].id,E[sinkingEscort].type);
+        fprintf(fp,"Battle ended at %.2f seconds\n",earliestEscortHitTime);
+    }
+    else{
+      fprintf(fp, "Status: SURVIVED\n");  
+    }
+    fprintf(fp,"\nTotal escort ships sunk by battleship: %d\n",sunkCount);
+     fclose(fp);
+    printf("Final conditions saved to final_conditions.txt\n");
+}
