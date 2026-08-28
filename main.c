@@ -6,7 +6,7 @@
 #include "battleship.h"
 #include "escort.h"
 #include "projectile.h"
-
+#include "battle.h"
 
 #define MAX_ESCORTS 100
 
@@ -58,6 +58,17 @@ int main(){
             printf("Escort %d (Type: %s) cannot hit the battleship.\n",E[i].id,E[i].type);
         }
     }
+
+    printf("\n---Can the Battleship Hit the Escort Ships?---\n");
+    for(int i=0;i<N;i++){
+        if(canBattleshipHitEscort(&B,&E[i])){
+            printf("The battleship can hit Escort %d (Type: %s).\n",E[i].id,E[i].type);
+        }
+        else{
+            printf("The battleship cannot hit Escort %d (Type: %s).\n",E[i].id,E[i].type);
+        }
+    }
+    simulateBattle(&B, E, N);
     return 0;
 
 

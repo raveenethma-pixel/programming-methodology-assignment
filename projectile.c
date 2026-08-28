@@ -56,3 +56,44 @@ int canEscortHitBattleship(EscortShip *E, Battleship *B){
         return 0;
     }
 }
+int canBattleshipHitEscort(Battleship *B, EscortShip *E){
+    double distance=calculate_distance(B->x,B->y,E->x,E->y);
+    double maxRange=calculateMaxAttackRange(B->vMax,B->angleMin,B->angleMax);
+    if(distance<=maxRange){
+        return 1;
+    }
+    else{
+        return 0;
+    }
+}
+double calculateFlightTime(double distance,double velocity,double angle){
+    double radians = angle * (PI / 180.0);
+    double time = distance / (velocity * cos(radians));
+    return time;
+}
+
+
+double calculateRequiredVelocity(double distance, double angle){
+    double radians = angle * (PI / 180.0);
+    double sinValue = sin(2*radians);
+    if(sinValue <= 0){
+        return -1; // Return -1 to indicate that the required velocity cannot be calculated
+    }
+   double velocity = sqrt((distance * GRAVITY) / sinValue);
+   return velocity;
+}  
+
+
+double calculateMinimumHitTime(double distance, double vMin, double vMax, double angleMin, double angleMax){
+    double minimumTime = -1.0; // Initialize to -1 to indicate no valid time found
+    for(double angle = angleMin; angle <= angleMax; angle += 0.1){ //start from the minimum angle and go to the maximum angle
+        double velocity = calculateRequiredVelocity(distance, angle); //calculate the velocity for that angle that would hit the target
+        if(velocity >= vMin && velocity <= vMax){ //check if the calculated velocity is within the valid range
+            double time = calculateFlightTime(distance, velocity, angle);
+            if(minimumTime < 0 || time < minimumTime){ //Have we not found any shot yet? or is this shot faster than the previous
+                minimumTime = time;//if so update the minimum time
+            }
+        }
+    }
+    return minimumTime;
+}
