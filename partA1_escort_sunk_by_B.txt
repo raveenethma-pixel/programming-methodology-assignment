@@ -1,0 +1,2 @@
+Escort 3 | Type EA | Hit Time 7.42 seconds
+Escort 8 | Type EE | Hit Time 4.73 seconds

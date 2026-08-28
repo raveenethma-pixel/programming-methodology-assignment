@@ -1,0 +1,10 @@
+--- Final Battlefield Conditions ---
+
+Battleship
+Type: M
+Position: (3884.00, 273.00)
+Status: SUNK
+Sunk by Escort 3 (Type: EA)
+Battle ended at 7.85 seconds
+
+Total escort ships sunk by battleship: 2

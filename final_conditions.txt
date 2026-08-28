@@ -1,8 +1,0 @@
---- Final Battlefield Conditions ---
-
-Battleship
-Type: M
-Position: (2000.00, 435.00)
-Status: SURVIVED
-
-Total escort ships sunk by battleship: 4

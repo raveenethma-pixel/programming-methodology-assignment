@@ -46,6 +46,12 @@ void simulateBattle(Battleship *B, EscortShip E[], int N)
 
     int sunkCount = 0;
 
+
+    //
+    FILE *hitFile = fopen("partA1_escort_sunk_by_B.txt","w");
+    if(hitFile==NULL){
+        printf("Error creating the escort_sunk_by_B.txt\n");
+        }
     for(int i = 0; i < N; i++)
     {
         if(canBattleshipHitEscort(B, &E[i]))
@@ -66,9 +72,21 @@ void simulateBattle(Battleship *B, EscortShip E[], int N)
                     {
                         battleEndTime=hitTime;
                     }
+                    if(hitFile!=NULL)
+                    {
+                        fprintf(hitFile,"Escort %d | Type %s | Hit Time %.2f seconds\n",E[i].id,E[i].type,hitTime);
+                    }
                 }
             }
         }
+    }
+    if(sunkCount == 0 && hitFile!= NULL)
+    {
+        fprintf(hitFile,"No escort ship was sunk\n");
+    }
+    if(hitFile != NULL)
+    {
+    fclose(hitFile);
     }
 
     if(sunkCount == 0){  //sunkCount=how many escort ships the battleship has destroyed

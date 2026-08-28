@@ -1,0 +1,21 @@
+--- Initial Battlefield Conditions ---
+
+Battlefield size: 4000.00 x 4000.00
+
+Battleship
+Type: M
+Position: (3884.00, 273.00)
+Minimum Velocity: 0.00
+Maximum Velocity: 120.00
+Minimum Angle: 0.00
+Maximum Angle: 90.00
+
+Escort Ships
+ID: 1 | Type: ED | Position: (2409.41, 2417.03) | Velocity: (77.85 - 114.20) | Angle: (50.00 - 55.40) | Impact Power: 0.05
+ID: 2 | Type: EA | Position: (21.29, 1259.09) | Velocity: (99.15 - 144.00) | Angle: (20.00 - 26.44) | Impact Power: 0.08
+ID: 3 | Type: EA | Position: (3051.56, 425.36) | Velocity: (111.25 - 144.00) | Angle: (20.00 - 56.40) | Impact Power: 0.08
+ID: 4 | Type: ED | Position: (105.23, 604.96) | Velocity: (114.54 - 117.69) | Angle: (50.00 - 65.94) | Impact Power: 0.05
+ID: 5 | Type: ED | Position: (558.45, 1767.80) | Velocity: (43.91 - 45.40) | Angle: (50.00 - 61.43) | Impact Power: 0.05
+ID: 6 | Type: EA | Position: (812.73, 1554.17) | Velocity: (36.86 - 144.00) | Angle: (20.00 - 27.87) | Impact Power: 0.08
+ID: 7 | Type: EE | Position: (2242.72, 3487.00) | Velocity: (74.53 - 96.50) | Angle: (70.00 - 71.39) | Impact Power: 0.04
+ID: 8 | Type: EE | Position: (3698.61, 796.67) | Velocity: (106.79 - 111.25) | Angle: (70.00 - 71.90) | Impact Power: 0.04

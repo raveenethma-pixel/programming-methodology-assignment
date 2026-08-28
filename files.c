@@ -3,7 +3,7 @@
 
 void saveInitialConditions(Battleship *B, EscortShip E[], int N, double D)
 {
-    FILE *fp = fopen("initial_conditions.txt", "w");//file pointer with writing
+    FILE *fp = fopen("partA1_initial_conditions.txt", "w");//file pointer with writing
 
     if(fp == NULL)
     {
@@ -41,10 +41,10 @@ void saveInitialConditions(Battleship *B, EscortShip E[], int N, double D)
 
     fclose(fp);
 
-    printf("Initial conditions saved to initial_conditions.txt\n");
+    printf("Initial conditions saved to partA1_initial_conditions.txt\n");
 }
 void saveFinalConditions(Battleship *B,EscortShip E[],int N,int sinkingEscort,double earliestEscortHitTime,int sunkCount){
-    FILE *fp = fopen("final_conditions.txt", "w");
+    FILE *fp = fopen("partA1_final_conditions.txt", "w");
     if(fp == NULL)
     {
         printf("Error creating final_conditions.txt\n");
@@ -65,5 +65,5 @@ void saveFinalConditions(Battleship *B,EscortShip E[],int N,int sinkingEscort,do
     }
     fprintf(fp,"\nTotal escort ships sunk by battleship: %d\n",sunkCount);
      fclose(fp);
-    printf("Final conditions saved to final_conditions.txt\n");
+    printf("Final conditions saved to partA1_final_conditions.txt\n");
 }
