@@ -6,7 +6,7 @@
 #include "battleship.h"
 #include "escort.h"
 #include "projectile.h"
-#include "battle.h"
+#include "part1A.h"
 #include "files.h"
 
 #define MAX_ESCORTS 100
@@ -70,7 +70,7 @@ int main(){
         }
     }
     saveInitialConditions(&B, E, N, D);
-    simulateBattle(&B, E, N);
+    simulatePart1A(&B, E, N);
     return 0;
 
 

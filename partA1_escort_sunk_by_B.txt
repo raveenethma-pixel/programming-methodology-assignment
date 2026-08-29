@@ -1,2 +1,7 @@
-Escort 3 | Type EA | Hit Time 7.42 seconds
-Escort 8 | Type EE | Hit Time 4.73 seconds
+Escort 1 | Type ED | Hit Time 0.32 seconds
+Escort 2 | Type EA | Hit Time 7.57 seconds
+Escort 3 | Type EE | Hit Time 6.04 seconds
+Escort 4 | Type ED | Hit Time 7.05 seconds
+Escort 5 | Type EB | Hit Time 9.00 seconds
+Escort 6 | Type EB | Hit Time 8.70 seconds
+Escort 7 | Type EE | Hit Time 7.85 seconds

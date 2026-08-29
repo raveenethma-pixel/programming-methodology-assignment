@@ -3,19 +3,18 @@
 Battlefield size: 4000.00 x 4000.00
 
 Battleship
-Type: M
-Position: (3884.00, 273.00)
+Type: U
+Position: (2884.00, 3845.00)
 Minimum Velocity: 0.00
-Maximum Velocity: 120.00
+Maximum Velocity: 473.00
 Minimum Angle: 0.00
 Maximum Angle: 90.00
 
 Escort Ships
-ID: 1 | Type: ED | Position: (2409.41, 2417.03) | Velocity: (77.85 - 114.20) | Angle: (50.00 - 55.40) | Impact Power: 0.05
-ID: 2 | Type: EA | Position: (21.29, 1259.09) | Velocity: (99.15 - 144.00) | Angle: (20.00 - 26.44) | Impact Power: 0.08
-ID: 3 | Type: EA | Position: (3051.56, 425.36) | Velocity: (111.25 - 144.00) | Angle: (20.00 - 56.40) | Impact Power: 0.08
-ID: 4 | Type: ED | Position: (105.23, 604.96) | Velocity: (114.54 - 117.69) | Angle: (50.00 - 65.94) | Impact Power: 0.05
-ID: 5 | Type: ED | Position: (558.45, 1767.80) | Velocity: (43.91 - 45.40) | Angle: (50.00 - 61.43) | Impact Power: 0.05
-ID: 6 | Type: EA | Position: (812.73, 1554.17) | Velocity: (36.86 - 144.00) | Angle: (20.00 - 27.87) | Impact Power: 0.08
-ID: 7 | Type: EE | Position: (2242.72, 3487.00) | Velocity: (74.53 - 96.50) | Angle: (70.00 - 71.39) | Impact Power: 0.04
-ID: 8 | Type: EE | Position: (3698.61, 796.67) | Velocity: (106.79 - 111.25) | Angle: (70.00 - 71.90) | Impact Power: 0.04
+ID: 1 | Type: ED | Position: (2812.23, 3977.19) | Velocity: (140.53 - 308.91) | Angle: (50.00 - 71.79) | Impact Power: 0.05
+ID: 2 | Type: EA | Position: (966.83, 839.35) | Velocity: (133.04 - 567.60) | Angle: (20.00 - 73.54) | Impact Power: 0.08
+ID: 3 | Type: EE | Position: (1500.90, 1385.11) | Velocity: (277.70 - 396.14) | Angle: (70.00 - 72.12) | Impact Power: 0.04
+ID: 4 | Type: ED | Position: (1261.81, 970.60) | Velocity: (24.20 - 34.46) | Angle: (50.00 - 79.62) | Impact Power: 0.05
+ID: 5 | Type: EB | Position: (259.61, 555.10) | Velocity: (164.37 - 331.56) | Angle: (30.00 - 44.11) | Impact Power: 0.06
+ID: 6 | Type: EB | Position: (26.75, 928.08) | Velocity: (143.64 - 468.04) | Angle: (30.00 - 71.65) | Impact Power: 0.06
+ID: 7 | Type: EE | Position: (1086.00, 642.58) | Velocity: (47.70 - 466.26) | Angle: (70.00 - 79.19) | Impact Power: 0.04

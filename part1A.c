@@ -1,9 +1,9 @@
 #include <stdio.h>
-#include "battle.h"
+#include "part1A.h"
 #include "projectile.h"
 #include "files.h"
 
-void simulateBattle(Battleship *B, EscortShip E[], int N)
+void simulatePart1A(Battleship *B, EscortShip E[], int N)
 {
     double earliestEscortHitTime = -1.0;
     int sinkingEscort = -1;//no sinking escort has been found yet

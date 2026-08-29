@@ -3,6 +3,6 @@
 
 #include "structures.h"
 
-void simulateBattle(Battleship *B, EscortShip E[], int N);
+void simulatePart1A(Battleship *B, EscortShip E[], int N);
 
 #endif
