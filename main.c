@@ -8,6 +8,7 @@
 #include "projectile.h"
 #include "part1A.h"
 #include "files.h"
+#include "part1B.h"
 
 #define MAX_ESCORTS 100
 
@@ -71,6 +72,7 @@ int main(){
     }
     saveInitialConditions(&B, E, N, D);
     simulatePart1A(&B, E, N);
+    simulatePart1B(&B, E, N, D);
     return 0;
 
 

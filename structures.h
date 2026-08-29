@@ -15,6 +15,8 @@ typedef struct { //Creating a structure for the escort ships
     double angleMax;
 
     double impactPower;
+
+    int alive;
 } EscortShip;
 
 typedef struct {  //creating a structure for the battleship
@@ -32,4 +34,8 @@ typedef struct {  //creating a structure for the battleship
     double impactPower;
 } Battleship;
 
+typedef struct {
+    double x;
+    double y;
+}Position;
 #endif

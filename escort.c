@@ -5,6 +5,7 @@
 
 void initializeEscortShips(EscortShip E[], int N, double D, double battleVMax){
     for(int i = 0; i < N; i++){
+        E[i].alive=1;
         E[i].id = i + 1; // Assign a unique id to each escort ship
         int randomtype= rand()%5;//generate 1 random number from 0 t0 4
 

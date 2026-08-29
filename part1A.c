@@ -35,7 +35,8 @@ void simulatePart1A(Battleship *B, EscortShip E[], int N)
     if(sinkingEscort != -1)
     {
         printf("\nBattleship %c was sunk by Escort %d (Type: %s).\n",B->type,E[sinkingEscort].id,E[sinkingEscort].type);
-        printf("Battle ende at %.2f seconds.\n",earliestEscortHitTime);
+        printf("Battleship sinks at %.2f seconds\n", earliestEscortHitTime);
+        printf("Battle ended at %.2f seconds.\n",earliestEscortHitTime);
     }
     else
     {
@@ -65,7 +66,7 @@ void simulatePart1A(Battleship *B, EscortShip E[], int N)
                 if(earliestEscortHitTime < 0 || hitTime < earliestEscortHitTime) //if the escort didn't hit or battleship hit escort before it sunk the battleship
                 {
                     printf("Escort %d (Type: %s) was sunk.\n",E[i].id,E[i].type);
-
+                    E[i].alive = 0;
                     sunkCount++;
                 
                     if(hitTime > battleEndTime)
@@ -93,10 +94,12 @@ void simulatePart1A(Battleship *B, EscortShip E[], int N)
         printf("None\n");
     }
     printf("Total escort ships sunk: %d\n", sunkCount);
-    if(sinkingEscort == -1){  //if no escort ship was sunken and the battleship i
-        printf("Battle Ended at .%2f\n",battleEndTime);
+    if(sinkingEscort == -1){
+        
+          //if no escort ship was sunken and the battleship i
+        printf("Battle Ended at %.2f\n",battleEndTime);
     }
     saveFinalConditions(B,E,N,sinkingEscort,earliestEscortHitTime,sunkCount);
 
-    printf("Battleship sinks at %.2f seconds\n",earliestEscortHitTime);
+    
 }

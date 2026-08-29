@@ -43,6 +43,7 @@ void saveInitialConditions(Battleship *B, EscortShip E[], int N, double D)
 
     printf("Initial conditions saved to partA1_initial_conditions.txt\n");
 }
+//Final conditions file part 1 A
 void saveFinalConditions(Battleship *B,EscortShip E[],int N,int sinkingEscort,double earliestEscortHitTime,int sunkCount){
     FILE *fp = fopen("partA1_final_conditions.txt", "w");
     if(fp == NULL)
@@ -67,3 +68,42 @@ void saveFinalConditions(Battleship *B,EscortShip E[],int N,int sinkingEscort,do
      fclose(fp);
     printf("Final conditions saved to partA1_final_conditions.txt\n");
 }
+
+//Part 1 B simulation 1 file
+void savePart1BSim1Iteration(Battleship *B,EscortShip E[],int N,int iteration,int sinkingEscort,double earliestEscortHitTime,int sunkThisIteration,double iterationEndTime){
+
+    FILE *fp = fopen("part1B_sim1_results.txt", "a");//for every iteration we need to append the data
+
+    if(fp == NULL){
+        printf("Error creating part1B_sim1_results.txt\n");
+        return;
+    }
+    fprintf(fp, "\n--------------------------------\n");
+    fprintf(fp, "Iteration %d\n", iteration);
+    fprintf(fp, "--------------------------------\n");
+
+    fprintf(fp, "Battleship Position: (%.2f, %.2f)\n",B->x, B->y);
+    fprintf(fp, "Battleship Type: %c\n", B->type);
+    fprintf(fp, "\nEscort Ship Conditions:\n");
+
+    for(int i = 0; i < N; i++)
+    {
+        fprintf(fp,"ID: %d | Type: %s | Position: (%.2f, %.2f) | Status: %s\n",E[i].id,E[i].type,E[i].x,E[i].y,E[i].alive ? "ALIVE" : "SUNK");
+    }
+
+    fprintf(fp, "\nEscort ships sunk in this iteration: %d\n",sunkThisIteration);
+
+    if(sinkingEscort != -1){
+        fprintf(fp, "Battleship Status: SUNK\n");
+        fprintf(fp, "Sunk by Escort %d (Type: %s)\n",E[sinkingEscort].id,E[sinkingEscort].type);
+        fprintf(fp, "Battleship sank at %.2f seconds\n",earliestEscortHitTime);
+    }
+    else{
+        fprintf(fp, "Battleship Status: SURVIVED\n");
+        fprintf(fp, "Iteration ended at %.2f seconds\n",iterationEndTime);
+    }
+
+    fclose(fp);
+}
+    
+
