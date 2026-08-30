@@ -145,5 +145,62 @@ void savePart1BSim2Iteration(Battleship *B,EscortShip E[],int N,int iteration,in
 
     fclose(fp);
 }
+void savePart1CResults(Battleship *B,EscortShip E[],int N,double escortHitTimes[],double battleHitTimes[],int sunkCount,double battleEndTime){
+
+    FILE *fp = fopen("part1C_results.txt", "w");
+
+    if(fp == NULL){
+        printf("Error creating part1C_results.txt\n");
+        return;
+    }
+
+    fprintf(fp, "--- Part 1-C Results ---\n");
+    fprintf(fp, "\nBattleship\n");
+    fprintf(fp, "Type: %c\n", B->type);
+    fprintf(fp, "Position: (%.2f, %.2f)\n", B->x, B->y);
+
+    fprintf(fp, "\n--- Escort Attack Details ---\n");
+
+    double cumulativeDamage = 0.0;
+
+    for(int i = 0; i < N; i++) {
+        fprintf(fp, "\nEscort %d\n", E[i].id);
+        fprintf(fp, "Type: %s\n", E[i].type);
+
+        if(escortHitTimes[i] >= 0){
+            cumulativeDamage += E[i].impactPower;
+
+            fprintf(fp, "Hit Battleship: YES\n");
+            fprintf(fp,"Hit Time: %.2f seconds\n",escortHitTimes[i]);
+            fprintf(fp,"Impact Power: %.2f\n",E[i].impactPower);
+            fprintf(fp, "Cumulative Damage: %.2f%%\n",cumulativeDamage * 100.0);
+        }
+        else{
+            fprintf(fp, "Hit Battleship: NO\n");
+        }
+
+        if(battleHitTimes[i] >= 0){
+            fprintf(fp, "Destroyed by Battleship: YES\n");
+            fprintf(fp,"Battleship Hit Time: %.2f seconds\n",battleHitTimes[i]);
+        }
+        else{
+            fprintf(fp, "Destroyed by Battleship: NO\n");
+        }
+    }
+
+    fprintf(fp, "\n--- Final Result ---\n");
+    fprintf(fp,"Total Escorts Sunk: %d\n",sunkCount);
+    fprintf(fp,"Final Cumulative Damage: %.2f%%\n",B->damage * 100.0);
+
+    if(B->damage >= 1.0){
+        fprintf(fp, "Battleship Status: SUNK\n");
+    }
+    else{
+        fprintf(fp, "Battleship Status: SURVIVED\n");
+    }
+    fprintf(fp,"Battle End Time: %.2f seconds\n",battleEndTime);
+    fclose(fp);
+    printf("Detailed results saved to part1C_results.txt\n");
+}
     
 

@@ -32,6 +32,8 @@ typedef struct {  //creating a structure for the battleship
     double angleMax;
 
     double impactPower;
+
+    double damage;
 } Battleship;
 
 typedef struct {

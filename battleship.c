@@ -16,6 +16,7 @@ void initializeBattleship(Battleship *B,double D){
     B->angleMin=0.0;
     B->angleMax=90.0;
     B->impactPower=1.0;
+    B->damage = 0.0;
     int ch;
     do{
         printf("Enter the maximum shell velocity: ");  //Ask the user to input the maximum shell velocity for the battleship

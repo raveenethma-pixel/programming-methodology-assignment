@@ -9,6 +9,7 @@
 #include "part1A.h"
 #include "files.h"
 #include "part1B.h"
+#include "part1C.h"
 
 #define MAX_ESCORTS 100
 
@@ -73,6 +74,7 @@ int main(){
     saveInitialConditions(&B, E, N, D);
     simulatePart1A(&B, E, N);
     simulatePart1B(&B, E, N, D);
+    simulatePart1C(&B, E, N);
     return 0;
 
 
