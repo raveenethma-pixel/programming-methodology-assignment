@@ -4,44 +4,27 @@ Gun jams after iteration 3
 Jammed angle range: 23.00 - 90.00 degrees
 
 --- Battleship Path ---
-Point 1: (437.26, 3928.93)
-Point 2: (1701.63, 725.16)
-Point 3: (1076.13, 2741.50)
-Point 4: (2668.18, 1715.90)
+Point 1: (2193.85, 799.55)
+Point 2: (2148.02, 987.05)
+Point 3: (2647.50, 1379.98)
+Point 4: (2052.52, 2878.85)
 
 --------------------------------
 Iteration 1
 --------------------------------
-Battleship Position: (437.26, 3928.93)
+Battleship Position: (2193.85, 799.55)
 Battleship Type: U
 Gun Status: NORMAL
 Angle Range: 0.00 - 90.00
 
 Escort Ship Conditions:
-ID: 1 | Type: EC | Position: (3852.67, 3440.09) | Status: ALIVE
-ID: 2 | Type: EA | Position: (3314.22, 1087.13) | Status: ALIVE
-ID: 3 | Type: EC | Position: (1077.27, 1915.61) | Status: ALIVE
+ID: 1 | Type: EC | Position: (907.47, 2144.10) | Status: ALIVE
+ID: 2 | Type: ED | Position: (1071.19, 1763.26) | Status: ALIVE
+ID: 3 | Type: EC | Position: (1711.01, 1328.62) | Status: SUNK
 
-Escort ships sunk in this iteration: 0
-Battleship Status: SURVIVED
-Iteration ended at 0.00 seconds
-
---------------------------------
-Iteration 2
---------------------------------
-Battleship Position: (1701.63, 725.16)
-Battleship Type: U
-Gun Status: NORMAL
-Angle Range: 0.00 - 90.00
-
-Escort Ship Conditions:
-ID: 1 | Type: EC | Position: (3852.67, 3440.09) | Status: ALIVE
-ID: 2 | Type: EA | Position: (3314.22, 1087.13) | Status: ALIVE
-ID: 3 | Type: EC | Position: (1077.27, 1915.61) | Status: ALIVE
-
-Escort ships sunk in this iteration: 0
+Escort ships sunk in this iteration: 1
 Battleship Status: SUNK
-Sunk by Escort 2 (Type: EA)
-Battleship sank at 12.84 seconds
+Sunk by Escort 3 (Type: EC)
+Battleship sank at 8.17 seconds
 
-Simulation 2 stopped at Point 2 because B was destroyed.
+Simulation 2 stopped at Point 1 because B was destroyed.

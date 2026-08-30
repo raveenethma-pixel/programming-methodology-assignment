@@ -1,0 +1,98 @@
+--- Part 1-C Movement Simulation 2 Results ---
+
+Gun jams after iteration 3
+Jammed angle range: 23.00 - 90.00 degrees
+
+--- Battleship Path ---
+Point 1: (1315.42, 2133.80)
+Point 2: (1853.22, 1997.25)
+Point 3: (303.62, 1580.84)
+Point 4: (2034.99, 2103.04)
+
+--------------------------------
+Iteration 1
+--------------------------------
+Battleship Position: (1315.42, 2133.80)
+Battleship Angle Range: 0.00 - 90.00 degrees
+
+Escort 1 | Type: EC | Status: SUNK
+Hit Battleship: YES | Hit Time: 6.17 seconds | Impact Power: 0.07
+Hit by Battleship: YES | Hit Time: 3.45 seconds
+
+Escort 2 | Type: ED | Status: SUNK
+Hit Battleship: YES | Hit Time: 10.28 seconds | Impact Power: 0.05
+Hit by Battleship: YES | Hit Time: 3.75 seconds
+
+Escort 3 | Type: EC | Status: SUNK
+Hit Battleship: YES | Hit Time: 9.29 seconds | Impact Power: 0.07
+Hit by Battleship: YES | Hit Time: 7.93 seconds
+
+Escorts sunk during this iteration: 3
+Cumulative damage on Battleship: 19.00%
+Battleship Status: SURVIVED
+
+--------------------------------
+Iteration 2
+--------------------------------
+Battleship Position: (1853.22, 1997.25)
+Battleship Angle Range: 0.00 - 90.00 degrees
+
+Escort 1 | Type: EC | Status: SUNK
+Hit Battleship: NO
+Hit by Battleship: NO
+
+Escort 2 | Type: ED | Status: SUNK
+Hit Battleship: NO
+Hit by Battleship: NO
+
+Escort 3 | Type: EC | Status: SUNK
+Hit Battleship: NO
+Hit by Battleship: NO
+
+Escorts sunk during this iteration: 0
+Cumulative damage on Battleship: 19.00%
+Battleship Status: SURVIVED
+
+--------------------------------
+Iteration 3
+--------------------------------
+Battleship Position: (303.62, 1580.84)
+Battleship Angle Range: 0.00 - 90.00 degrees
+
+Escort 1 | Type: EC | Status: SUNK
+Hit Battleship: NO
+Hit by Battleship: NO
+
+Escort 2 | Type: ED | Status: SUNK
+Hit Battleship: NO
+Hit by Battleship: NO
+
+Escort 3 | Type: EC | Status: SUNK
+Hit Battleship: NO
+Hit by Battleship: NO
+
+Escorts sunk during this iteration: 0
+Cumulative damage on Battleship: 19.00%
+Battleship Status: SURVIVED
+
+--------------------------------
+Iteration 4
+--------------------------------
+Battleship Position: (2034.99, 2103.04)
+Battleship Angle Range: 23.00 - 90.00 degrees
+
+Escort 1 | Type: EC | Status: SUNK
+Hit Battleship: NO
+Hit by Battleship: NO
+
+Escort 2 | Type: ED | Status: SUNK
+Hit Battleship: NO
+Hit by Battleship: NO
+
+Escort 3 | Type: EC | Status: SUNK
+Hit Battleship: NO
+Hit by Battleship: NO
+
+Escorts sunk during this iteration: 0
+Cumulative damage on Battleship: 19.00%
+Battleship Status: SURVIVED

@@ -38,6 +38,12 @@ int main(){
     }
     initializeBattleship(&B,D);
     initializeEscortShips(E,N,D,B.vMax);
+    Battleship originalB = B;
+    EscortShip originalE[N];
+
+    for(int i = 0; i < N; i++){
+        originalE[i] = E[i];
+    }
 
     //Print the initialized escort ships
     printf("\n---Escort Ships---\n");
@@ -72,9 +78,44 @@ int main(){
         }
     }
     saveInitialConditions(&B, E, N, D);
+
+
+    // -------------------- Part 1-A --------------------
+    B = originalB;
+
+    for(int i = 0; i < N; i++){
+        E[i] = originalE[i];
+    }
+
     simulatePart1A(&B, E, N);
+
+
+    // -------------------- Part 1-B --------------------
+    B = originalB;
+
+    for(int i = 0; i < N; i++){
+        E[i] = originalE[i];
+    }
+
     simulatePart1B(&B, E, N, D);
+
+
+    // -------------------- Part 1-C --------------------
+    B = originalB;
+
+    for(int i = 0; i < N; i++){
+        E[i] = originalE[i];
+    }
+
     simulatePart1C(&B, E, N);
+
+
+    // -------- Part 1-C Movement Simulation --------
+    B = originalB;
+    for(int i = 0; i < N; i++){
+        E[i] = originalE[i];
+    }
+    simulatePart1CMovement(&B, E, N, D);
     return 0;
 
 
