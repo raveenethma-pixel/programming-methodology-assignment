@@ -4,13 +4,16 @@ Battlefield size: 4000.00 x 4000.00
 
 Battleship
 Type: U
-Position: (3456.00, 345.00)
+Position: (2334.00, 322.00)
 Minimum Velocity: 0.00
 Maximum Velocity: 120.00
 Minimum Angle: 0.00
 Maximum Angle: 90.00
 
 Escort Ships
-ID: 1 | Type: ED | Position: (855.12, 2401.59) | Velocity: (88.85 - 116.97) | Angle: (50.00 - 54.51) | Impact Power: 0.05
-ID: 2 | Type: EE | Position: (1395.39, 3170.72) | Velocity: (5.23 - 44.62) | Angle: (70.00 - 72.23) | Impact Power: 0.04
-ID: 3 | Type: EE | Position: (874.08, 1253.84) | Velocity: (88.46 - 90.77) | Angle: (70.00 - 73.65) | Impact Power: 0.04
+ID: 1 | Type: EA | Position: (1721.84, 638.01) | Velocity: (106.93 - 144.00) | Angle: (20.00 - 28.93) | Impact Power: 0.08
+ID: 2 | Type: EB | Position: (3719.64, 2391.86) | Velocity: (100.53 - 111.51) | Angle: (30.00 - 56.43) | Impact Power: 0.06
+ID: 3 | Type: EA | Position: (2330.78, 244.45) | Velocity: (49.49 - 144.00) | Angle: (20.00 - 25.48) | Impact Power: 0.08
+ID: 4 | Type: EE | Position: (2389.70, 2933.00) | Velocity: (84.91 - 107.11) | Angle: (70.00 - 72.28) | Impact Power: 0.04
+ID: 5 | Type: EB | Position: (2364.26, 3146.34) | Velocity: (64.74 - 73.23) | Angle: (30.00 - 65.88) | Impact Power: 0.06
+ID: 6 | Type: EB | Position: (3188.62, 1172.93) | Velocity: (72.29 - 83.04) | Angle: (30.00 - 71.73) | Impact Power: 0.06

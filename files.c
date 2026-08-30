@@ -105,5 +105,45 @@ void savePart1BSim1Iteration(Battleship *B,EscortShip E[],int N,int iteration,in
 
     fclose(fp);
 }
+//save part 1 B simulation 2 to a file
+void savePart1BSim2Iteration(Battleship *B,EscortShip E[],int N,int iteration,int sinkingEscort,double earliestEscortHitTime,int sunkThisIteration,double iterationEndTime,int gunJammed){
+    FILE *fp = fopen("part1B_sim2_results.txt", "a");
+    if(fp == NULL){
+        printf("Error opening part1B_sim2_results.txt\n");
+        return;
+    }
+
+    fprintf(fp, "\n--------------------------------\n");
+    fprintf(fp, "Iteration %d\n", iteration);
+    fprintf(fp, "--------------------------------\n");
+    fprintf(fp, "Battleship Position: (%.2f, %.2f)\n",B->x, B->y);
+    fprintf(fp, "Battleship Type: %c\n", B->type);
+
+    if(gunJammed == 1){
+        fprintf(fp, "Gun Status: JAMMED\n");
+    }
+    else{
+        fprintf(fp, "Gun Status: NORMAL\n");
+    }
+    fprintf(fp, "Angle Range: %.2f - %.2f\n", B->angleMin,B->angleMax);
+    fprintf(fp, "\nEscort Ship Conditions:\n");
+
+    for(int i = 0; i < N; i++){
+        fprintf(fp,"ID: %d | Type: %s | Position: (%.2f, %.2f) | Status: %s\n",E[i].id,E[i].type,E[i].x,E[i].y,E[i].alive ? "ALIVE" : "SUNK");
+    }
+    fprintf(fp,"\nEscort ships sunk in this iteration: %d\n",sunkThisIteration);
+
+    if(sinkingEscort != -1){
+        fprintf(fp, "Battleship Status: SUNK\n");
+        fprintf(fp,"Sunk by Escort %d (Type: %s)\n",E[sinkingEscort].id,E[sinkingEscort].type);
+        fprintf(fp,"Battleship sank at %.2f seconds\n",earliestEscortHitTime);
+    }
+    else{
+        fprintf(fp, "Battleship Status: SURVIVED\n");
+        fprintf(fp,"Iteration ended at %.2f seconds\n",iterationEndTime);
+    }
+
+    fclose(fp);
+}
     
 
