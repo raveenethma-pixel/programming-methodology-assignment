@@ -333,5 +333,65 @@ void savePart1CMovementSim2Iteration(Battleship *B, EscortShip E[], int N,int it
 
     fclose(fp);
 }
+void savePart2APart1AResults(Battleship *B, EscortShip E[], int N, double reloadTime, int attackOrder[], int attackCount,double fireTimes[], double hitTimes[], int sunkCount,int sinkingEscort,double earliestEscortHitTime)
+{
+    FILE *fp = fopen("part2A_part1A_results.txt", "w");
+
+    if(fp == NULL){
+        printf("Error creating part2A_part1A_results.txt\n");
+        return;
+    }
+
+    fprintf(fp, "--- Part 2-A / Part 1-A Results ---\n");
+
+    fprintf(fp,"\nBattleship Type: %c\n", B->type);
+    fprintf(fp,"Battleship Position: (%.2f, %.2f)\n", B->x,B->y);
+
+    fprintf(fp,"Battleship Reload Time T_B: %.2f seconds\n",reloadTime);
+    fprintf(fp, "\n--- Battleship Attack Order ---\n");
+
+    if(attackCount == 0){
+        fprintf(fp, "No escorts were within Battleship attack range.\n");
+    }
+    else{
+        for(int i = 0; i < attackCount; i++){
+            int index = attackOrder[i];
+            fprintf(fp, "Attack %d -> Escort %d | Type: %s\n", i + 1, E[index].id,E[index].type);
+        }
+    }
+
+
+    fprintf(fp, "\n--- Attack Timing ---\n");
+
+    for(int i = 0; i < attackCount; i++){
+
+        int index = attackOrder[i];
+
+        if(fireTimes[i] >= 0.0){
+            fprintf(fp,"Escort %d | Fire Time: %.2f s | Hit Time: %.2f s\n",E[index].id,fireTimes[i],hitTimes[i]);
+        }
+        else{
+            fprintf(fp, "Escort %d | NOT FIRED AT\n",E[index].id);
+        }
+    }
+
+
+    fprintf(fp,"\nTotal Escorts Sunk: %d\n",sunkCount);
+
+
+    if(sinkingEscort != -1){
+
+        fprintf(fp,"Battleship Status: SUNK\n");
+        fprintf(fp,"Sunk by Escort %d | Type: %s\n",E[sinkingEscort].id,E[sinkingEscort].type);
+        fprintf(fp,"Battleship Sink Time: %.2f seconds\n",earliestEscortHitTime);
+    }
+    else{
+        fprintf(fp, "Battleship Status: SURVIVED\n");
+    }
+
+    fclose(fp);
+
+    printf("Detailed results saved to part2A_part1A_results.txt\n");
+}
     
 

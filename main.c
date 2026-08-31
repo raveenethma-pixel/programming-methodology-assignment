@@ -10,6 +10,7 @@
 #include "files.h"
 #include "part1B.h"
 #include "part1C.h"
+#include "part2A.h"
 
 #define MAX_ESCORTS 100
 
@@ -91,8 +92,8 @@ int main(){
 
 
     // -------------------- Part 1-B --------------------
-    B = originalB;
-
+    B = originalB;               //this piece of code take a copy of the original values in the structs. So that any change done by the above codes will have no effect.
+                                //Strats from the initial values and conditions
     for(int i = 0; i < N; i++){
         E[i] = originalE[i];
     }
@@ -116,6 +117,13 @@ int main(){
         E[i] = originalE[i];
     }
     simulatePart1CMovement(&B, E, N, D);
+
+    //part 2 A
+    B = originalB;
+    for(int i = 0; i < N; i++){
+        E[i] = originalE[i];
+    }
+    simulatePart2A(&B, E, N, D);
     return 0;
 
 

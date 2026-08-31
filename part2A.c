@@ -5,7 +5,7 @@
 5. Sort them so the most dangerous escort comes first
 */
 #include <stdio.h>
-
+#include "files.h"
 #include "part2A.h"
 #include "projectile.h"
 
@@ -65,8 +65,7 @@ void determineAttackOrder(Battleship *B,  EscortShip E[], int N,int attackOrder[
         }
     }
 }
-
-void simulatePart2A(Battleship *B, EscortShip E[], int N)
+void simulatePart2A(Battleship *B,EscortShip E[],int N,double D)
 {
     double reloadTime;
 
@@ -87,8 +86,52 @@ void simulatePart2A(Battleship *B, EscortShip E[], int N)
     }while(reloadTime <= 0.0);
 
 
+    /*
+       Save original battlefield conditions.
+       Each Part 2-A simulation must start from fresh conditions.
+    */
+    Battleship originalB = *B;//copies the original structure
+    EscortShip originalE[N];
+
+    for(int i = 0; i < N; i++){
+        originalE[i] = E[i];
+    }
+
+
+    // ---------------- Part 1-A under Part 2-A rules ----------------
+
+    *B = originalB;
+
+    for(int i = 0; i < N; i++){
+        E[i] = originalE[i];
+    }
+
+    simulatePart2A_Part1A( B, E, N,reloadTime);
+
+
+    /*
+       Later:
+
+       restore battlefield
+       simulatePart2A_Part1B(...)
+
+       restore battlefield
+       simulatePart2A_Part1C(...)
+    */
+}
+
+void simulatePart2A_Part1A(Battleship *B, EscortShip E[], int N,double reloadTime)
+{
+    
     int attackOrder[N];
     int attackCount = 0;
+    double fireTimes[N];
+    double hitTimes[N];
+
+    for(int i = 0; i < N; i++){
+        fireTimes[i] = -1.0;
+        hitTimes[i] = -1.0;
+    }
 
     determineAttackOrder(B,E, N, attackOrder, &attackCount);
 
@@ -137,6 +180,8 @@ void simulatePart2A(Battleship *B, EscortShip E[], int N)
         if(earliestEscortHitTime >= 0 && currentFireTime >= earliestEscortHitTime){
             break;
         }
+        fireTimes[i] = currentFireTime;
+        hitTimes[i] = actualHitTime;
         printf("Attack %d -> Escort %d (Type: %s) | ""Fire Time: %.2f s | Hit Time: %.2f s\n", i + 1,  E[index].id,  E[index].type, currentFireTime, actualHitTime);
         //   B still destroys E with one successful hitat this stage.
         
@@ -156,4 +201,5 @@ void simulatePart2A(Battleship *B, EscortShip E[], int N)
     else{
         printf("Battleship survived.\n");
     }
+    savePart2APart1AResults(B,E,N,reloadTime,attackOrder,attackCount, fireTimes, hitTimes, sunkCount, sinkingEscort, earliestEscortHitTime);
 }

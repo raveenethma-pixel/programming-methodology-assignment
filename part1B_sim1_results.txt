@@ -1,25 +1,25 @@
 --- Part 1-B Simulation 1 Results ---
 
 --- Battleship Path ---
-Point 1: (2193.85, 799.55)
-Point 2: (2148.02, 987.05)
-Point 3: (2647.50, 1379.98)
-Point 4: (2052.52, 2878.85)
+Point 1: (1372.91, 1303.09)
+Point 2: (3190.83, 2210.95)
+Point 3: (1201.76, 3266.98)
+Point 4: (2800.95, 2309.15)
 
 --------------------------------
 Iteration 1
 --------------------------------
-Battleship Position: (2193.85, 799.55)
+Battleship Position: (1372.91, 1303.09)
 Battleship Type: U
 
 Escort Ship Conditions:
-ID: 1 | Type: EC | Position: (907.47, 2144.10) | Status: ALIVE
-ID: 2 | Type: ED | Position: (1071.19, 1763.26) | Status: ALIVE
-ID: 3 | Type: EC | Position: (1711.01, 1328.62) | Status: SUNK
+ID: 1 | Type: EC | Position: (2878.87, 615.27) | Status: SUNK
+ID: 2 | Type: ED | Position: (3783.41, 2720.09) | Status: SUNK
+ID: 3 | Type: EB | Position: (2577.73, 737.73) | Status: SUNK
 
-Escort ships sunk in this iteration: 1
+Escort ships sunk in this iteration: 3
 Battleship Status: SUNK
-Sunk by Escort 3 (Type: EC)
-Battleship sank at 8.17 seconds
+Sunk by Escort 2 (Type: ED)
+Battleship sank at 25.82 seconds
 
 Simulation stopped at Point 1 because B was destroyed.
