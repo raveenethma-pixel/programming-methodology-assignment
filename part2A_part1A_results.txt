@@ -1,14 +1,14 @@
 --- Part 2-A / Part 1-A Results ---
 
 Battleship Type: U
-Battleship Position: (3.00, 2342.00)
+Battleship Position: (2345.00, 3523.00)
 Battleship Reload Time T_B: 2.00 seconds
 
 --- Battleship Attack Order ---
-Attack 1 -> Escort 3 | Type: EE
+Attack 1 -> Escort 2 | Type: EC
 
 --- Attack Timing ---
-Escort 3 | Fire Time: 0.00 s | Hit Time: 14.23 s
+Escort 2 | Fire Time: 0.00 s | Hit Time: 4.95 s
 
 Total Escorts Sunk: 1
 Battleship Status: SURVIVED

@@ -2,28 +2,38 @@
 
 Battleship
 Type: U
-Position: (3.00, 2342.00)
+Position: (2345.00, 3523.00)
 
 --- Escort Attack Details ---
 
 Escort 1
-Type: EC
-Hit Battleship: NO
-Destroyed by Battleship: NO
-
-Escort 2
 Type: EA
 Hit Battleship: NO
 Destroyed by Battleship: NO
 
+Escort 2
+Type: EC
+Hit Battleship: NO
+Destroyed by Battleship: YES
+Battleship Hit Time: 4.95 seconds
+
 Escort 3
 Type: EE
 Hit Battleship: NO
-Destroyed by Battleship: YES
-Battleship Hit Time: 14.23 seconds
+Destroyed by Battleship: NO
+
+Escort 4
+Type: EC
+Hit Battleship: NO
+Destroyed by Battleship: NO
+
+Escort 5
+Type: EE
+Hit Battleship: NO
+Destroyed by Battleship: NO
 
 --- Final Result ---
 Total Escorts Sunk: 1
 Final Cumulative Damage: 0.00%
 Battleship Status: SURVIVED
-Battle End Time: 14.23 seconds
+Battle End Time: 4.95 seconds

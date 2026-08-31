@@ -1,70 +1,27 @@
 --- Part 1-B Simulation 1 Results ---
 
 --- Battleship Path ---
-Point 1: (1877.93, 1398.08)
-Point 2: (464.31, 2716.91)
-Point 3: (1112.71, 1889.73)
-Point 4: (3788.39, 2587.12)
+Point 1: (2433.55, 292.26)
+Point 2: (1663.85, 1494.67)
+Point 3: (621.96, 1725.71)
+Point 4: (1762.42, 2963.45)
 
 --------------------------------
 Iteration 1
 --------------------------------
-Battleship Position: (1877.93, 1398.08)
+Battleship Position: (2433.55, 292.26)
 Battleship Type: U
 
 Escort Ship Conditions:
-ID: 1 | Type: EC | Position: (3043.21, 3948.00) | Status: ALIVE
-ID: 2 | Type: EA | Position: (3540.58, 3436.38) | Status: ALIVE
-ID: 3 | Type: EE | Position: (1167.26, 3071.90) | Status: ALIVE
+ID: 1 | Type: EA | Position: (1303.70, 1450.69) | Status: ALIVE
+ID: 2 | Type: EC | Position: (2882.12, 3265.14) | Status: ALIVE
+ID: 3 | Type: EE | Position: (2148.15, 1205.91) | Status: SUNK
+ID: 4 | Type: EC | Position: (250.72, 3185.93) | Status: ALIVE
+ID: 5 | Type: EE | Position: (3286.37, 830.57) | Status: SUNK
 
-Escort ships sunk in this iteration: 0
-Battleship Status: SURVIVED
-Iteration ended at 0.00 seconds
-
---------------------------------
-Iteration 2
---------------------------------
-Battleship Position: (464.31, 2716.91)
-Battleship Type: U
-
-Escort Ship Conditions:
-ID: 1 | Type: EC | Position: (3043.21, 3948.00) | Status: ALIVE
-ID: 2 | Type: EA | Position: (3540.58, 3436.38) | Status: ALIVE
-ID: 3 | Type: EE | Position: (1167.26, 3071.90) | Status: SUNK
-
-Escort ships sunk in this iteration: 1
-Battleship Status: SURVIVED
-Iteration ended at 6.85 seconds
-
---------------------------------
-Iteration 3
---------------------------------
-Battleship Position: (1112.71, 1889.73)
-Battleship Type: U
-
-Escort Ship Conditions:
-ID: 1 | Type: EC | Position: (3043.21, 3948.00) | Status: ALIVE
-ID: 2 | Type: EA | Position: (3540.58, 3436.38) | Status: ALIVE
-ID: 3 | Type: EE | Position: (1167.26, 3071.90) | Status: SUNK
-
-Escort ships sunk in this iteration: 0
-Battleship Status: SURVIVED
-Iteration ended at 0.00 seconds
-
---------------------------------
-Iteration 4
---------------------------------
-Battleship Position: (3788.39, 2587.12)
-Battleship Type: U
-
-Escort Ship Conditions:
-ID: 1 | Type: EC | Position: (3043.21, 3948.00) | Status: ALIVE
-ID: 2 | Type: EA | Position: (3540.58, 3436.38) | Status: SUNK
-ID: 3 | Type: EE | Position: (1167.26, 3071.90) | Status: SUNK
-
-Escort ships sunk in this iteration: 1
+Escort ships sunk in this iteration: 2
 Battleship Status: SUNK
-Sunk by Escort 2 (Type: EA)
-Battleship sank at 8.02 seconds
+Sunk by Escort 1 (Type: EA)
+Battleship sank at 12.00 seconds
 
-Simulation stopped at Point 4 because B was destroyed.
+Simulation stopped at Point 1 because B was destroyed.

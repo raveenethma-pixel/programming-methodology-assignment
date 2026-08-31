@@ -26,6 +26,8 @@ typedef struct {
     int sunkCount;
 
     double battleEndTime;
+
+    double lastBattleshipHitTime;
 } BattleResult;
 
 
@@ -34,5 +36,13 @@ typedef struct {
    of B and the escort ships.
 */
 BattleResult simulateBattleStep(Battleship *B,EscortShip E[],int N,BattleRules rules,int fired[]);
-
+/*
+this file handles,
+can E hit B?
+when does E hit B?
+can B hit E?
+when does B hit E?
+which E ships sink?
+does B sink?
+*/
 #endif

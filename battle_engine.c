@@ -10,10 +10,11 @@ BattleResult simulateBattleStep( Battleship *B, EscortShip E[], int N, BattleRul
     result.sinkingEscort = -1;
     result.sunkCount = 0;
     result.battleEndTime = 0.0;
+    result.lastBattleshipHitTime = 0.0;
 
     double earliestEscortHitTime = -1.0;
     
-      // First find the earliest escort shell that can hit B.
+    // First find the earliest escort shell that can hit B.
     for(int i = 0; i < N; i++){
         //E[i].alive tells us whether a specific escort ship is still alive or already destroyed.
         if(E[i].alive == 0){
@@ -73,8 +74,15 @@ BattleResult simulateBattleStep( Battleship *B, EscortShip E[], int N, BattleRul
             double hitTime =calculateMinimumHitTime(distance,B->vMin,B->vMax,B->angleMin,B->angleMax);
 
             if(hitTime >= 0){
+                if(!rules.cumulativeDamage && earliestEscortHitTime >= 0 && hitTime >= earliestEscortHitTime){
+                    continue;
+                }
                 E[i].alive = 0;
                 result.sunkCount++;
+
+                if(hitTime > result.lastBattleshipHitTime){
+                    result.lastBattleshipHitTime = hitTime;
+                }
 
                 if(hitTime > result.battleEndTime){
                     result.battleEndTime = hitTime;
