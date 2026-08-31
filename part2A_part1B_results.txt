@@ -1,0 +1,51 @@
+--- Part 2-A / Part 1-B Results ---
+Battleship Reload Time T_B: 2.00 seconds
+
+--- Battleship Path ---
+Point 1: (3347.29, 1165.99)
+Point 2: (1841.55, 1623.20)
+Point 3: (2024.84, 3648.97)
+
+--------------------------------
+Iteration 1
+--------------------------------
+Battleship Position: (3347.29, 1165.99)
+
+Attack Order:
+No escorts within Battleship attack range.
+
+Attack Timing:
+
+Escorts sunk during this iteration: 0
+Battleship Status: SURVIVED
+
+--------------------------------
+Iteration 2
+--------------------------------
+Battleship Position: (1841.55, 1623.20)
+
+Attack Order:
+No escorts within Battleship attack range.
+
+Attack Timing:
+
+Escorts sunk during this iteration: 0
+Battleship Status: SURVIVED
+
+--------------------------------
+Iteration 3
+--------------------------------
+Battleship Position: (2024.84, 3648.97)
+
+Attack Order:
+Attack 1 -> Escort 1 | Type: EC
+Attack 2 -> Escort 3 | Type: EE
+
+Attack Timing:
+Escort 1 | Fire Time: 0.00 s | Hit Time: 9.68 s
+Escort 3 | Fire Time: 2.00 s | Hit Time: 11.37 s
+
+Escorts sunk during this iteration: 2
+Battleship Status: SUNK
+Sunk by Escort 2 | Type: EA
+Battleship Sink Time: 11.62 seconds

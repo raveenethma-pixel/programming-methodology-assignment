@@ -24,19 +24,39 @@ int main(){
     double D;//the upper limit of the canvas
 
     //Get the user inputs
+    do{
     printf("Enter battlefield size D: ");
-    scanf("%lf",&D);
-    printf("Enter the number of escort ships N(less than 100) ");
-    scanf("%d",&N);
-    //Make sure the inputes are valid
-    if(D<=0){
-        printf("Invalid battlefield size D. It must be greater than 0.\n");
-        return 1;
+
+    if(scanf("%lf", &D) != 1){
+        printf("Invalid input. Enter a number.\n");
+        while(getchar() != '\n');
+        D = -1.0;
+        continue;
     }
-    if(N<=0 || N>MAX_ESCORTS){
-        printf("Invalid number of escort ships N. It must be between 1 and %d.\n", MAX_ESCORTS);
-        return 1;
+
+    if(D <= 0){
+        printf("Battlefield size must be greater than 0.\n");
     }
+
+    }while(D <= 0);
+
+
+    do{
+        printf("Enter the number of escort ships N (1-%d): ",MAX_ESCORTS);
+
+        if(scanf("%d", &N) != 1){
+            printf("Invalid input. Enter an integer.\n");
+            while(getchar() != '\n');
+            N = -1;
+            continue;
+        }
+
+        if(N <= 0 || N > MAX_ESCORTS){
+            printf("Number of escort ships must be between 1 and %d.\n",MAX_ESCORTS);
+        }
+
+    }while(N <= 0 || N > MAX_ESCORTS);
+    
     initializeBattleship(&B,D);
     initializeEscortShips(E,N,D,B.vMax);
     Battleship originalB = B;

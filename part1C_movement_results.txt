@@ -1,91 +1,69 @@
 --- Part 1-C Movement Simulation Results ---
 
 --- Battleship Path ---
-Point 1: (560.92, 3328.67)
-Point 2: (153.18, 2939.40)
-Point 3: (2420.79, 1759.13)
-Point 4: (3687.76, 2294.60)
+Point 1: (2657.06, 2674.87)
+Point 2: (2260.64, 727.59)
+Point 3: (1832.92, 398.93)
 
 --------------------------------
 Iteration 1
 --------------------------------
-Battleship Position: (560.92, 3328.67)
+Battleship Position: (2657.06, 2674.87)
 
 Escort 1 | Type: EC | Status: SUNK
 Hit Battleship: NO
-Hit by Battleship: YES | Hit Time: 20.95 seconds
+Hit by Battleship: YES | Hit Time: 13.35 seconds
 
-Escort 2 | Type: ED | Status: SUNK
-Hit Battleship: YES | Hit Time: 27.96 seconds | Impact Power: 0.05
-Hit by Battleship: YES | Hit Time: 18.52 seconds
+Escort 2 | Type: EA | Status: SUNK
+Hit Battleship: YES | Hit Time: 9.21 seconds | Impact Power: 0.08
+Hit by Battleship: YES | Hit Time: 10.93 seconds
 
-Escort 3 | Type: EB | Status: SUNK
+Escort 3 | Type: EE | Status: ALIVE
 Hit Battleship: NO
-Hit by Battleship: YES | Hit Time: 18.53 seconds
+Hit by Battleship: NO
 
-Escorts sunk during this iteration: 3
-Cumulative damage on Battleship: 5.00%
+Escorts sunk during this iteration: 2
+Cumulative damage on Battleship: 8.00%
 Battleship Status: SURVIVED
 
 --------------------------------
 Iteration 2
 --------------------------------
-Battleship Position: (153.18, 2939.40)
+Battleship Position: (2260.64, 727.59)
 
 Escort 1 | Type: EC | Status: SUNK
 Hit Battleship: NO
 Hit by Battleship: NO
 
-Escort 2 | Type: ED | Status: SUNK
+Escort 2 | Type: EA | Status: SUNK
 Hit Battleship: NO
 Hit by Battleship: NO
 
-Escort 3 | Type: EB | Status: SUNK
+Escort 3 | Type: EE | Status: ALIVE
 Hit Battleship: NO
 Hit by Battleship: NO
 
 Escorts sunk during this iteration: 0
-Cumulative damage on Battleship: 5.00%
+Cumulative damage on Battleship: 8.00%
 Battleship Status: SURVIVED
 
 --------------------------------
 Iteration 3
 --------------------------------
-Battleship Position: (2420.79, 1759.13)
+Battleship Position: (1832.92, 398.93)
 
 Escort 1 | Type: EC | Status: SUNK
 Hit Battleship: NO
 Hit by Battleship: NO
 
-Escort 2 | Type: ED | Status: SUNK
+Escort 2 | Type: EA | Status: SUNK
 Hit Battleship: NO
 Hit by Battleship: NO
 
-Escort 3 | Type: EB | Status: SUNK
-Hit Battleship: NO
-Hit by Battleship: NO
-
-Escorts sunk during this iteration: 0
-Cumulative damage on Battleship: 5.00%
-Battleship Status: SURVIVED
-
---------------------------------
-Iteration 4
---------------------------------
-Battleship Position: (3687.76, 2294.60)
-
-Escort 1 | Type: EC | Status: SUNK
-Hit Battleship: NO
-Hit by Battleship: NO
-
-Escort 2 | Type: ED | Status: SUNK
-Hit Battleship: NO
-Hit by Battleship: NO
-
-Escort 3 | Type: EB | Status: SUNK
+Escort 3 | Type: EE | Status: ALIVE
 Hit Battleship: NO
 Hit by Battleship: NO
 
 Escorts sunk during this iteration: 0
-Cumulative damage on Battleship: 5.00%
+Cumulative damage on Battleship: 8.00%
 Battleship Status: SURVIVED

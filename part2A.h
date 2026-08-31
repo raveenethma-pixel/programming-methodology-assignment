@@ -9,4 +9,5 @@ void determineAttackOrder(Battleship *B,  EscortShip E[], int N,  int attackOrde
 void simulatePart2A_Part1A(Battleship *B, EscortShip E[],int N,double reloadTime);
 void simulatePart2A_Part1B(Battleship *B, EscortShip E[], int N,  double D, double reloadTime);
 void simulatePart2A_Part1C(Battleship *B, EscortShip E[], int N, double D, double reloadTime);
+int simulatePart2A_Part1BStep(Battleship *B,EscortShip E[],int N, int iteration, double reloadTime, int *totalSunk);
 #endif

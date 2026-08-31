@@ -1,8 +1,8 @@
-#ifndef BATTLE_H
-#define BATTLE_H
+#ifndef PART1A_H
+#define PART1A_H
 
 #include "structures.h"
 
-void simulatePart1A(Battleship *B, EscortShip E[], int N);
+void simulatePart1A(Battleship *B,EscortShip E[],int N);
 
 #endif

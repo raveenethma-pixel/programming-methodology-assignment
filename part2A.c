@@ -8,6 +8,7 @@
 #include "files.h"
 #include "part2A.h"
 #include "projectile.h"
+#include "part1B.h"
 
 void determineAttackOrder(Battleship *B,  EscortShip E[], int N,int attackOrder[],int *attackCount){
     double threatTime[N];
@@ -107,17 +108,16 @@ void simulatePart2A(Battleship *B,EscortShip E[],int N,double D)
     }
 
     simulatePart2A_Part1A( B, E, N,reloadTime);
+    
+    // ---------------- Part 1-B under Part 2-A rules ----------------
 
+    *B = originalB;
 
-    /*
-       Later:
+    for(int i = 0; i < N; i++){
+        E[i] = originalE[i];
+    }
+    simulatePart2A_Part1B(B, E, N,D, reloadTime);
 
-       restore battlefield
-       simulatePart2A_Part1B(...)
-
-       restore battlefield
-       simulatePart2A_Part1C(...)
-    */
 }
 
 void simulatePart2A_Part1A(Battleship *B, EscortShip E[], int N,double reloadTime)
@@ -202,4 +202,133 @@ void simulatePart2A_Part1A(Battleship *B, EscortShip E[], int N,double reloadTim
         printf("Battleship survived.\n");
     }
     savePart2APart1AResults(B,E,N,reloadTime,attackOrder,attackCount, fireTimes, hitTimes, sunkCount, sinkingEscort, earliestEscortHitTime);
+}
+void simulatePart2A_Part1B(Battleship *B,EscortShip E[],int N,double D,double reloadTime)
+{
+    int k;
+
+    do{
+        printf("\nEnter the number of movement points for Part 2-A / Part 1-B: ");
+
+        if(scanf("%d", &k) != 1){
+            printf("Invalid input. Enter an integer.\n");
+            while(getchar() != '\n');
+            k = -1;
+            continue;
+        }
+
+        if(k <= 0){
+            printf("Number of points must be greater than 0.\n");
+        }
+
+    }while(k <= 0);
+
+    Position path[k];
+    generatePath(path, k, D);
+    startPart2APart1BResults( path,k,reloadTime);
+
+    printf("\n--- Part 2-A / Part 1-B Path ---\n");
+
+    for(int i = 0; i < k; i++){
+        printf("Point %d: (%.2f, %.2f)\n",i + 1,path[i].x,path[i].y);
+    }  
+    int totalSunk = 0;
+
+    printf("\n--- Starting Part 2-A / Part 1-B Simulation ---\n");
+
+    for(int iteration = 0; iteration < k; iteration++){
+
+        B->x = path[iteration].x;
+        B->y = path[iteration].y;
+
+        int battleshipDestroyed =simulatePart2A_Part1BStep( B, E, N,iteration + 1,reloadTime,&totalSunk);
+
+        if(battleshipDestroyed == 1){
+            printf("Simulation stopped at iteration %d because B was destroyed.\n",iteration + 1);
+            break;
+        }
+    }
+
+    printf("\n--- Part 2-A / Part 1-B Summary ---\n");
+    printf("Total escorts sunk: %d\n", totalSunk);
+}
+int simulatePart2A_Part1BStep(Battleship *B,EscortShip E[],int N,int iteration,double reloadTime,int *totalSunk)
+{
+    int attackOrder[N];
+    int attackCount = 0;
+    double fireTimes[N];
+    double hitTimes[N];
+
+    for(int i = 0; i < N; i++){
+        fireTimes[i] = -1.0;
+        hitTimes[i] = -1.0;
+    }
+
+    determineAttackOrder( B,E, N, attackOrder,&attackCount);
+
+    double earliestEscortHitTime = -1.0;
+    int sinkingEscort = -1;
+
+    for(int i = 0; i < N; i++){
+
+        if(E[i].alive == 0){
+            continue;
+    }
+
+        if(canEscortHitBattleship(&E[i], B)){
+
+            double distance =calculate_distance(E[i].x,E[i].y,B->x,B->y);
+            double hitTime =calculateMinimumHitTime(distance,E[i].vMin,E[i].vMax,E[i].angleMin,E[i].angleMax);
+
+            if(hitTime >= 0 && (earliestEscortHitTime < 0 || hitTime < earliestEscortHitTime)){
+                earliestEscortHitTime = hitTime;
+                sinkingEscort = i;
+            }
+        }
+    }
+    double currentFireTime = 0.0;
+    int sunkThisIteration = 0;
+
+    for(int i = 0; i < attackCount; i++){
+
+        int index = attackOrder[i];
+        double distance =calculate_distance(B->x,B->y,E[index].x,E[index].y);
+        double shellFlightTime =calculateMinimumHitTime(distance, B->vMin,B->vMax,B->angleMin,B->angleMax);
+
+        if(shellFlightTime < 0){
+            continue;
+        }
+
+    
+    //  B cannot fire once the escort shell has already hit it.
+    
+        if(earliestEscortHitTime >= 0 &&
+            currentFireTime >= earliestEscortHitTime){
+            break;
+        }
+
+        double actualHitTime = currentFireTime + shellFlightTime;
+        fireTimes[i] = currentFireTime;
+        hitTimes[i] = actualHitTime;
+        E[index].alive = 0;
+
+        (*totalSunk)++;
+        sunkThisIteration++;
+
+        currentFireTime += reloadTime;
+    }
+    savePart2APart1BIteration( B, E, N,iteration,attackOrder,attackCount,fireTimes,hitTimes,sunkThisIteration,sinkingEscort,earliestEscortHitTime);
+ 
+    if(sinkingEscort != -1){
+
+    printf("Iteration %d: Battleship was sunk by Escort %d (Type: %s) at %.2f seconds.\n", iteration, E[sinkingEscort].id, E[sinkingEscort].type,earliestEscortHitTime);
+    printf("Escorts sunk in this iteration: %d\n", sunkThisIteration);
+
+    return 1;
+    }
+
+    printf("Iteration %d: Battleship survived.\n",iteration);
+    printf("Escorts sunk in this iteration: %d\n",sunkThisIteration);
+
+    return 0;
 }

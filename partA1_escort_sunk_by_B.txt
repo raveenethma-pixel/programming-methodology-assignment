@@ -1,3 +1,1 @@
-Escort 1 | Type EC | Hit Time 23.67 seconds
-Escort 2 | Type ED | Hit Time 20.59 seconds
-Escort 3 | Type EB | Hit Time 20.54 seconds
+No escort ship was sunk

@@ -2,7 +2,7 @@
 
 Battleship
 Type: U
-Position: (334.00, 3455.00)
+Position: (3.00, 2342.00)
 Status: SURVIVED
 
-Total escort ships sunk by battleship: 3
+Total escort ships sunk by battleship: 1
