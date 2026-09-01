@@ -366,7 +366,7 @@ void simulatePart1C(Battleship *B, EscortShip E[], int N)
     printf("\n--- Starting Part 1-C ---\n");
 
 
-    BattleResult result =simulateBattleStep(B, E, N, rules,  NULL, escortHitTimes, battleHitTimes);
+    BattleResult result =simulateBattleStep(B, E, N, rules,  NULL, escortHitTimes, battleHitTimes,NULL,0,NULL);
 
     if(result.battleshipDestroyed){
         printf("Battleship was destroyed.\n");
@@ -404,7 +404,7 @@ int runPart1CMovementIteration(Battleship *B,EscortShip E[],int N,int iteration,
     rules.useBattleshipReload = 0;
     rules.battleshipReloadTime = 0.0;
 
-    BattleResult result =simulateBattleStep( B, E, N,rules,fired,escortHitTimes,battleHitTimes);
+    BattleResult result =simulateBattleStep( B, E, N,rules,fired,escortHitTimes,battleHitTimes,NULL,0,NULL);
     *totalSunk += result.sunkCount;
 
     /*

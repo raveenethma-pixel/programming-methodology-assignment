@@ -1,0 +1,42 @@
+--- Part 2-A / Part 1-B Results ---
+Battleship Reload Time T_B: 2.00 seconds
+Gun jams after iteration 2
+Jammed angle range: 23.00 - 90.00 degrees
+
+--- Battleship Path ---
+Point 1: (911.31, 3183.13)
+Point 2: (732.99, 662.62)
+Point 3: (1355.65, 3048.70)
+Point 4: (280.08, 802.27)
+
+--------------------------------
+Iteration 1
+--------------------------------
+Battleship Position: (911.31, 3183.13)
+Battleship Angle Range: 0.00 - 90.00 degrees
+
+--- Battleship Attack Order ---
+Attack 1 -> Escort 4 | Type: ED
+
+--- Attack Timing ---
+Escort 4 | Fire Time: 0.00 s | Hit Time: 8.24 s
+
+Escorts sunk during this iteration: 1
+Battleship Status: SURVIVED
+
+--------------------------------
+Iteration 2
+--------------------------------
+Battleship Position: (732.99, 662.62)
+Battleship Angle Range: 0.00 - 90.00 degrees
+
+--- Battleship Attack Order ---
+Attack 1 -> Escort 5 | Type: EA
+
+--- Attack Timing ---
+Escort 5 | Fire Time: 0.00 s | Hit Time: 3.66 s
+
+Escorts sunk during this iteration: 1
+Battleship Status: SUNK
+Sunk by Escort 5 | Type: EA
+Battleship Sink Time: 5.68 seconds

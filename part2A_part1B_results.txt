@@ -1,40 +1,28 @@
 --- Part 2-A / Part 1-B Results ---
-Battleship Reload Time T_B: 2.00 seconds
+Battleship Reload Time T_B: 3.00 seconds
 
 --- Battleship Path ---
-Point 1: (3381.82, 1943.28)
-Point 2: (243.47, 1274.18)
-Point 3: (1119.64, 2381.11)
-Point 4: (2522.80, 1028.53)
+Point 1: (2749.47, 665.86)
+Point 2: (3862.43, 3546.17)
+Point 3: (1465.18, 864.64)
+Point 4: (2513.49, 610.58)
 
 --------------------------------
 Iteration 1
 --------------------------------
-Battleship Position: (3381.82, 1943.28)
+Battleship Position: (2749.47, 665.86)
 
 Attack Order:
-Attack 1 -> Escort 1 | Type: EB
+Attack 1 -> Escort 6 | Type: EC
+Attack 2 -> Escort 3 | Type: ED
+Attack 3 -> Escort 5 | Type: EB
 
 Attack Timing:
-Escort 1 | Fire Time: 0.00 s | Hit Time: 9.13 s
+Escort 6 | Fire Time: 0.00 s | Hit Time: 3.32 s
+Escort 3 | Fire Time: 3.00 s | Hit Time: 11.04 s
+Escort 5 | Fire Time: 6.00 s | Hit Time: 12.97 s
 
-Escorts sunk during this iteration: 1
-Battleship Status: SURVIVED
-
---------------------------------
-Iteration 2
---------------------------------
-Battleship Position: (243.47, 1274.18)
-
-Attack Order:
-Attack 1 -> Escort 4 | Type: EE
-Attack 2 -> Escort 3 | Type: EB
-
-Attack Timing:
-Escort 4 | Fire Time: 0.00 s | Hit Time: 3.96 s
-Escort 3 | Fire Time: 2.00 s | Hit Time: 4.72 s
-
-Escorts sunk during this iteration: 2
+Escorts sunk during this iteration: 3
 Battleship Status: SUNK
-Sunk by Escort 4 | Type: EE
-Battleship Sink Time: 16.05 seconds
+Sunk by Escort 6 | Type: EC
+Battleship Sink Time: 6.12 seconds

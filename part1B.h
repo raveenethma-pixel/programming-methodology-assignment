@@ -20,5 +20,6 @@ int simulatePart1BSim2Step(Battleship *B,EscortShip E[],int N,int iteration);
 void generatePath(Position path[],int k,double D);
 void simulatePart1B(Battleship *B, EscortShip E[],int N,double D);
 int runPart1BIteration(Battleship *B,EscortShip E[],int N,int iteration,int simulationNumber);
+void getJamSettings(int k,int *t,double *jammedAngleMin);
 
 #endif
