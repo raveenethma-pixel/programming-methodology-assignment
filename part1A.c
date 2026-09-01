@@ -135,7 +135,7 @@ void simulatePart1A(Battleship *B, EscortShip E[], int N)
     Run the actual battle using the reusable battle engine.
     fired = NULL because Part 1-A only performs one battle at one position. We do not need to remember firing state across multiple iterations.
     */
-    BattleResult result = simulateBattleStep(B,E,N,rules,NULL);
+    BattleResult result = simulateBattleStep(B,E,N,rules,NULL,NULL,NULL);
 
     //   Display result.
     if(result.battleshipDestroyed){

@@ -35,7 +35,7 @@ typedef struct {
    Simulates one battle at the current positions
    of B and the escort ships.
 */
-BattleResult simulateBattleStep(Battleship *B,EscortShip E[],int N,BattleRules rules,int fired[]);
+BattleResult simulateBattleStep(Battleship *B,EscortShip E[],int N,BattleRules rules,int fired[], double escortHitTimes[],double battleHitTimes[]);
 /*
 this file handles,
 can E hit B?

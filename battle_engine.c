@@ -2,7 +2,7 @@
 #include "battle_engine.h"
 #include "projectile.h"
 
-BattleResult simulateBattleStep( Battleship *B, EscortShip E[], int N, BattleRules rules, int fired[])
+BattleResult simulateBattleStep( Battleship *B, EscortShip E[], int N, BattleRules rules, int fired[],double escortHitTimes[],double battleHitTimes[])
 {
     BattleResult result;
 
@@ -12,8 +12,21 @@ BattleResult simulateBattleStep( Battleship *B, EscortShip E[], int N, BattleRul
     result.battleEndTime = 0.0;
     result.lastBattleshipHitTime = 0.0;
 
+    if(escortHitTimes != NULL){
+        for(int i = 0; i < N; i++){
+            escortHitTimes[i] = -1.0;
+        }
+    }
+
+    if(battleHitTimes != NULL){
+        for(int i = 0; i < N; i++){
+            battleHitTimes[i] = -1.0;
+        }
+    }
+
     double earliestEscortHitTime = -1.0;
     
+    //Escort attack B
     // First find the earliest escort shell that can hit B.
     for(int i = 0; i < N; i++){
         //E[i].alive tells us whether a specific escort ship is still alive or already destroyed.
@@ -28,12 +41,13 @@ BattleResult simulateBattleStep( Battleship *B, EscortShip E[], int N, BattleRul
         if(canEscortHitBattleship(&E[i], B)){
 
             double distance = calculate_distance(E[i].x,E[i].y,B->x,B->y);//distance bet E and B
-
             double hitTime =calculateMinimumHitTime( distance,E[i].vMin,E[i].vMax,E[i].angleMin,E[i].angleMax);
 
+            if(escortHitTimes != NULL){
+                escortHitTimes[i] = hitTime;
+            }
             if(hitTime >= 0){
                 // Mark the escort as having fired if Part 1-C is using the fired[] array.
-                
                 if(fired != NULL){
                     fired[i] = 1;
                 }
@@ -73,6 +87,9 @@ BattleResult simulateBattleStep( Battleship *B, EscortShip E[], int N, BattleRul
             double distance = calculate_distance( B->x,  B->y, E[i].x, E[i].y);
             double hitTime =calculateMinimumHitTime(distance,B->vMin,B->vMax,B->angleMin,B->angleMax);
 
+            if(battleHitTimes != NULL){
+                battleHitTimes[i] = hitTime;
+            }
             if(hitTime >= 0){
                 if(!rules.cumulativeDamage && earliestEscortHitTime >= 0 && hitTime >= earliestEscortHitTime){
                     continue;

@@ -350,7 +350,7 @@ int runPart1BIteration(Battleship *B,EscortShip E[],int N,int iteration,int simu
 
     //The battle engine now performs all projectile calculations and updates E[i].alive.
     
-    BattleResult result =simulateBattleStep( B, E, N,rules,NULL);
+    BattleResult result =simulateBattleStep( B, E, N,rules,NULL,NULL,NULL);
 
 
     /*

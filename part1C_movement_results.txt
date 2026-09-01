@@ -1,123 +1,107 @@
 --- Part 1-C Movement Simulation Results ---
 
 --- Battleship Path ---
-Point 1: (2756.84, 600.64)
-Point 2: (3242.24, 2827.94)
-Point 3: (141.33, 3630.92)
-Point 4: (2591.08, 1323.90)
+Point 1: (1103.36, 669.95)
+Point 2: (619.05, 804.04)
+Point 3: (3466.30, 2453.40)
+Point 4: (2136.11, 2695.63)
 
 --------------------------------
 Iteration 1
 --------------------------------
-Battleship Position: (2756.84, 600.64)
+Battleship Position: (1103.36, 669.95)
 
-Escort 1 | Type: EA | Status: ALIVE
-Hit Battleship: YES | Hit Time: 12.64 seconds | Impact Power: 0.08
+Escort 1 | Type: EB | Status: ALIVE
+Hit Battleship: NO
 Hit by Battleship: NO
 
 Escort 2 | Type: EC | Status: ALIVE
 Hit Battleship: NO
 Hit by Battleship: NO
 
-Escort 3 | Type: EE | Status: SUNK
+Escort 3 | Type: EB | Status: SUNK
 Hit Battleship: NO
-Hit by Battleship: YES | Hit Time: 7.31 seconds
+Hit by Battleship: YES | Hit Time: 8.28 seconds
 
-Escort 4 | Type: EC | Status: ALIVE
+Escort 4 | Type: EE | Status: SUNK
 Hit Battleship: NO
-Hit by Battleship: NO
-
-Escort 5 | Type: EE | Status: SUNK
-Hit Battleship: NO
-Hit by Battleship: YES | Hit Time: 4.80 seconds
+Hit by Battleship: YES | Hit Time: 10.44 seconds
 
 Escorts sunk during this iteration: 2
-Cumulative damage on Battleship: 8.00%
+Cumulative damage on Battleship: 0.00%
 Battleship Status: SURVIVED
 
 --------------------------------
 Iteration 2
 --------------------------------
-Battleship Position: (3242.24, 2827.94)
+Battleship Position: (619.05, 804.04)
 
-Escort 1 | Type: EA | Status: ALIVE
+Escort 1 | Type: EB | Status: ALIVE
 Hit Battleship: NO
 Hit by Battleship: NO
 
-Escort 2 | Type: EC | Status: SUNK
-Hit Battleship: NO
-Hit by Battleship: YES | Hit Time: 4.69 seconds
-
-Escort 3 | Type: EE | Status: SUNK
+Escort 2 | Type: EC | Status: ALIVE
 Hit Battleship: NO
 Hit by Battleship: NO
 
-Escort 4 | Type: EC | Status: ALIVE
+Escort 3 | Type: EB | Status: SUNK
 Hit Battleship: NO
 Hit by Battleship: NO
 
-Escort 5 | Type: EE | Status: SUNK
+Escort 4 | Type: EE | Status: SUNK
 Hit Battleship: NO
 Hit by Battleship: NO
 
-Escorts sunk during this iteration: 1
-Cumulative damage on Battleship: 8.00%
+Escorts sunk during this iteration: 0
+Cumulative damage on Battleship: 0.00%
 Battleship Status: SURVIVED
 
 --------------------------------
 Iteration 3
 --------------------------------
-Battleship Position: (141.33, 3630.92)
+Battleship Position: (3466.30, 2453.40)
 
-Escort 1 | Type: EA | Status: ALIVE
+Escort 1 | Type: EB | Status: SUNK
+Hit Battleship: NO
+Hit by Battleship: YES | Hit Time: 6.80 seconds
+
+Escort 2 | Type: EC | Status: ALIVE
 Hit Battleship: NO
 Hit by Battleship: NO
 
-Escort 2 | Type: EC | Status: SUNK
+Escort 3 | Type: EB | Status: SUNK
 Hit Battleship: NO
 Hit by Battleship: NO
 
-Escort 3 | Type: EE | Status: SUNK
-Hit Battleship: NO
-Hit by Battleship: NO
-
-Escort 4 | Type: EC | Status: SUNK
-Hit Battleship: NO
-Hit by Battleship: YES | Hit Time: 3.79 seconds
-
-Escort 5 | Type: EE | Status: SUNK
+Escort 4 | Type: EE | Status: SUNK
 Hit Battleship: NO
 Hit by Battleship: NO
 
 Escorts sunk during this iteration: 1
-Cumulative damage on Battleship: 8.00%
+Cumulative damage on Battleship: 0.00%
 Battleship Status: SURVIVED
 
 --------------------------------
 Iteration 4
 --------------------------------
-Battleship Position: (2591.08, 1323.90)
+Battleship Position: (2136.11, 2695.63)
 
-Escort 1 | Type: EA | Status: SUNK
+Escort 1 | Type: EB | Status: SUNK
 Hit Battleship: NO
-Hit by Battleship: YES | Hit Time: 12.07 seconds
+Hit by Battleship: NO
 
 Escort 2 | Type: EC | Status: SUNK
 Hit Battleship: NO
-Hit by Battleship: NO
+Hit by Battleship: YES | Hit Time: 8.48 seconds
 
-Escort 3 | Type: EE | Status: SUNK
+Escort 3 | Type: EB | Status: SUNK
 Hit Battleship: NO
 Hit by Battleship: NO
 
-Escort 4 | Type: EC | Status: SUNK
-Hit Battleship: NO
-Hit by Battleship: NO
-
-Escort 5 | Type: EE | Status: SUNK
+Escort 4 | Type: EE | Status: SUNK
 Hit Battleship: NO
 Hit by Battleship: NO
 
 Escorts sunk during this iteration: 1
-Cumulative damage on Battleship: 8.00%
+Cumulative damage on Battleship: 0.00%
 Battleship Status: SURVIVED

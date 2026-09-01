@@ -1,8 +1,8 @@
 --- Final Battlefield Conditions ---
 
 Battleship
-Type: U
-Position: (2345.00, 3523.00)
+Type: R
+Position: (345.00, 2345.00)
 Status: SURVIVED
 
-Total escort ships sunk by battleship: 1
+Total escort ships sunk by battleship: 3
