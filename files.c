@@ -394,3 +394,69 @@ void savePart2APart1BIteration(const char filename[],Battleship *B, EscortShip E
     }
     fclose(fp);
 }
+void startPart2APart1CResults(Position path[],int k,double reloadTime)
+{
+    FILE *fp = fopen("part2A_part1C_results.txt", "w");
+    if(fp == NULL){
+        printf("Error creating part2A_part1C_results.txt\n");
+        return;
+    }
+    fprintf(fp, "--- Part 2-A / Part 1-C Results ---\n");
+    fprintf(fp,"Battleship Reload Time T_B: %.2f seconds\n",reloadTime );
+    writePath(fp, path, k);
+    fclose(fp);
+}
+void savePart2APart1CJamSettings( int t, double jammedAngleMin)
+{
+    FILE *fp = fopen("part2A_part1C_results.txt", "a");
+    if(fp == NULL){
+        printf("Error opening part2A_part1C_results.txt\n");
+        return;
+    }
+    fprintf(fp, "\n--- Simulation 2 Gun Jam Settings ---\n");
+    fprintf(fp, "Gun jams after iteration %d\n", t);
+    fprintf(fp,"Jammed angle range: %.2f - 90.00 degrees\n",jammedAngleMin);
+    fclose(fp);
+}
+void savePart2APart1CIteration(Battleship *B,EscortShip E[],int N,int iteration,int simulationNumber, BattleDetails *details, BattleResult result)
+{
+    FILE *fp = fopen("part2A_part1C_results.txt", "a");
+
+    if(fp == NULL){
+        printf("Error opening part2A_part1C_results.txt\n");
+        return;
+    }
+
+    if(iteration == 1){
+        if(simulationNumber == 0){
+            fprintf(fp,"\n================================\nStationary Part 1-A Style Simulation\n================================\n");
+        }
+
+        else{
+            fprintf(fp,"\n================================\nMovement Simulation %d\n================================\n",simulationNumber);
+        }
+    }
+
+    fprintf(fp, "\n--------------------------------\n");
+    fprintf(fp, "Iteration %d\n", iteration);
+    fprintf(fp, "--------------------------------\n");
+    fprintf(fp, "Battleship Position: (%.2f, %.2f)\n", B->x, B->y);
+    fprintf( fp, "Battleship Angle Range: %.2f - %.2f degrees\n", B->angleMin, B->angleMax);
+
+    writeAttackDetails(fp, E, details);
+    fprintf(fp, "\n--- Escort Attack Details ---\n");
+    for(int i = 0; i < N; i++){
+        fprintf(fp,"Escort %d | Type: %s | Status: %s\n", E[i].id,E[i].type,E[i].alive ? "ALIVE" : "SUNK");
+
+        if(details->escortHitTimes[i] >= 0.0){
+            fprintf(fp,"Hit Battleship: YES | Hit Time: %.2f s | Impact Power: %.2f\n", details->escortHitTimes[i], E[i].impactPower);
+        }
+        else{
+            fprintf(fp, "Hit Battleship: NO\n");
+        }
+    }
+    fprintf(fp,"\nEscorts sunk during this iteration: %d\n",result.sunkCount);
+    fprintf(fp,"Cumulative damage on Battleship: %.2f%%\n",B->damage * 100.0);
+    fprintf(fp, "Battleship Status: %s\n",result.battleshipDestroyed ? "SUNK" : "SURVIVED");
+    fclose(fp);
+}

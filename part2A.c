@@ -196,26 +196,7 @@ static void runPart2APart1BSimulation( Battleship *B, EscortShip E[], int N, Pos
 }
 void simulatePart2A_Part1B( Battleship *B,EscortShip E[], int N, double D, double reloadTime)
 {
-    int k;
-    do{
-        printf(
-            "\nEnter the number of movement points for "
-            "Part 2-A / Part 1-B: "
-        );
-
-        if(scanf("%d", &k) != 1){
-            printf("Invalid input. Enter an integer.\n");
-            while(getchar() != '\n');
-            k = -1;
-            continue;
-        }
-
-        if(k < 2){
-            printf("Number of points must be at least 2.\n");
-        }
-
-    }while(k < 2);
-
+    int k = getMovementPoints("Part 2-A / Part 1-B");
     Position path[k];
     generatePath(path, k, D);
     printf("\n--- Part 2-A / Part 1-B Path ---\n");
@@ -261,126 +242,94 @@ int simulatePart2A_Part1BStep( Battleship *B, EscortShip E[], int N, int iterati
 
     return 0;
 }
-void simulatePart2A_Part1C( Battleship *B,EscortShip E[],int N,double D, double reloadTime)
+static void runPart2APart1CStationary(Battleship *B,EscortShip E[],int N,double reloadTime)
 {
-    int k;
-
-    do{
-        printf("\nEnter the number of movement points for Part 2-A / Part 1-C: ");
-
-        if(scanf("%d", &k) != 1){
-            printf( "Invalid input. Enter an integer.\n");
-            while(getchar() != '\n');
-            k = -1;
-            continue;
-        }
-
-        if(k <= 0){
-            printf( "Number of points must be greater than 0.\n" );
-        }
-
-    }while(k <= 0);
-
-    Position path[k];
-    generatePath( path, k, D);
-    
-    //Save fresh conditions for Simulation 2.
-    Battleship BSim2 = *B;
-    EscortShip ESim2[N];
-    for(int i = 0; i < N; i++){
-        ESim2[i] = E[i];
-    }
-    
-    //PART 2-A / PART 1-C SIM 1
-    B->damage = 0.0;
-    int totalSunk = 0;
     int fired[N];
-
     for(int i = 0; i < N; i++){
         fired[i] = 0;
     }
+    B->damage = 0.0;
+    BattleDetails details;
+    BattleResult result =
+        runPart2ABattle(
+            B,
+            E,
+            N,
+            reloadTime,
+            1,          // cumulative damage
+            fired,      // each escort attacks only once
+            &details
+        );
+// 0 = stationary simulation
+    savePart2APart1CIteration(B,E,N,1,0,&details,result);
+    printf("\n--- Part 2-A / Part 1-C Stationary Simulation ---\n");
+    printf("Escorts sunk: %d\n",result.sunkCount);
+    printf("Cumulative damage on Battleship: %.2f%%\n",B->damage * 100.0);
+    if(result.battleshipDestroyed){
+        printf("Battleship was destroyed at %.2f seconds.\n",result.battleEndTime);
+    }
+    else{
+        printf("Battleship survived.\n");
+    }
+}
+static void runPart2APart1CSimulation(Battleship *B,EscortShip E[],int N,Position path[],int k,double reloadTime,int simulationNumber,int jamAfter,double jammedAngleMin)
+{
+    int totalSunk = 0;
+    int fired[N];
+    B->damage = 0.0;
+    for(int i = 0; i < N; i++){
+        fired[i] = 0;
+    }
+    printf("\n--- Starting Part 2-A / Part 1-C Simulation %d ---\n", simulationNumber);
 
-    printf("\n--- Starting Part 2-A / Part 1-C Simulation 1 ---\n");
-
-    for(int iteration = 0; iteration < k;iteration++){
+    for(int iteration = 0; iteration < k; iteration++){
         B->x = path[iteration].x;
         B->y = path[iteration].y;
-        int battleshipDestroyed = simulatePart2A_Part1CStep( B, E, N, iteration + 1,reloadTime, &totalSunk,fired,1);
-
+        // Simulation 2 only: gun jams after iteration jamAfter.
+        if(jamAfter > 0 && iteration >= jamAfter){
+            B->angleMin = jammedAngleMin;
+            B->angleMax = 90.0;
+        }
+        int battleshipDestroyed =simulatePart2A_Part1CStep( B, E, N,iteration + 1, reloadTime, &totalSunk,fired, simulationNumber);
         if(battleshipDestroyed){
-            printf("Simulation 1 stopped at iteration %d because B was destroyed.\n", iteration + 1);
+            printf( "Simulation %d stopped at iteration %d because B was destroyed.\n", simulationNumber, iteration + 1);
             break;
         }
     }
-
-    printf( "\n--- Part 2-A / Part 1-C Simulation 1 Summary ---\n");
-    printf( "Total escorts sunk: %d\n", totalSunk);
-    printf( "Final cumulative damage: %.2f%%\n",B->damage * 100.0);
-
-    //JAM SETTINGS
-    int t;
-    do{
-        printf("\nEnter the iteration after which the gun jams (t < k): ");
-        if(scanf("%d", &t) != 1){
-            printf( "Invalid input. Enter an integer.\n");
-            while(getchar() != '\n');
-            t = -1;
-            continue;
-        }
-
-        if(t <= 0 || t >= k){
-            printf( "t must be greater than 0 and less than %d.\n", k);
-        }
-
-    }while(t <= 0 || t >= k);
-
-    double jammedAngleMin;
-    do{
-        printf("Enter the minimum jammed gun angle (0 < angle < 30): ");
-        if(scanf("%lf", &jammedAngleMin) != 1){
-            printf("Invalid input.\n");
-            while(getchar() != '\n');
-            jammedAngleMin = -1.0;
-            continue;
-        }
-
-        if(jammedAngleMin <= 0.0 || jammedAngleMin >= 30.0){
-            printf("Angle must be between 0 and 30 degrees.\n");
-        }
-
-    }while( jammedAngleMin <= 0.0 || jammedAngleMin >= 30.0);
-
-    //PART 2-A / PART 1-C SIM 2
-    BSim2.damage = 0.0;
-    int totalSunkSim2 = 0;
-    int firedSim2[N];
+    printf( "\n--- Part 2-A / Part 1-C Simulation %d Summary ---\n",simulationNumber);
+    printf("Total escorts sunk: %d\n", totalSunk);
+    printf("Final cumulative damage: %.2f%%\n", B->damage * 100.0 );
+}
+void simulatePart2A_Part1C(Battleship *B,EscortShip E[],int N,double D,double reloadTime)
+{
+    int k = getMovementPoints("Part 2-A / Part 1-C");
+    Position path[k];
+    generatePath(path, k, D);
+    startPart2APart1CResults(path,k,reloadTime);
+    // Save the original battlefield.
+    // Stationary, Movement 1 and Movement 2 must all
+    // begin from these same initial conditions.
+    Battleship originalB = *B;
+    EscortShip originalE[N];
 
     for(int i = 0; i < N; i++){
-        firedSim2[i] = 0;
+        originalE[i] = E[i];
     }
-    printf("\n--- Starting Part 2-A / Part 1-C Simulation 2 ---\n");
-    for(int iteration = 0; iteration < k; iteration++){
-        BSim2.x =path[iteration].x;
-        BSim2.y =path[iteration].y;
-
-        //Gun works normally during the first t iterations.Jam begins at iteration t + 1.
-        
-        if(iteration >= t){
-            BSim2.angleMin = jammedAngleMin;
-            BSim2.angleMax = 90.0;
-        }
-
-        int battleshipDestroyed =simulatePart2A_Part1CStep( &BSim2, ESim2, N,iteration + 1,reloadTime,&totalSunkSim2,firedSim2,2);
-
-        if(battleshipDestroyed){
-            printf("Simulation 2 stopped at iteration %d because B was destroyed.\n",iteration + 1);
-            break;
-        }
-    }
-
-    printf("\n--- Part 2-A / Part 1-C Simulation 2 Summary ---\n");
-    printf("Total escorts sunk: %d\n",totalSunkSim2);
-    printf("Final cumulative damage: %.2f%%\n",BSim2.damage * 100.0);
+    // Part 1-C stationary Part 1-A-style simulation.
+    runPart2APart1CStationary(B,E,N,reloadTime);
+    // Reset before Movement Simulation 1.
+    resetBattlefield(B,E,originalB,originalE,N);
+    // Movement Simulation 1 - normal gun.
+    runPart2APart1CSimulation(B,E,N,path,k,reloadTime,1,-1,0.0);
+    // Jam settings for Simulation 2.
+    int t;
+    double jammedAngleMin;
+    getJamSettings( k, &t, &jammedAngleMin);
+    savePart2APart1CJamSettings(t,jammedAngleMin);
+    // Simulation 2 must start from the original battlefield.
+    resetBattlefield( B, E, originalB, originalE, N);
+    // Simulation 2 - jammed gun.
+    runPart2APart1CSimulation( B, E, N,path, k,reloadTime, 2,t, jammedAngleMin );
 }
 int simulatePart2A_Part1CStep(Battleship *B,EscortShip E[],int N,int iteration,double reloadTime,int *totalSunk,int fired[],int simulationNumber)
 {
@@ -388,7 +337,7 @@ int simulatePart2A_Part1CStep(Battleship *B,EscortShip E[],int N,int iteration,d
 // Part 1-C uses cumulative damage each escort can fire only once
     BattleResult result = runPart2ABattle( B, E, N, reloadTime,1,fired, &details);
     *totalSunk += result.sunkCount;
-
+    savePart2APart1CIteration(B, E, N, iteration, simulationNumber,&details,result);
     printf("Iteration %d: Escorts sunk: %d | Damage on B: %.2f%%\n",iteration, result.sunkCount, B->damage * 100.0 );
     if(result.battleshipDestroyed){
         printf("Battleship destroyed during iteration %d.\n",iteration);

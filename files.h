@@ -15,4 +15,7 @@ void savePart1CMovementSim2Iteration(Battleship *B,EscortShip E[],int N, int ite
 void savePart2APart1AResults( Battleship *B,EscortShip E[],int N,double reloadTime,BattleDetails *details, BattleResult result);
 void startPart2APart1BResults(const char filename[], Position path[], int k, double reloadTime, int t, double jammedAngleMin);
 void savePart2APart1BIteration(const char filename[],Battleship *B,EscortShip E[],int N,int iteration, BattleDetails *details,BattleResult result);
+void startPart2APart1CResults( Position path[], int k, double reloadTime);
+void savePart2APart1CJamSettings(int t,double jammedAngleMin);
+void savePart2APart1CIteration(Battleship *B, EscortShip E[], int N,int iteration,int simulationNumber, BattleDetails *details,BattleResult result);
 #endif

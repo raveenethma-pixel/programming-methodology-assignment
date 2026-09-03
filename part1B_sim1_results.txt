@@ -1,28 +1,37 @@
 --- Part 1-B Simulation 1 Results ---
 
 --- Battleship Path ---
-Point 1: (988.80, 2289.80)
-Point 2: (3111.66, 3084.79)
-Point 3: (3124.09, 7.03)
-Point 4: (1349.05, 56.13)
+Point 1: (428.06, 429.98)
+Point 2: (2730.44, 1327.44)
+Point 3: (331.35, 2861.35)
+Point 4: (999.05, 380.05)
 
 --------------------------------
 Iteration 1
 --------------------------------
-Battleship Position: (988.80, 2289.80)
+Battleship Position: (428.06, 429.98)
 Battleship Type: U
 
 Escort Ship Conditions:
-ID: 1 | Type: EC | Position: (3833.16, 3350.60) | Status: ALIVE
-ID: 2 | Type: EB | Position: (2506.19, 1848.63) | Status: ALIVE
-ID: 3 | Type: EB | Position: (3404.75, 3477.35) | Status: ALIVE
-ID: 4 | Type: ED | Position: (753.06, 2243.62) | Status: SUNK
-ID: 5 | Type: EA | Position: (487.04, 1031.04) | Status: ALIVE
-ID: 6 | Type: ED | Position: (3818.40, 3154.24) | Status: ALIVE
+ID: 1 | Type: EA | Position: (2597.83, 2953.35) | Status: SUNK
+ID: 2 | Type: EC | Position: (229.45, 2201.33) | Status: SUNK
+ID: 3 | Type: EA | Position: (2811.97, 1504.51) | Status: SUNK
+ID: 4 | Type: EE | Position: (1569.17, 845.25) | Status: SUNK
+ID: 5 | Type: EB | Position: (799.17, 1858.16) | Status: SUNK
+ID: 6 | Type: ED | Position: (2381.13, 557.87) | Status: SUNK
+ID: 7 | Type: EC | Position: (2641.90, 187.55) | Status: SUNK
+ID: 8 | Type: EA | Position: (1687.85, 1775.88) | Status: SUNK
+ID: 9 | Type: EB | Position: (856.02, 972.79) | Status: SUNK
+ID: 10 | Type: ED | Position: (1249.23, 2015.91) | Status: SUNK
+ID: 11 | Type: EB | Position: (236.39, 1820.30) | Status: SUNK
+ID: 12 | Type: EC | Position: (1157.08, 194.09) | Status: SUNK
+ID: 13 | Type: EC | Position: (2195.11, 1059.24) | Status: SUNK
+ID: 14 | Type: EA | Position: (2544.30, 2756.20) | Status: SUNK
+ID: 15 | Type: EB | Position: (381.70, 713.09) | Status: SUNK
 
-Escort ships sunk in this iteration: 1
+Escort ships sunk in this iteration: 15
 Battleship Status: SUNK
-Sunk by Escort 5 (Type: EA)
-Battleship sank at 9.93 seconds
+Sunk by Escort 15 (Type: EB)
+Battleship sank at 5.76 seconds
 
 Simulation stopped at Point 1 because B was destroyed.

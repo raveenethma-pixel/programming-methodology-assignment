@@ -425,23 +425,7 @@ int runPart1CMovementIteration(Battleship *B,EscortShip E[],int N,int iteration,
 
 void simulatePart1CMovement(Battleship *B,EscortShip E[],int N,double D)
 {
-    int k;
-
-    do{
-        printf("\nEnter the number of movement points for Part 1-C: ");
-
-        if(scanf("%d", &k) != 1){
-            printf("Invalid input. Enter an integer.\n");
-            while(getchar() != '\n');
-            k = -1;
-            continue;
-        }
-
-        if(k <= 0){
-            printf("Number of points must be greater than 0.\n");
-        }
-
-    }while(k <= 0);
+    int k = getMovementPoints("Part 1-C");
 
     Position path[k];
     generatePath(path, k, D);
@@ -503,42 +487,9 @@ void simulatePart1CMovement(Battleship *B,EscortShip E[],int N,double D)
     printf("Final cumulative damage: %.2f%%\n", B->damage * 100.0);
 
     //   MOVEMENT SIMULATION 2
-
     int t;
-
-    do{
-        printf("\nEnter the iteration after which the gun jams (t < k): ");
-        if(scanf("%d", &t) != 1){
-            printf("Invalid input. Enter an integer.\n");
-            while(getchar() != '\n');
-            t = -1;
-            continue;
-        }
-
-        if(t <= 0 || t >= k){
-
-            printf("t must be greater than 0 and less than %d.\n",k);
-        }
-
-    }while(t <= 0 || t >= k);
-
     double jammedAngleMin;
-    do{
-        printf("Enter the minimum jammed gun angle (0 < angle < 30): ");
-
-        if(scanf("%lf", &jammedAngleMin) != 1){
-            printf("Invalid input.\n");
-            while(getchar() != '\n');
-            jammedAngleMin = -1.0;
-            continue;
-        }
-
-        if(jammedAngleMin <= 0.0 || jammedAngleMin >= 30.0){
-            printf("Angle must be between 0 and 30 degrees.\n");
-        }
-
-    }while(jammedAngleMin <= 0.0 || jammedAngleMin >= 30.0);
-
+    getJamSettings(k, &t, &jammedAngleMin);
     startPart1CMovementSim2Results( path,  k, t, jammedAngleMin);
 
 
