@@ -4,39 +4,29 @@ Gun jams after iteration 3
 Jammed angle range: 23.00 - 90.00 degrees
 
 --- Battleship Path ---
-Point 1: (428.06, 429.98)
-Point 2: (2730.44, 1327.44)
-Point 3: (331.35, 2861.35)
-Point 4: (999.05, 380.05)
+Point 1: (2317.19, 3671.27)
+Point 2: (1086.05, 1618.70)
+Point 3: (2214.65, 3390.40)
+Point 4: (2208.90, 2700.12)
 
 --------------------------------
 Iteration 1
 --------------------------------
-Battleship Position: (428.06, 429.98)
+Battleship Position: (2317.19, 3671.27)
 Battleship Type: U
 Gun Status: NORMAL
 Angle Range: 0.00 - 90.00
 
 Escort Ship Conditions:
-ID: 1 | Type: EA | Position: (2597.83, 2953.35) | Status: SUNK
-ID: 2 | Type: EC | Position: (229.45, 2201.33) | Status: SUNK
-ID: 3 | Type: EA | Position: (2811.97, 1504.51) | Status: SUNK
-ID: 4 | Type: EE | Position: (1569.17, 845.25) | Status: SUNK
-ID: 5 | Type: EB | Position: (799.17, 1858.16) | Status: SUNK
-ID: 6 | Type: ED | Position: (2381.13, 557.87) | Status: SUNK
-ID: 7 | Type: EC | Position: (2641.90, 187.55) | Status: SUNK
-ID: 8 | Type: EA | Position: (1687.85, 1775.88) | Status: SUNK
-ID: 9 | Type: EB | Position: (856.02, 972.79) | Status: SUNK
-ID: 10 | Type: ED | Position: (1249.23, 2015.91) | Status: SUNK
-ID: 11 | Type: EB | Position: (236.39, 1820.30) | Status: SUNK
-ID: 12 | Type: EC | Position: (1157.08, 194.09) | Status: SUNK
-ID: 13 | Type: EC | Position: (2195.11, 1059.24) | Status: SUNK
-ID: 14 | Type: EA | Position: (2544.30, 2756.20) | Status: SUNK
-ID: 15 | Type: EB | Position: (381.70, 713.09) | Status: SUNK
+ID: 1 | Type: EE | Position: (1201.13, 701.44) | Status: ALIVE
+ID: 2 | Type: EA | Position: (3092.53, 1369.34) | Status: ALIVE
+ID: 3 | Type: EE | Position: (2663.48, 2736.84) | Status: SUNK
+ID: 4 | Type: EA | Position: (1672.45, 2128.50) | Status: ALIVE
+ID: 5 | Type: EA | Position: (3437.86, 222.60) | Status: ALIVE
 
-Escort ships sunk in this iteration: 15
+Escort ships sunk in this iteration: 1
 Battleship Status: SUNK
-Sunk by Escort 15 (Type: EB)
-Battleship sank at 5.76 seconds
+Sunk by Escort 4 (Type: EA)
+Battleship sank at 13.03 seconds
 
 Simulation 2 stopped at Point 1 because B was destroyed.

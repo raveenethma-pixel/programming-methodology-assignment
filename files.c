@@ -1,5 +1,15 @@
 #include <stdio.h>
 #include "files.h"
+static FILE *openTextFile(const char filename[], const char mode[])
+{
+    FILE *fp = fopen(filename, mode);
+
+    if(fp == NULL){
+        printf("Error opening %s\n", filename);
+    }
+
+    return fp;
+}
 
 static void writePath(FILE *fp,Position path[],int k)
 {
@@ -458,5 +468,90 @@ void savePart2APart1CIteration(Battleship *B,EscortShip E[],int N,int iteration,
     fprintf(fp,"\nEscorts sunk during this iteration: %d\n",result.sunkCount);
     fprintf(fp,"Cumulative damage on Battleship: %.2f%%\n",B->damage * 100.0);
     fprintf(fp, "Battleship Status: %s\n",result.battleshipDestroyed ? "SUNK" : "SURVIVED");
+    fclose(fp);
+}
+void startPart2BResults(AdvancedBattleRules *rules)
+{
+    FILE *fp = openTextFile("part2B_results.txt", "w");
+    if(fp == NULL){
+        return;
+    }
+    const char *types[ESCORT_TYPE_COUNT] = {
+        "EA", "EB", "EC", "ED", "EE"
+    };
+    fprintf(fp, "========================================\n");
+    fprintf(fp, "          PART 2-B RESULTS\n");
+    fprintf(fp, "========================================\n");
+    fprintf(fp, "\nBattleship Reload Time T_B: %.2f seconds\n", rules->battleshipReloadTime);
+    fprintf(fp, "\nEscort Reload Times:\n");
+    for(int i = 0; i < ESCORT_TYPE_COUNT; i++){
+        fprintf(fp, "%s: %.2f seconds\n", types[i], rules->escortReloadTime[i]);
+    }
+    fclose(fp);
+}
+void savePart2BPart1AResults(Battleship *B,EscortShip E[],BattleDetails *details, BattleResult result)
+{
+    FILE *fp = openTextFile("part2B_results.txt", "a");
+
+    if(fp == NULL){
+        return;
+    }
+
+    fprintf(fp, "\n\n========================================\n");
+    fprintf(fp, "PART 2-B / PART 1-A\n");
+    fprintf(fp, "========================================\n");
+    fprintf(fp, "Battleship Position: (%.2f, %.2f)\n", B->x, B->y );
+
+    writeAttackDetails(fp, E, details);
+    fprintf( fp, "\nTotal Escorts Sunk: %d\n", result.sunkCount);
+
+    if(result.battleshipDestroyed){
+        fprintf(fp, "Battleship Status: SUNK\n");
+        fprintf(fp,"Sunk by Escort %d | Type: %s\n",E[result.sinkingEscort].id, E[result.sinkingEscort].type);
+        fprintf( fp, "Battleship Sink Time: %.2f seconds\n",result.battleEndTime );
+    }
+    else{
+        fprintf(fp, "Battleship Status: SURVIVED\n");
+    }
+    fclose(fp);
+}
+void savePart2BPart1BSetup(Position path[],int k,int simulationNumber,int jamAfter,double jammedAngleMin)
+{
+    FILE *fp = openTextFile("part2B_results.txt", "a");
+    if(fp == NULL){
+        return;
+    }
+    fprintf(fp, "\n\n========================================\n");
+    fprintf(fp, "PART 2-B / PART 1-B - SIMULATION %d\n", simulationNumber);
+    fprintf(fp, "========================================\n");
+    if(simulationNumber == 2){
+        fprintf(fp, "Gun jams after iteration %d\n",jamAfter);
+        fprintf(fp,"Jammed Angle Range: %.2f - 90.00 degrees\n", jammedAngleMin);
+    }
+    writePath(fp, path, k);
+    fclose(fp);
+}
+void savePart2BPart1BIteration(Battleship *B,EscortShip E[],int iteration,BattleDetails *details,BattleResult result)
+{
+    FILE *fp = openTextFile("part2B_results.txt", "a");
+
+    if(fp == NULL){
+        return;
+    }
+    fprintf(fp, "\n----------------------------------------\n");
+    fprintf(fp, "Iteration %d\n", iteration);
+    fprintf(fp, "----------------------------------------\n");
+    fprintf( fp,"Battleship Position: (%.2f, %.2f)\n", B->x, B->y);
+    fprintf( fp, "Battleship Angle Range: %.2f - %.2f\n", B->angleMin, B->angleMax );
+    writeAttackDetails(fp, E, details);
+    fprintf(fp,"\nEscorts sunk during iteration: %d\n",result.sunkCount);
+    if(result.battleshipDestroyed){
+        fprintf(fp, "Battleship Status: SUNK\n");
+        fprintf(fp,"Sunk by Escort %d | Type: %s\n",E[result.sinkingEscort].id,E[result.sinkingEscort].type);
+        fprintf(fp,"Sink Time: %.2f seconds\n",result.battleEndTime );
+    }
+    else{
+        fprintf(fp, "Battleship Status: SURVIVED\n");
+    }
     fclose(fp);
 }

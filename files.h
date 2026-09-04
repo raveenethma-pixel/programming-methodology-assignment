@@ -18,4 +18,8 @@ void savePart2APart1BIteration(const char filename[],Battleship *B,EscortShip E[
 void startPart2APart1CResults( Position path[], int k, double reloadTime);
 void savePart2APart1CJamSettings(int t,double jammedAngleMin);
 void savePart2APart1CIteration(Battleship *B, EscortShip E[], int N,int iteration,int simulationNumber, BattleDetails *details,BattleResult result);
+void startPart2BResults(AdvancedBattleRules *rules);
+void savePart2BPart1AResults(Battleship *B,EscortShip E[],BattleDetails *details,BattleResult result);
+void savePart2BPart1BSetup(Position path[],int k,int simulationNumber,int jamAfter,double jammedAngleMin);
+void savePart2BPart1BIteration(Battleship *B,EscortShip E[],int iteration, BattleDetails *details,BattleResult result);
 #endif

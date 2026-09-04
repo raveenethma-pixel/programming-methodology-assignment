@@ -11,6 +11,7 @@
 #include "part1B.h"
 #include "part1C.h"
 #include "part2A.h"
+#include "part2B.h"
 
 #define MAX_ESCORTS 100
 
@@ -139,12 +140,11 @@ int main(){
     simulatePart1CMovement(&B, E, N, D);
 
     //part 2 A
-    B = originalB;
-    for(int i = 0; i < N; i++){
-        E[i] = originalE[i];
-    }
+    resetBattlefield( &B, E,originalB,originalE, N);
     simulatePart2A(&B, E, N, D);
+
+    //part 2 B
+    resetBattlefield( &B, E,originalB,originalE, N);
+    simulatePart2B(&B, E, N, D);
     return 0;
-
-
 }

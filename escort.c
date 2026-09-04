@@ -59,3 +59,15 @@ void initializeEscortShips(EscortShip E[], int N, double D, double battleVMax){
         }
     }
 }
+//inspect if the 1st character is E. check if the 2nd character is an uppercase letter between A & E
+//type[1] get the character at the 1st position of the array
+//if it is A then A-A=0
+//just like that EA=0,EB=1,EC=2,ED=3,EE=4
+int getEscortTypeIndex(const char type[])
+{
+    if(type[0] == 'E' && type[1] >= 'A' && type[1] <= 'E'){
+        return type[1] - 'A';
+    }
+
+    return -1;
+}

@@ -444,20 +444,15 @@ void simulatePart1CMovement(Battleship *B,EscortShip E[],int N,double D)
 
     //   MOVEMENT SIMULATION 1
     startPart1CMovementResults(path, k);
-
     B->damage = 0.0;
     int totalSunk = 0;
     int battleEndedIteration = k;
 
     //   fired[i] remembers whether Escort i has already fired during a previous movement iteration.
-    
     int fired[N];
-
     for(int i = 0; i < N; i++){
         fired[i] = 0;
     }
-
-
     printf("\n--- Starting Part 1-C Movement Simulation ---\n");
 
     for(int iteration = 0;iteration < k;iteration++){
@@ -509,11 +504,8 @@ void simulatePart1CMovement(Battleship *B,EscortShip E[],int N,double D)
         BSim2.y = path[iteration].y;
 
 
-        /*
-           The first t iterations use the normal angle.
-
-           The jam starts at iteration t + 1.
-        */
+        
+        //The first t iterations use the normal angle. The jam starts at iteration t + 1.
         if(iteration >= t){
             BSim2.angleMin = jammedAngleMin;
             BSim2.angleMax = 90.0;
@@ -529,17 +521,12 @@ void simulatePart1CMovement(Battleship *B,EscortShip E[],int N,double D)
 
 
     printf("\n--- Part 1-C Movement Simulation 2 Summary ---\n");
-
-
     if(BSim2.damage >= 1.0){
         printf("Battleship was destroyed at iteration %d.\n", battleEndedIterationSim2);
     }
-
     else{
         printf("Battleship survived all %d iterations.\n", k);
     }
-
-
     printf("Total escorts sunk: %d\n",totalSunkSim2);
     printf("Final cumulative damage: %.2f%%\n",BSim2.damage * 100.0);
 }

@@ -6,95 +6,6 @@
 #include "battle_engine.h"
 #include "files.h"
 
-
-void determineAttackOrder( Battleship *B, EscortShip E[], int N, int attackOrder[], int *attackCount)
-{
-    double threatTime[N];
-    *attackCount = 0;
-    
-    //Find all living escorts that B can attack.
-    for(int i = 0; i < N; i++){
-        threatTime[i] = -1.0;
-        if(E[i].alive == 0){
-            continue;
-        }
-
-        if(canBattleshipHitEscort(B, &E[i])){
-            //Store the ARRAY INDEX of the escort.
-            attackOrder[*attackCount] = i;
-            (*attackCount)++;
-
-            //If this escort can also attack B, calculate how quickly it can hit B.Smaller hit time = greater threat.
-            if(canEscortHitBattleship(&E[i], B)){
-                double distance = calculate_distance( E[i].x, E[i].y, B->x, B->y );
-                threatTime[i] = calculateMinimumHitTime( distance, E[i].vMin, E[i].vMax, E[i].angleMin, E[i].angleMax);
-            }
-        }
-    }
-
-
-    /*
-       Bubble sort the attack order.
-
-       Priority:
-       1. Escorts capable of hitting B come first.
-       2. Among those, the one that can hit B sooner comes first.
-       3. Escorts that cannot hit B come afterwards.
-    */
-    for(int i = 0; i < *attackCount - 1; i++){
-        for(int j = 0; j < *attackCount - i - 1; j++)
-        {
-            int first = attackOrder[j];
-            int second = attackOrder[j + 1];
-            int swap = 0;
-
-            if(threatTime[first] < 0 && threatTime[second] >= 0){ //the escort can't hit B
-                swap = 1;
-            }
-            else if(threatTime[first] >= 0 && threatTime[second] >= 0 && threatTime[first] >threatTime[second]){ //escort can hit B
-                swap = 1;
-            }
-
-
-            if(swap){
-                int temp = attackOrder[j];
-                attackOrder[j] = attackOrder[j + 1];
-                attackOrder[j + 1] = temp;
-            }
-        }
-    }
-}
-
-static BattleResult runPart2ABattle(Battleship *B, EscortShip E[], int N, double reloadTime, int cumulativeDamage, int fired[], BattleDetails *details)
-{
-    double engineFireTimes[N];
-    double engineHitTimes[N];
-    determineAttackOrder( B, E, N, details->attackOrder, &details->attackCount);
-
-    BattleRules rules;
-
-    rules.cumulativeDamage = cumulativeDamage;
-    rules.useBattleshipReload = 1;
-    rules.battleshipReloadTime = reloadTime;
-
-    BattleResult result = simulateBattleStep( B, E,N,rules,fired,details->escortHitTimes, engineHitTimes,details->attackOrder, details->attackCount, engineFireTimes);
-
-    //Convert engine arrays from escort-index order into B's attack order.
-    for(int i = 0; i < N; i++){
-        details->fireTimes[i] = -1.0;
-        details->hitTimes[i] = -1.0;
-    }
-
-    for(int a = 0; a < details->attackCount; a++){
-        int index = details->attackOrder[a];
-        details->fireTimes[a] = engineFireTimes[index];
-        details->hitTimes[a] = engineHitTimes[index];
-    }
-
-    return result;
-}
-
-
 void simulatePart2A( Battleship *B,EscortShip E[], int N,double D)
 {
     double reloadTime;
@@ -140,7 +51,7 @@ void simulatePart2A( Battleship *B,EscortShip E[], int N,double D)
 void simulatePart2A_Part1A(Battleship *B,EscortShip E[],int N,double reloadTime)
 {
     BattleDetails details; // no cumulative damage,escorts do not need fired[] here
-    BattleResult result = runPart2ABattle(B, E, N, reloadTime, 0, NULL, &details);
+    BattleResult result = runReloadBattle(B, E, N, reloadTime, 0, NULL, &details);
     //print attacks that were actually fired
     for(int a = 0; a < details.attackCount; a++){
         int index = details.attackOrder[a];
@@ -229,7 +140,7 @@ int simulatePart2A_Part1BStep( Battleship *B, EscortShip E[], int N, int iterati
 {
     BattleDetails details;
     // Part 1-B: no cumulative damage no fired[] restriction
-    BattleResult result = runPart2ABattle( B, E, N,reloadTime, 0, NULL, &details);
+    BattleResult result = runReloadBattle( B, E, N,reloadTime, 0, NULL, &details);
     *totalSunk += result.sunkCount;
     savePart2APart1BIteration(filename, B, E, N,iteration,&details,result);
     if(result.battleshipDestroyed){
@@ -251,7 +162,7 @@ static void runPart2APart1CStationary(Battleship *B,EscortShip E[],int N,double 
     B->damage = 0.0;
     BattleDetails details;
     BattleResult result =
-        runPart2ABattle(
+        runReloadBattle(
             B,
             E,
             N,
@@ -335,7 +246,7 @@ int simulatePart2A_Part1CStep(Battleship *B,EscortShip E[],int N,int iteration,d
 {
     BattleDetails details;
 // Part 1-C uses cumulative damage each escort can fire only once
-    BattleResult result = runPart2ABattle( B, E, N, reloadTime,1,fired, &details);
+    BattleResult result = runReloadBattle( B, E, N, reloadTime,1,fired, &details);
     *totalSunk += result.sunkCount;
     savePart2APart1CIteration(B, E, N, iteration, simulationNumber,&details,result);
     printf("Iteration %d: Escorts sunk: %d | Damage on B: %.2f%%\n",iteration, result.sunkCount, B->damage * 100.0 );

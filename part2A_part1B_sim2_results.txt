@@ -1,56 +1,39 @@
 --- Part 2-A / Part 1-B Results ---
 Battleship Reload Time T_B: 9.00 seconds
-Gun jams after iteration 2
+Gun jams after iteration 3
 Jammed angle range: 23.00 - 90.00 degrees
 
 --- Battleship Path ---
-Point 1: (2812.91, 2252.84)
-Point 2: (2897.49, 2837.03)
-Point 3: (2987.93, 2826.53)
-Point 4: (380.15, 1624.68)
-Point 5: (1414.23, 2010.74)
+Point 1: (2328.20, 878.40)
+Point 2: (1922.50, 2778.66)
+Point 3: (3538.46, 3912.85)
+Point 4: (3336.38, 1741.16)
 
 --------------------------------
 Iteration 1
 --------------------------------
-Battleship Position: (2812.91, 2252.84)
+Battleship Position: (2328.20, 878.40)
 Battleship Angle Range: 0.00 - 90.00 degrees
 
 --- Battleship Attack Order ---
-Attack 1 -> Escort 8 | Type: EA
-Attack 2 -> Escort 11 | Type: EB
-Attack 3 -> Escort 1 | Type: EA
-Attack 4 -> Escort 2 | Type: EC
-Attack 5 -> Escort 3 | Type: EA
-Attack 6 -> Escort 4 | Type: EE
-Attack 7 -> Escort 5 | Type: EB
-Attack 8 -> Escort 6 | Type: ED
-Attack 9 -> Escort 7 | Type: EC
-Attack 10 -> Escort 9 | Type: EB
-Attack 11 -> Escort 10 | Type: ED
-Attack 12 -> Escort 12 | Type: EC
-Attack 13 -> Escort 13 | Type: EC
-Attack 14 -> Escort 14 | Type: EA
-Attack 15 -> Escort 15 | Type: EB
+Attack 1 -> Escort 6 | Type: EA
+Attack 2 -> Escort 11 | Type: EA
+Attack 3 -> Escort 10 | Type: EA
+Attack 4 -> Escort 8 | Type: EE
+Attack 5 -> Escort 4 | Type: EE
+Attack 6 -> Escort 5 | Type: EB
+Attack 7 -> Escort 16 | Type: ED
 
 --- Attack Timing ---
-Escort 8 | Fire Time: 0.00 s | Hit Time: 1.13 s
-Escort 11 | Fire Time: 9.00 s | Hit Time: 11.14 s
-Escort 1 | NOT FIRED AT
-Escort 2 | NOT FIRED AT
-Escort 3 | NOT FIRED AT
+Escort 6 | Fire Time: 0.00 s | Hit Time: 7.40 s
+Escort 11 | NOT FIRED AT
+Escort 10 | NOT FIRED AT
+Escort 8 | NOT FIRED AT
 Escort 4 | NOT FIRED AT
 Escort 5 | NOT FIRED AT
-Escort 6 | NOT FIRED AT
-Escort 7 | NOT FIRED AT
-Escort 9 | NOT FIRED AT
-Escort 10 | NOT FIRED AT
-Escort 12 | NOT FIRED AT
-Escort 13 | NOT FIRED AT
-Escort 14 | NOT FIRED AT
-Escort 15 | NOT FIRED AT
+Escort 16 | NOT FIRED AT
 
-Escorts sunk during this iteration: 2
+Escorts sunk during this iteration: 1
 Battleship Status: SUNK
-Sunk by Escort 8 | Type: EA
-Battleship Sink Time: 9.43 seconds
+Sunk by Escort 6 | Type: EA
+Battleship Sink Time: 7.95 seconds

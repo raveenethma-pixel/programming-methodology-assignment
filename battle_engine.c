@@ -1,6 +1,10 @@
 #include <stdio.h>
+#include <float.h>
+#include <math.h>
+
 #include "battle_engine.h"
 #include "projectile.h"
+#include "escort.h"
 
 static double applyCumulativeEscortDamage( Battleship *B, EscortShip E[], int N, double hitTimes[], int *destroyingEscort)
 {
@@ -33,6 +37,87 @@ static double applyCumulativeEscortDamage( Battleship *B, EscortShip E[], int N,
     }
     return -1.0;
 }
+
+void determineAttackOrder( Battleship *B, EscortShip E[],int N,int attackOrder[],int *attackCount)
+{
+    double threatTime[N];
+    *attackCount = 0;
+    // Find all living escorts B can attack.
+    for(int i = 0; i < N; i++){
+        threatTime[i] = -1.0;
+        if(E[i].alive == 0){
+            continue;
+        }
+
+        if(canBattleshipHitEscort(B, &E[i])){
+            attackOrder[*attackCount] = i;
+            (*attackCount)++;
+            /*
+               Escorts capable of hitting B are threats.
+               Smaller hit time = higher priority.
+            */
+            if(canEscortHitBattleship(&E[i], B)){
+                double distance = calculate_distance( E[i].x,E[i].y, B->x, B->y);
+                threatTime[i] = calculateMinimumHitTime( distance, E[i].vMin, E[i].vMax, E[i].angleMin, E[i].angleMax);
+            }
+        }
+    }
+    /*
+       Bubble sort the attack order.
+
+       Priority:
+       1. Escorts capable of hitting B come first.
+       2. Among those, the one that can hit B sooner comes first.
+       3. Escorts that cannot hit B come afterwards.
+    */
+
+    // Sort threats first, earliest threat first.
+    for(int i = 0; i < *attackCount - 1; i++){
+        for(int j = 0; j < *attackCount - i - 1; j++){
+            int first = attackOrder[j];
+            int second = attackOrder[j + 1];
+            int swap = 0;
+
+            if(threatTime[first] < 0.0 && threatTime[second] >= 0.0){
+                swap = 1;
+            }
+            else if(threatTime[first] >= 0.0 && threatTime[second] >= 0.0 && threatTime[first] > threatTime[second]){
+                swap = 1;
+            }
+            if(swap){
+                int temp = attackOrder[j];
+                attackOrder[j] = attackOrder[j + 1];
+                attackOrder[j + 1] = temp;
+            }
+        }
+    }
+}
+
+BattleResult runReloadBattle( Battleship *B, EscortShip E[], int N, double reloadTime,int cumulativeDamage, int fired[], BattleDetails *details)
+{
+    double engineFireTimes[N];
+    double engineHitTimes[N];
+    determineAttackOrder( B, E, N, details->attackOrder, &details->attackCount);
+
+    BattleRules rules;
+    rules.cumulativeDamage = cumulativeDamage;
+    rules.useBattleshipReload = 1;
+    rules.battleshipReloadTime = reloadTime;
+
+    BattleResult result = simulateBattleStep( B, E, N, rules,fired, details->escortHitTimes, engineHitTimes, details->attackOrder, details->attackCount, engineFireTimes);
+    //Convert engine arrays from escort-index order into B's attack-order order.
+    for(int i = 0; i < N; i++){
+        details->fireTimes[i] = -1.0;
+        details->hitTimes[i] = -1.0;
+    }
+    for(int a = 0; a < details->attackCount; a++){
+        int index = details->attackOrder[a];
+        details->fireTimes[a] = engineFireTimes[index];
+        details->hitTimes[a] = engineHitTimes[index];
+    }
+    return result;
+}
+
 BattleResult simulateBattleStep( Battleship *B, EscortShip E[], int N, BattleRules rules, int fired[],double escortHitTimes[],double battleHitTimes[],int attackOrder[],int attackCount,double battleshipFireTimes[])
 {
     BattleResult result;
