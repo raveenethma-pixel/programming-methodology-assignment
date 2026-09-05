@@ -2,7 +2,7 @@
           PART 2-B RESULTS
 ========================================
 
-Battleship Reload Time T_B: 4.00 seconds
+Battleship Reload Time T_B: 9.00 seconds
 
 Escort Reload Times:
 EA: 1.00 seconds
@@ -18,21 +18,17 @@ PART 2-B / PART 1-A
 Battleship Position: (345.00, 345.00)
 
 --- Battleship Attack Order ---
-Attack 1 -> Escort 17 | Type: EA
-Attack 2 -> Escort 6 | Type: EE
-Attack 3 -> Escort 7 | Type: ED
-Attack 4 -> Escort 14 | Type: EC
+Attack 1 -> Escort 1 | Type: EA
+Attack 2 -> Escort 3 | Type: EB
 
 --- Attack Timing ---
-Escort 17 | Fire Time: 0.00 s | Hit Time: 12.89 s
-Escort 6 | Fire Time: 4.00 s | Hit Time: 13.76 s
-Escort 7 | Fire Time: 8.00 s | Hit Time: 20.03 s
-Escort 14 | NOT FIRED AT
+Escort 1 | Fire Time: 0.00 s | Hit Time: 7.01 s
+Escort 3 | NOT FIRED AT
 
-Total Escorts Sunk: 3
+Total Escorts Sunk: 1
 Battleship Status: SUNK
-Sunk by Escort 17 | Type: EA
-Battleship Sink Time: 9.74 seconds
+Sunk by Escort 1 | Type: EA
+Battleship Sink Time: 7.65 seconds
 
 
 ========================================
@@ -40,47 +36,57 @@ PART 2-B / PART 1-B - SIMULATION 1
 ========================================
 
 --- Battleship Path ---
-Point 1: (881.46, 1302.92)
-Point 2: (359.03, 480.21)
-Point 3: (2029.87, 251.53)
-Point 4: (799.87, 1332.52)
+Point 1: (1042.61, 3145.20)
+Point 2: (2960.89, 3674.57)
+Point 3: (538.28, 2625.46)
+Point 4: (3446.43, 329.45)
 
 ----------------------------------------
 Iteration 1
 ----------------------------------------
-Battleship Position: (881.46, 1302.92)
+Battleship Position: (1042.61, 3145.20)
 Battleship Angle Range: 0.00 - 90.00
 
 --- Battleship Attack Order ---
-Attack 1 -> Escort 14 | Type: EC
-Attack 2 -> Escort 17 | Type: EA
-Attack 3 -> Escort 24 | Type: EA
-Attack 4 -> Escort 13 | Type: EB
-Attack 5 -> Escort 12 | Type: EE
-Attack 6 -> Escort 2 | Type: EC
-Attack 7 -> Escort 5 | Type: EE
-Attack 8 -> Escort 6 | Type: EE
-Attack 9 -> Escort 7 | Type: ED
-Attack 10 -> Escort 11 | Type: EC
-Attack 11 -> Escort 18 | Type: ED
+Attack 1 -> Escort 2 | Type: EB
 
 --- Attack Timing ---
-Escort 14 | Fire Time: 0.00 s | Hit Time: 5.52 s
-Escort 17 | Fire Time: 4.00 s | Hit Time: 11.42 s
-Escort 24 | NOT FIRED AT
-Escort 13 | NOT FIRED AT
-Escort 12 | NOT FIRED AT
-Escort 2 | NOT FIRED AT
-Escort 5 | NOT FIRED AT
-Escort 6 | NOT FIRED AT
-Escort 7 | NOT FIRED AT
-Escort 11 | NOT FIRED AT
-Escort 18 | NOT FIRED AT
+Escort 2 | Fire Time: 0.00 s | Hit Time: 8.90 s
 
-Escorts sunk during iteration: 2
+Escorts sunk during iteration: 1
+Battleship Status: SURVIVED
+
+----------------------------------------
+Iteration 2
+----------------------------------------
+Battleship Position: (2960.89, 3674.57)
+Battleship Angle Range: 0.00 - 90.00
+
+--- Battleship Attack Order ---
+Attack 1 -> Escort 4 | Type: EE
+
+--- Attack Timing ---
+Escort 4 | Fire Time: 0.00 s | Hit Time: 12.35 s
+
+Escorts sunk during iteration: 1
+Battleship Status: SURVIVED
+
+----------------------------------------
+Iteration 3
+----------------------------------------
+Battleship Position: (538.28, 2625.46)
+Battleship Angle Range: 0.00 - 90.00
+
+--- Battleship Attack Order ---
+Attack 1 -> Escort 3 | Type: EB
+
+--- Attack Timing ---
+Escort 3 | Fire Time: 0.00 s | Hit Time: 14.50 s
+
+Escorts sunk during iteration: 1
 Battleship Status: SUNK
-Sunk by Escort 14 | Type: EC
-Sink Time: 7.75 seconds
+Sunk by Escort 1 | Type: EA
+Sink Time: 11.33 seconds
 
 
 ========================================
@@ -90,47 +96,57 @@ Gun jams after iteration 3
 Jammed Angle Range: 23.00 - 90.00 degrees
 
 --- Battleship Path ---
-Point 1: (881.46, 1302.92)
-Point 2: (359.03, 480.21)
-Point 3: (2029.87, 251.53)
-Point 4: (799.87, 1332.52)
+Point 1: (1042.61, 3145.20)
+Point 2: (2960.89, 3674.57)
+Point 3: (538.28, 2625.46)
+Point 4: (3446.43, 329.45)
 
 ----------------------------------------
 Iteration 1
 ----------------------------------------
-Battleship Position: (881.46, 1302.92)
+Battleship Position: (1042.61, 3145.20)
 Battleship Angle Range: 0.00 - 90.00
 
 --- Battleship Attack Order ---
-Attack 1 -> Escort 14 | Type: EC
-Attack 2 -> Escort 17 | Type: EA
-Attack 3 -> Escort 24 | Type: EA
-Attack 4 -> Escort 13 | Type: EB
-Attack 5 -> Escort 12 | Type: EE
-Attack 6 -> Escort 2 | Type: EC
-Attack 7 -> Escort 5 | Type: EE
-Attack 8 -> Escort 6 | Type: EE
-Attack 9 -> Escort 7 | Type: ED
-Attack 10 -> Escort 11 | Type: EC
-Attack 11 -> Escort 18 | Type: ED
+Attack 1 -> Escort 2 | Type: EB
 
 --- Attack Timing ---
-Escort 14 | Fire Time: 0.00 s | Hit Time: 5.52 s
-Escort 17 | Fire Time: 4.00 s | Hit Time: 11.42 s
-Escort 24 | NOT FIRED AT
-Escort 13 | NOT FIRED AT
-Escort 12 | NOT FIRED AT
-Escort 2 | NOT FIRED AT
-Escort 5 | NOT FIRED AT
-Escort 6 | NOT FIRED AT
-Escort 7 | NOT FIRED AT
-Escort 11 | NOT FIRED AT
-Escort 18 | NOT FIRED AT
+Escort 2 | Fire Time: 0.00 s | Hit Time: 8.90 s
 
-Escorts sunk during iteration: 2
+Escorts sunk during iteration: 1
+Battleship Status: SURVIVED
+
+----------------------------------------
+Iteration 2
+----------------------------------------
+Battleship Position: (2960.89, 3674.57)
+Battleship Angle Range: 0.00 - 90.00
+
+--- Battleship Attack Order ---
+Attack 1 -> Escort 4 | Type: EE
+
+--- Attack Timing ---
+Escort 4 | Fire Time: 0.00 s | Hit Time: 12.35 s
+
+Escorts sunk during iteration: 1
+Battleship Status: SURVIVED
+
+----------------------------------------
+Iteration 3
+----------------------------------------
+Battleship Position: (538.28, 2625.46)
+Battleship Angle Range: 0.00 - 90.00
+
+--- Battleship Attack Order ---
+Attack 1 -> Escort 3 | Type: EB
+
+--- Attack Timing ---
+Escort 3 | Fire Time: 0.00 s | Hit Time: 14.50 s
+
+Escorts sunk during iteration: 1
 Battleship Status: SUNK
-Sunk by Escort 14 | Type: EC
-Sink Time: 7.75 seconds
+Sunk by Escort 1 | Type: EA
+Sink Time: 11.33 seconds
 
 
 ========================================
@@ -140,100 +156,152 @@ Battleship Position: (345.00, 345.00)
 Battleship Angle Range: 0.00 - 90.00
 
 --- Battleship Attack Order ---
-Attack 1 -> Escort 17 | Type: EA
-Attack 2 -> Escort 6 | Type: EE
-Attack 3 -> Escort 7 | Type: ED
-Attack 4 -> Escort 14 | Type: EC
+Attack 1 -> Escort 1 | Type: EA
+Attack 2 -> Escort 3 | Type: EB
 
 --- Attack Timing ---
-Escort 17 | Fire Time: 0.00 s | Hit Time: 12.89 s
-Escort 6 | Fire Time: 4.00 s | Hit Time: 13.76 s
-Escort 7 | Fire Time: 8.00 s | Hit Time: 20.03 s
-Escort 14 | Fire Time: 12.00 s | Hit Time: 25.00 s
+Escort 1 | Fire Time: 0.00 s | Hit Time: 7.01 s
+Escort 3 | Fire Time: 9.00 s | Hit Time: 17.05 s
 
 --- Continuous Escort Attacks ---
-Escort 17 | Type: EA | Hits on B: 13
+Escort 1 | Type: EA | Hits on B: 8
 
-Total Escort Hits: 13
-Escorts Sunk: 4
-Cumulative Damage on B: 104.00%
-Battleship Status: SUNK
-Battle End Time: 21.74 seconds
+Total Escort Hits: 8
+Escorts Sunk: 2
+Cumulative Damage on B: 64.00%
+Battleship Status: SURVIVED
+Battle End Time: 17.05 seconds
 
 
 ========================================
 PART 2-B / PART 1-C - SIMULATION 1 - ITERATION 1
 ========================================
-Battleship Position: (2032.76, 871.48)
+Battleship Position: (2998.26, 93.46)
 Battleship Angle Range: 0.00 - 90.00
 
 --- Battleship Attack Order ---
-Attack 1 -> Escort 14 | Type: EC
-Attack 2 -> Escort 13 | Type: EB
-Attack 3 -> Escort 2 | Type: EC
-Attack 4 -> Escort 25 | Type: EB
-Attack 5 -> Escort 5 | Type: EE
-Attack 6 -> Escort 4 | Type: EE
-Attack 7 -> Escort 7 | Type: ED
-Attack 8 -> Escort 12 | Type: EE
+Attack 1 -> Escort 5 | Type: EE
 
 --- Attack Timing ---
-Escort 14 | Fire Time: 0.00 s | Hit Time: 5.05 s
-Escort 13 | Fire Time: 4.00 s | Hit Time: 9.71 s
-Escort 2 | Fire Time: 8.00 s | Hit Time: 15.01 s
-Escort 25 | NOT FIRED AT
-Escort 5 | NOT FIRED AT
-Escort 4 | NOT FIRED AT
-Escort 7 | NOT FIRED AT
-Escort 12 | NOT FIRED AT
+Escort 5 | Fire Time: 0.00 s | Hit Time: 15.65 s
 
 --- Continuous Escort Attacks ---
-Escort 2 | Type: EC | Hits on B: 4
-Escort 13 | Type: EB | Hits on B: 4
-Escort 14 | Type: EC | Hits on B: 5
-Escort 25 | Type: EB | Hits on B: 3
 
-Total Escort Hits: 16
-Escorts Sunk: 3
-Cumulative Damage on B: 105.00%
+Total Escort Hits: 0
+Escorts Sunk: 1
+Cumulative Damage on B: 0.00%
+Battleship Status: SURVIVED
+Battle End Time: 15.65 seconds
+
+
+========================================
+PART 2-B / PART 1-C - SIMULATION 1 - ITERATION 2
+========================================
+Battleship Position: (2716.25, 2096.95)
+Battleship Angle Range: 0.00 - 90.00
+
+--- Battleship Attack Order ---
+Attack 1 -> Escort 4 | Type: EE
+
+--- Attack Timing ---
+Escort 4 | Fire Time: 0.00 s | Hit Time: 2.82 s
+
+--- Continuous Escort Attacks ---
+Escort 4 | Type: EE | Hits on B: 3
+
+Total Escort Hits: 3
+Escorts Sunk: 1
+Cumulative Damage on B: 12.00%
+Battleship Status: SURVIVED
+Battle End Time: 15.55 seconds
+
+
+========================================
+PART 2-B / PART 1-C - SIMULATION 1 - ITERATION 3
+========================================
+Battleship Position: (241.41, 2544.66)
+Battleship Angle Range: 0.00 - 90.00
+
+--- Battleship Attack Order ---
+Attack 1 -> Escort 2 | Type: EB
+Attack 2 -> Escort 3 | Type: EB
+
+--- Attack Timing ---
+Escort 2 | Fire Time: 0.00 s | Hit Time: 6.08 s
+Escort 3 | Fire Time: 9.00 s | Hit Time: 21.72 s
+
+--- Continuous Escort Attacks ---
+Escort 1 | Type: EA | Hits on B: 12
+
+Total Escort Hits: 12
+Escorts Sunk: 2
+Cumulative Damage on B: 108.00%
 Battleship Status: SUNK
-Battle End Time: 11.91 seconds
+Battle End Time: 21.83 seconds
 
 
 ========================================
 PART 2-B / PART 1-C - SIMULATION 2 - ITERATION 1
 ========================================
-Battleship Position: (2032.76, 871.48)
+Battleship Position: (2998.26, 93.46)
 Battleship Angle Range: 0.00 - 90.00
 
 --- Battleship Attack Order ---
-Attack 1 -> Escort 14 | Type: EC
-Attack 2 -> Escort 13 | Type: EB
-Attack 3 -> Escort 2 | Type: EC
-Attack 4 -> Escort 25 | Type: EB
-Attack 5 -> Escort 5 | Type: EE
-Attack 6 -> Escort 4 | Type: EE
-Attack 7 -> Escort 7 | Type: ED
-Attack 8 -> Escort 12 | Type: EE
+Attack 1 -> Escort 5 | Type: EE
 
 --- Attack Timing ---
-Escort 14 | Fire Time: 0.00 s | Hit Time: 5.05 s
-Escort 13 | Fire Time: 4.00 s | Hit Time: 9.71 s
-Escort 2 | Fire Time: 8.00 s | Hit Time: 15.01 s
-Escort 25 | NOT FIRED AT
-Escort 5 | NOT FIRED AT
-Escort 4 | NOT FIRED AT
-Escort 7 | NOT FIRED AT
-Escort 12 | NOT FIRED AT
+Escort 5 | Fire Time: 0.00 s | Hit Time: 15.65 s
 
 --- Continuous Escort Attacks ---
-Escort 2 | Type: EC | Hits on B: 4
-Escort 13 | Type: EB | Hits on B: 4
-Escort 14 | Type: EC | Hits on B: 5
-Escort 25 | Type: EB | Hits on B: 3
 
-Total Escort Hits: 16
-Escorts Sunk: 3
-Cumulative Damage on B: 105.00%
+Total Escort Hits: 0
+Escorts Sunk: 1
+Cumulative Damage on B: 0.00%
+Battleship Status: SURVIVED
+Battle End Time: 15.65 seconds
+
+
+========================================
+PART 2-B / PART 1-C - SIMULATION 2 - ITERATION 2
+========================================
+Battleship Position: (2716.25, 2096.95)
+Battleship Angle Range: 0.00 - 90.00
+
+--- Battleship Attack Order ---
+Attack 1 -> Escort 4 | Type: EE
+
+--- Attack Timing ---
+Escort 4 | Fire Time: 0.00 s | Hit Time: 2.82 s
+
+--- Continuous Escort Attacks ---
+Escort 4 | Type: EE | Hits on B: 3
+
+Total Escort Hits: 3
+Escorts Sunk: 1
+Cumulative Damage on B: 12.00%
+Battleship Status: SURVIVED
+Battle End Time: 15.55 seconds
+
+
+========================================
+PART 2-B / PART 1-C - SIMULATION 2 - ITERATION 3
+========================================
+Battleship Position: (241.41, 2544.66)
+Battleship Angle Range: 0.00 - 90.00
+
+--- Battleship Attack Order ---
+Attack 1 -> Escort 2 | Type: EB
+Attack 2 -> Escort 3 | Type: EB
+
+--- Attack Timing ---
+Escort 2 | Fire Time: 0.00 s | Hit Time: 6.08 s
+Escort 3 | Fire Time: 9.00 s | Hit Time: 21.72 s
+
+--- Continuous Escort Attacks ---
+Escort 1 | Type: EA | Hits on B: 12
+
+Total Escort Hits: 12
+Escorts Sunk: 2
+Cumulative Damage on B: 108.00%
 Battleship Status: SUNK
-Battle End Time: 11.91 seconds
+Battle End Time: 21.83 seconds

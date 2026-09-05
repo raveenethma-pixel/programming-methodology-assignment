@@ -1,53 +1,27 @@
 --- Part 2-A / Part 1-B Results ---
-Battleship Reload Time T_B: 4.00 seconds
+Battleship Reload Time T_B: 5.00 seconds
 Gun jams after iteration 3
 Jammed angle range: 23.00 - 90.00 degrees
 
 --- Battleship Path ---
-Point 1: (1669.81, 1741.63)
-Point 2: (1417.66, 1669.94)
-Point 3: (3932.33, 2837.59)
-Point 4: (2451.24, 1820.13)
+Point 1: (1042.36, 2833.18)
+Point 2: (271.72, 255.85)
+Point 3: (1488.12, 2533.04)
+Point 4: (1315.01, 3685.13)
 
 --------------------------------
 Iteration 1
 --------------------------------
-Battleship Position: (1669.81, 1741.63)
+Battleship Position: (1042.36, 2833.18)
 Battleship Angle Range: 0.00 - 90.00 degrees
 
 --- Battleship Attack Order ---
-Attack 1 -> Escort 13 | Type: EB
-Attack 2 -> Escort 24 | Type: EA
-Attack 3 -> Escort 14 | Type: EC
-Attack 4 -> Escort 23 | Type: EA
-Attack 5 -> Escort 3 | Type: EC
-Attack 6 -> Escort 12 | Type: EE
-Attack 7 -> Escort 2 | Type: EC
-Attack 8 -> Escort 5 | Type: EE
-Attack 9 -> Escort 6 | Type: EE
-Attack 10 -> Escort 7 | Type: ED
-Attack 11 -> Escort 8 | Type: EB
-Attack 12 -> Escort 11 | Type: EC
-Attack 13 -> Escort 18 | Type: ED
-Attack 14 -> Escort 25 | Type: EB
+Attack 1 -> Escort 2 | Type: EB
 
 --- Attack Timing ---
-Escort 13 | Fire Time: 0.00 s | Hit Time: 3.21 s
-Escort 24 | Fire Time: 4.00 s | Hit Time: 9.67 s
-Escort 14 | NOT FIRED AT
-Escort 23 | NOT FIRED AT
-Escort 3 | NOT FIRED AT
-Escort 12 | NOT FIRED AT
-Escort 2 | NOT FIRED AT
-Escort 5 | NOT FIRED AT
-Escort 6 | NOT FIRED AT
-Escort 7 | NOT FIRED AT
-Escort 8 | NOT FIRED AT
-Escort 11 | NOT FIRED AT
-Escort 18 | NOT FIRED AT
-Escort 25 | NOT FIRED AT
+Escort 2 | Fire Time: 0.00 s | Hit Time: 5.92 s
 
-Escorts sunk during this iteration: 2
+Escorts sunk during this iteration: 1
 Battleship Status: SUNK
-Sunk by Escort 13 | Type: EB
-Battleship Sink Time: 6.63 seconds
+Sunk by Escort 1 | Type: EA
+Battleship Sink Time: 14.26 seconds
