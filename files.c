@@ -584,3 +584,18 @@ void savePart2BPart1CResult(const char title[],Battleship *B,EscortShip E[],int 
     fprintf(fp,"Battle End Time: %.2f seconds\n",result.battleEndTime);
     fclose(fp);
 }
+void displayTextFile(const char filename[])
+{
+    FILE *fp = fopen(filename, "r");
+    if(fp == NULL){
+        printf("\nNo saved results found for %s\n", filename);
+        return;
+    }
+    int ch;
+    printf("\n");
+    while((ch = fgetc(fp)) != EOF){ //reads the file character by character until the end of the file is reached
+        putchar(ch); //prints that character to the terminal. print the whole file content character by character
+    }
+    printf("\n");
+    fclose(fp);
+}

@@ -2,9 +2,7 @@
 
 Battleship
 Type: U
-Position: (345.00, 345.00)
-Status: SUNK
-Sunk by Escort 17 (Type: EA)
-Battle ended at 9.74 seconds
+Position: (234.00, 345.00)
+Status: SURVIVED
 
-Total escort ships sunk by battleship: 0
+Total escort ships sunk by battleship: 1

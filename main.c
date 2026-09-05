@@ -23,6 +23,8 @@ static void runSimulationMenu(Battleship *B, EscortShip E[], int N, double D, Ba
 
 static void showInstructions(void);
 
+static void showStatisticsMenu(void);
+
 int main()
 {
     srand(time(NULL));
@@ -85,12 +87,22 @@ int main()
                 break;
 
             case 3:
-                printf("\nSimulation statistics will be added next.\n");
+                showStatisticsMenu();
                 break;
 
-            case 4:
-                printf("\nExiting simulator.\n");
+            case 4:{
+                char confirm;
+                printf("\nAre you sure you want to exit? (y/n): ");
+                scanf(" %c", &confirm);
+                if(confirm == 'y' || confirm == 'Y'){
+                    printf("\nExiting simulator.\n");
+                    break;
+                }
+                else{
+                    mainChoice = 0; // Reset to continue the loop
+                }
                 break;
+            }
         }
 
     }while(mainChoice != 4);
@@ -199,7 +211,7 @@ static void setupBattlefield( Battleship *B,EscortShip E[],int *N,double *D,Batt
             canBattleshipHitEscort(B, &E[i]) ?
             "can" : "cannot",E[i].id,E[i].type);
     }
-    saveInitialConditions( B, E, *N,*D);
+   
     printf("\nBattlefield setup completed.\n");
 }
 static void runSimulationMenu( Battleship *B, EscortShip E[], int N, double D, Battleship originalB, EscortShip originalE[])
@@ -221,6 +233,7 @@ static void runSimulationMenu( Battleship *B, EscortShip E[], int N, double D, B
 
             case 1:
                 resetBattlefield( B, E,originalB,originalE, N);
+                saveInitialConditions(B,E,N,D);
                 simulatePart1A( B, E, N);
                 break;
 
@@ -296,4 +309,56 @@ static void showInstructions(void)
     printf("EC = Matsu-class Destroyer | Gun = Type 89 dual-purpose gun| Impact power = 0.07 \n");
     printf("ED = F-classEscort Ships| Gun = SK C/32 naval gun| Impact power = 0.05 \n");
     printf("EE = Japanese Kaibōkan| Gun = (4.7 inch) naval guns| Impact power = 0.04 \n");
+}
+static void showStatisticsMenu(void)
+{
+    int choice;
+
+    do{
+        printf("\n========================================\n");
+        printf("         SIMULATION STATISTICS\n");
+        printf("========================================\n");
+        printf("1. Part 1-A Results\n");
+        printf("2. Part 1-B Results\n");
+        printf("3. Part 1-C Results\n");
+        printf("4. Part 2-A Results\n");
+        printf("5. Part 2-B Results\n");
+        printf("6. Return to Main Menu\n");
+
+        choice = getMenuChoice(1, 6);
+
+        switch(choice){
+
+            case 1:
+                displayTextFile("partA1_initial_conditions.txt");
+                displayTextFile("partA1_final_conditions.txt");
+                break;
+
+            case 2:
+                displayTextFile("part1B_sim1_results.txt");
+                displayTextFile("part1B_sim2_results.txt");
+                break;
+
+            case 3:
+                displayTextFile("part1C_results.txt");
+                displayTextFile("part1C_movement_results.txt");
+                displayTextFile("part1C_movement_sim2_results.txt");
+                break;
+
+            case 4:
+                displayTextFile("part2A_part1A_results.txt");
+                displayTextFile("part2A_part1B_sim1_results.txt");
+                displayTextFile("part2A_part1B_sim2_results.txt");
+                displayTextFile("part2A_part1C_results.txt");
+                break;
+
+            case 5:
+                displayTextFile("part2B_results.txt");
+                break;
+
+            case 6:
+                break;
+        }
+
+    }while(choice != 6);
 }

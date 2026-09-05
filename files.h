@@ -23,4 +23,5 @@ void savePart2BPart1AResults(Battleship *B,EscortShip E[],BattleDetails *details
 void savePart2BPart1BSetup(Position path[],int k,int simulationNumber,int jamAfter,double jammedAngleMin);
 void savePart2BPart1BIteration(Battleship *B,EscortShip E[],int iteration, BattleDetails *details,BattleResult result);
 void savePart2BPart1CResult(const char title[],Battleship *B,EscortShip E[],int N,BattleDetails *details,BattleResult result,int escortHitCount[]);
+void displayTextFile(const char filename[]);
 #endif
