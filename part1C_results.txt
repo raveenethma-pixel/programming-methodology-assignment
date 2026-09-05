@@ -2,38 +2,144 @@
 
 Battleship
 Type: U
-Position: (432.00, 324.00)
+Position: (345.00, 345.00)
 
 --- Escort Attack Details ---
 
 Escort 1
-Type: EE
+Type: EA
 Hit Battleship: NO
-Destroyed by Battleship: YES
-Battleship Hit Time: 7.53 seconds
+Destroyed by Battleship: NO
 
 Escort 2
-Type: EA
+Type: EC
 Hit Battleship: NO
 Destroyed by Battleship: NO
 
 Escort 3
-Type: EE
+Type: EC
 Hit Battleship: NO
 Destroyed by Battleship: NO
 
 Escort 4
-Type: EA
+Type: EE
 Hit Battleship: NO
 Destroyed by Battleship: NO
 
 Escort 5
+Type: EE
+Hit Battleship: NO
+Destroyed by Battleship: NO
+
+Escort 6
+Type: EE
+Hit Battleship: NO
+Destroyed by Battleship: YES
+Battleship Hit Time: 9.76 seconds
+
+Escort 7
+Type: ED
+Hit Battleship: NO
+Destroyed by Battleship: YES
+Battleship Hit Time: 12.03 seconds
+
+Escort 8
+Type: EB
+Hit Battleship: NO
+Destroyed by Battleship: NO
+
+Escort 9
+Type: EE
+Hit Battleship: NO
+Destroyed by Battleship: NO
+
+Escort 10
+Type: EC
+Hit Battleship: NO
+Destroyed by Battleship: NO
+
+Escort 11
+Type: EC
+Hit Battleship: NO
+Destroyed by Battleship: NO
+
+Escort 12
+Type: EE
+Hit Battleship: NO
+Destroyed by Battleship: NO
+
+Escort 13
+Type: EB
+Hit Battleship: NO
+Destroyed by Battleship: NO
+
+Escort 14
+Type: EC
+Hit Battleship: NO
+Destroyed by Battleship: YES
+Battleship Hit Time: 13.00 seconds
+
+Escort 15
+Type: EC
+Hit Battleship: NO
+Destroyed by Battleship: NO
+
+Escort 16
+Type: EE
+Hit Battleship: NO
+Destroyed by Battleship: NO
+
+Escort 17
+Type: EA
+Hit Battleship: YES
+Hit Time: 9.74 seconds
+Impact Power: 0.08
+Cumulative Damage: 8.00%
+Destroyed by Battleship: YES
+Battleship Hit Time: 12.89 seconds
+
+Escort 18
+Type: ED
+Hit Battleship: NO
+Destroyed by Battleship: NO
+
+Escort 19
+Type: ED
+Hit Battleship: NO
+Destroyed by Battleship: NO
+
+Escort 20
+Type: EB
+Hit Battleship: NO
+Destroyed by Battleship: NO
+
+Escort 21
+Type: ED
+Hit Battleship: NO
+Destroyed by Battleship: NO
+
+Escort 22
+Type: EE
+Hit Battleship: NO
+Destroyed by Battleship: NO
+
+Escort 23
 Type: EA
 Hit Battleship: NO
 Destroyed by Battleship: NO
 
+Escort 24
+Type: EA
+Hit Battleship: NO
+Destroyed by Battleship: NO
+
+Escort 25
+Type: EB
+Hit Battleship: NO
+Destroyed by Battleship: NO
+
 --- Final Result ---
-Total Escorts Sunk: 1
-Final Cumulative Damage: 0.00%
+Total Escorts Sunk: 4
+Final Cumulative Damage: 8.00%
 Battleship Status: SURVIVED
-Battle End Time: 7.53 seconds
+Battle End Time: 13.00 seconds

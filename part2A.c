@@ -47,7 +47,6 @@ void simulatePart2A( Battleship *B,EscortShip E[], int N,double D)
     simulatePart2A_Part1C( B, E, N, D,reloadTime);
 }
 
-
 void simulatePart2A_Part1A(Battleship *B,EscortShip E[],int N,double reloadTime)
 {
     BattleDetails details; // no cumulative damage,escorts do not need fired[] here

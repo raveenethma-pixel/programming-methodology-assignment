@@ -1,11 +1,11 @@
 --- Part 2-A / Part 1-C Results ---
-Battleship Reload Time T_B: 9.00 seconds
+Battleship Reload Time T_B: 4.00 seconds
 
 --- Battleship Path ---
-Point 1: (1427.02, 3165.95)
-Point 2: (3965.61, 2556.84)
-Point 3: (1495.53, 3117.75)
-Point 4: (1380.07, 1680.13)
+Point 1: (1368.70, 2409.31)
+Point 2: (759.52, 2789.68)
+Point 3: (727.20, 3373.10)
+Point 4: (3313.22, 321.23)
 
 ================================
 Stationary Part 1-A Style Simulation
@@ -14,73 +14,75 @@ Stationary Part 1-A Style Simulation
 --------------------------------
 Iteration 1
 --------------------------------
-Battleship Position: (234.00, 234.00)
+Battleship Position: (345.00, 345.00)
 Battleship Angle Range: 0.00 - 90.00 degrees
 
 --- Battleship Attack Order ---
-Attack 1 -> Escort 10 | Type: EA
-Attack 2 -> Escort 6 | Type: EA
-Attack 3 -> Escort 16 | Type: ED
-Attack 4 -> Escort 18 | Type: EB
-Attack 5 -> Escort 19 | Type: EC
+Attack 1 -> Escort 17 | Type: EA
+Attack 2 -> Escort 6 | Type: EE
+Attack 3 -> Escort 7 | Type: ED
+Attack 4 -> Escort 14 | Type: EC
 
 --- Attack Timing ---
-Escort 10 | Fire Time: 0.00 s | Hit Time: 7.68 s
-Escort 6 | Fire Time: 9.00 s | Hit Time: 24.28 s
-Escort 16 | Fire Time: 18.00 s | Hit Time: 29.39 s
-Escort 18 | Fire Time: 27.00 s | Hit Time: 28.28 s
-Escort 19 | Fire Time: 36.00 s | Hit Time: 45.72 s
+Escort 17 | Fire Time: 0.00 s | Hit Time: 12.89 s
+Escort 6 | Fire Time: 4.00 s | Hit Time: 13.76 s
+Escort 7 | Fire Time: 8.00 s | Hit Time: 20.03 s
+Escort 14 | Fire Time: 12.00 s | Hit Time: 25.00 s
 
 --- Escort Attack Details ---
-Escort 1 | Type: EC | Status: ALIVE
+Escort 1 | Type: EA | Status: ALIVE
 Hit Battleship: NO
 Escort 2 | Type: EC | Status: ALIVE
 Hit Battleship: NO
-Escort 3 | Type: EB | Status: ALIVE
+Escort 3 | Type: EC | Status: ALIVE
 Hit Battleship: NO
 Escort 4 | Type: EE | Status: ALIVE
 Hit Battleship: NO
-Escort 5 | Type: EB | Status: ALIVE
+Escort 5 | Type: EE | Status: ALIVE
 Hit Battleship: NO
-Escort 6 | Type: EA | Status: SUNK
-Hit Battleship: YES | Hit Time: 10.72 s | Impact Power: 0.08
-Escort 7 | Type: EE | Status: ALIVE
+Escort 6 | Type: EE | Status: SUNK
 Hit Battleship: NO
-Escort 8 | Type: EE | Status: ALIVE
+Escort 7 | Type: ED | Status: SUNK
 Hit Battleship: NO
-Escort 9 | Type: EC | Status: ALIVE
+Escort 8 | Type: EB | Status: ALIVE
 Hit Battleship: NO
-Escort 10 | Type: EA | Status: SUNK
-Hit Battleship: YES | Hit Time: 8.08 s | Impact Power: 0.08
-Escort 11 | Type: EA | Status: ALIVE
-Hit Battleship: YES | Hit Time: 14.44 s | Impact Power: 0.08
-Escort 12 | Type: ED | Status: ALIVE
+Escort 9 | Type: EE | Status: ALIVE
 Hit Battleship: NO
-Escort 13 | Type: EC | Status: ALIVE
+Escort 10 | Type: EC | Status: ALIVE
 Hit Battleship: NO
-Escort 14 | Type: EE | Status: ALIVE
+Escort 11 | Type: EC | Status: ALIVE
 Hit Battleship: NO
-Escort 15 | Type: EB | Status: ALIVE
+Escort 12 | Type: EE | Status: ALIVE
 Hit Battleship: NO
-Escort 16 | Type: ED | Status: SUNK
+Escort 13 | Type: EB | Status: ALIVE
 Hit Battleship: NO
-Escort 17 | Type: EB | Status: ALIVE
+Escort 14 | Type: EC | Status: SUNK
 Hit Battleship: NO
-Escort 18 | Type: EB | Status: SUNK
+Escort 15 | Type: EC | Status: ALIVE
 Hit Battleship: NO
-Escort 19 | Type: EC | Status: SUNK
+Escort 16 | Type: EE | Status: ALIVE
 Hit Battleship: NO
-Escort 20 | Type: ED | Status: ALIVE
+Escort 17 | Type: EA | Status: SUNK
+Hit Battleship: YES | Hit Time: 9.74 s | Impact Power: 0.08
+Escort 18 | Type: ED | Status: ALIVE
 Hit Battleship: NO
-Escort 21 | Type: EA | Status: ALIVE
+Escort 19 | Type: ED | Status: ALIVE
+Hit Battleship: NO
+Escort 20 | Type: EB | Status: ALIVE
+Hit Battleship: NO
+Escort 21 | Type: ED | Status: ALIVE
 Hit Battleship: NO
 Escort 22 | Type: EE | Status: ALIVE
 Hit Battleship: NO
-Escort 23 | Type: ED | Status: ALIVE
+Escort 23 | Type: EA | Status: ALIVE
+Hit Battleship: NO
+Escort 24 | Type: EA | Status: ALIVE
+Hit Battleship: NO
+Escort 25 | Type: EB | Status: ALIVE
 Hit Battleship: NO
 
-Escorts sunk during this iteration: 5
-Cumulative damage on Battleship: 24.00%
+Escorts sunk during this iteration: 4
+Cumulative damage on Battleship: 8.00%
 Battleship Status: SURVIVED
 
 ================================
@@ -90,287 +92,304 @@ Movement Simulation 1
 --------------------------------
 Iteration 1
 --------------------------------
-Battleship Position: (1427.02, 3165.95)
+Battleship Position: (1368.70, 2409.31)
 Battleship Angle Range: 0.00 - 90.00 degrees
 
 --- Battleship Attack Order ---
-Attack 1 -> Escort 21 | Type: EA
-Attack 2 -> Escort 11 | Type: EA
-Attack 3 -> Escort 3 | Type: EB
-Attack 4 -> Escort 7 | Type: EE
-Attack 5 -> Escort 12 | Type: ED
-Attack 6 -> Escort 15 | Type: EB
-Attack 7 -> Escort 22 | Type: EE
-Attack 8 -> Escort 23 | Type: ED
+Attack 1 -> Escort 3 | Type: EC
+Attack 2 -> Escort 11 | Type: EC
+Attack 3 -> Escort 18 | Type: ED
+Attack 4 -> Escort 23 | Type: EA
+Attack 5 -> Escort 1 | Type: EA
+Attack 6 -> Escort 2 | Type: EC
+Attack 7 -> Escort 13 | Type: EB
+Attack 8 -> Escort 12 | Type: EE
+Attack 9 -> Escort 6 | Type: EE
+Attack 10 -> Escort 7 | Type: ED
+Attack 11 -> Escort 9 | Type: EE
+Attack 12 -> Escort 14 | Type: EC
+Attack 13 -> Escort 16 | Type: EE
+Attack 14 -> Escort 21 | Type: ED
+Attack 15 -> Escort 24 | Type: EA
 
 --- Attack Timing ---
-Escort 21 | Fire Time: 0.00 s | Hit Time: 6.23 s
-Escort 11 | Fire Time: 9.00 s | Hit Time: 23.21 s
-Escort 3 | Fire Time: 18.00 s | Hit Time: 19.84 s
-Escort 7 | Fire Time: 27.00 s | Hit Time: 39.52 s
-Escort 12 | Fire Time: 36.00 s | Hit Time: 48.40 s
-Escort 15 | Fire Time: 45.00 s | Hit Time: 52.01 s
-Escort 22 | Fire Time: 54.00 s | Hit Time: 64.19 s
-Escort 23 | Fire Time: 63.00 s | Hit Time: 66.02 s
+Escort 3 | Fire Time: 0.00 s | Hit Time: 2.70 s
+Escort 11 | Fire Time: 4.00 s | Hit Time: 8.82 s
+Escort 18 | Fire Time: 8.00 s | Hit Time: 10.67 s
+Escort 23 | Fire Time: 12.00 s | Hit Time: 22.82 s
+Escort 1 | Fire Time: 16.00 s | Hit Time: 27.45 s
+Escort 2 | Fire Time: 20.00 s | Hit Time: 28.16 s
+Escort 13 | Fire Time: 24.00 s | Hit Time: 33.80 s
+Escort 12 | Fire Time: 28.00 s | Hit Time: 35.56 s
+Escort 6 | Fire Time: 32.00 s | Hit Time: 44.14 s
+Escort 7 | Fire Time: 36.00 s | Hit Time: 48.14 s
+Escort 9 | Fire Time: 40.00 s | Hit Time: 53.24 s
+Escort 14 | Fire Time: 44.00 s | Hit Time: 58.44 s
+Escort 16 | Fire Time: 48.00 s | Hit Time: 61.90 s
+Escort 21 | Fire Time: 52.00 s | Hit Time: 61.63 s
+Escort 24 | Fire Time: 56.00 s | Hit Time: 58.62 s
 
 --- Escort Attack Details ---
-Escort 1 | Type: EC | Status: ALIVE
-Hit Battleship: NO
-Escort 2 | Type: EC | Status: ALIVE
-Hit Battleship: NO
-Escort 3 | Type: EB | Status: SUNK
-Hit Battleship: NO
+Escort 1 | Type: EA | Status: SUNK
+Hit Battleship: YES | Hit Time: 9.37 s | Impact Power: 0.08
+Escort 2 | Type: EC | Status: SUNK
+Hit Battleship: YES | Hit Time: 10.86 s | Impact Power: 0.07
+Escort 3 | Type: EC | Status: SUNK
+Hit Battleship: YES | Hit Time: 5.47 s | Impact Power: 0.07
 Escort 4 | Type: EE | Status: ALIVE
 Hit Battleship: NO
-Escort 5 | Type: EB | Status: ALIVE
+Escort 5 | Type: EE | Status: ALIVE
 Hit Battleship: NO
-Escort 6 | Type: EA | Status: ALIVE
-Hit Battleship: YES | Hit Time: 18.77 s | Impact Power: 0.08
-Escort 7 | Type: EE | Status: SUNK
+Escort 6 | Type: EE | Status: SUNK
 Hit Battleship: NO
-Escort 8 | Type: EE | Status: ALIVE
+Escort 7 | Type: ED | Status: SUNK
 Hit Battleship: NO
-Escort 9 | Type: EC | Status: ALIVE
+Escort 8 | Type: EB | Status: ALIVE
 Hit Battleship: NO
-Escort 10 | Type: EA | Status: ALIVE
+Escort 9 | Type: EE | Status: SUNK
 Hit Battleship: NO
-Escort 11 | Type: EA | Status: SUNK
-Hit Battleship: YES | Hit Time: 10.33 s | Impact Power: 0.08
-Escort 12 | Type: ED | Status: SUNK
+Escort 10 | Type: EC | Status: ALIVE
 Hit Battleship: NO
-Escort 13 | Type: EC | Status: ALIVE
+Escort 11 | Type: EC | Status: SUNK
+Hit Battleship: YES | Hit Time: 7.26 s | Impact Power: 0.07
+Escort 12 | Type: EE | Status: SUNK
+Hit Battleship: YES | Hit Time: 21.73 s | Impact Power: 0.04
+Escort 13 | Type: EB | Status: SUNK
+Hit Battleship: YES | Hit Time: 11.37 s | Impact Power: 0.06
+Escort 14 | Type: EC | Status: SUNK
 Hit Battleship: NO
-Escort 14 | Type: EE | Status: ALIVE
+Escort 15 | Type: EC | Status: ALIVE
 Hit Battleship: NO
-Escort 15 | Type: EB | Status: SUNK
+Escort 16 | Type: EE | Status: SUNK
 Hit Battleship: NO
-Escort 16 | Type: ED | Status: ALIVE
+Escort 17 | Type: EA | Status: ALIVE
+Hit Battleship: YES | Hit Time: 11.28 s | Impact Power: 0.08
+Escort 18 | Type: ED | Status: SUNK
+Hit Battleship: YES | Hit Time: 8.69 s | Impact Power: 0.05
+Escort 19 | Type: ED | Status: ALIVE
 Hit Battleship: NO
-Escort 17 | Type: EB | Status: ALIVE
+Escort 20 | Type: EB | Status: ALIVE
 Hit Battleship: NO
-Escort 18 | Type: EB | Status: ALIVE
+Escort 21 | Type: ED | Status: SUNK
 Hit Battleship: NO
-Escort 19 | Type: EC | Status: ALIVE
+Escort 22 | Type: EE | Status: ALIVE
 Hit Battleship: NO
-Escort 20 | Type: ED | Status: ALIVE
+Escort 23 | Type: EA | Status: SUNK
+Hit Battleship: YES | Hit Time: 9.18 s | Impact Power: 0.08
+Escort 24 | Type: EA | Status: SUNK
 Hit Battleship: NO
-Escort 21 | Type: EA | Status: SUNK
-Hit Battleship: YES | Hit Time: 7.34 s | Impact Power: 0.08
-Escort 22 | Type: EE | Status: SUNK
-Hit Battleship: NO
-Escort 23 | Type: ED | Status: SUNK
+Escort 25 | Type: EB | Status: ALIVE
 Hit Battleship: NO
 
-Escorts sunk during this iteration: 8
-Cumulative damage on Battleship: 24.00%
+Escorts sunk during this iteration: 15
+Cumulative damage on Battleship: 60.00%
 Battleship Status: SURVIVED
 
 --------------------------------
 Iteration 2
 --------------------------------
-Battleship Position: (3965.61, 2556.84)
+Battleship Position: (759.52, 2789.68)
 Battleship Angle Range: 0.00 - 90.00 degrees
 
 --- Battleship Attack Order ---
-Attack 1 -> Escort 13 | Type: EC
-Attack 2 -> Escort 1 | Type: EC
-Attack 3 -> Escort 2 | Type: EC
-Attack 4 -> Escort 9 | Type: EC
-Attack 5 -> Escort 17 | Type: EB
+Attack 1 -> Escort 17 | Type: EA
+Attack 2 -> Escort 19 | Type: ED
 
 --- Attack Timing ---
-Escort 13 | Fire Time: 0.00 s | Hit Time: 4.72 s
-Escort 1 | Fire Time: 9.00 s | Hit Time: 9.63 s
-Escort 2 | Fire Time: 18.00 s | Hit Time: 33.54 s
-Escort 9 | Fire Time: 27.00 s | Hit Time: 28.70 s
-Escort 17 | Fire Time: 36.00 s | Hit Time: 40.61 s
+Escort 17 | Fire Time: 0.00 s | Hit Time: 13.52 s
+Escort 19 | Fire Time: 4.00 s | Hit Time: 11.00 s
 
 --- Escort Attack Details ---
-Escort 1 | Type: EC | Status: SUNK
+Escort 1 | Type: EA | Status: SUNK
 Hit Battleship: NO
 Escort 2 | Type: EC | Status: SUNK
 Hit Battleship: NO
-Escort 3 | Type: EB | Status: SUNK
+Escort 3 | Type: EC | Status: SUNK
 Hit Battleship: NO
 Escort 4 | Type: EE | Status: ALIVE
 Hit Battleship: NO
-Escort 5 | Type: EB | Status: ALIVE
+Escort 5 | Type: EE | Status: ALIVE
 Hit Battleship: NO
-Escort 6 | Type: EA | Status: ALIVE
+Escort 6 | Type: EE | Status: SUNK
 Hit Battleship: NO
-Escort 7 | Type: EE | Status: SUNK
+Escort 7 | Type: ED | Status: SUNK
 Hit Battleship: NO
-Escort 8 | Type: EE | Status: ALIVE
+Escort 8 | Type: EB | Status: ALIVE
 Hit Battleship: NO
-Escort 9 | Type: EC | Status: SUNK
+Escort 9 | Type: EE | Status: SUNK
 Hit Battleship: NO
-Escort 10 | Type: EA | Status: ALIVE
+Escort 10 | Type: EC | Status: ALIVE
 Hit Battleship: NO
-Escort 11 | Type: EA | Status: SUNK
+Escort 11 | Type: EC | Status: SUNK
 Hit Battleship: NO
-Escort 12 | Type: ED | Status: SUNK
+Escort 12 | Type: EE | Status: SUNK
 Hit Battleship: NO
-Escort 13 | Type: EC | Status: SUNK
-Hit Battleship: YES | Hit Time: 7.28 s | Impact Power: 0.07
-Escort 14 | Type: EE | Status: ALIVE
+Escort 13 | Type: EB | Status: SUNK
 Hit Battleship: NO
-Escort 15 | Type: EB | Status: SUNK
+Escort 14 | Type: EC | Status: SUNK
 Hit Battleship: NO
-Escort 16 | Type: ED | Status: ALIVE
+Escort 15 | Type: EC | Status: ALIVE
 Hit Battleship: NO
-Escort 17 | Type: EB | Status: SUNK
+Escort 16 | Type: EE | Status: SUNK
 Hit Battleship: NO
-Escort 18 | Type: EB | Status: ALIVE
+Escort 17 | Type: EA | Status: SUNK
 Hit Battleship: NO
-Escort 19 | Type: EC | Status: ALIVE
+Escort 18 | Type: ED | Status: SUNK
 Hit Battleship: NO
-Escort 20 | Type: ED | Status: ALIVE
+Escort 19 | Type: ED | Status: SUNK
 Hit Battleship: NO
-Escort 21 | Type: EA | Status: SUNK
+Escort 20 | Type: EB | Status: ALIVE
 Hit Battleship: NO
-Escort 22 | Type: EE | Status: SUNK
+Escort 21 | Type: ED | Status: SUNK
 Hit Battleship: NO
-Escort 23 | Type: ED | Status: SUNK
+Escort 22 | Type: EE | Status: ALIVE
+Hit Battleship: NO
+Escort 23 | Type: EA | Status: SUNK
+Hit Battleship: NO
+Escort 24 | Type: EA | Status: SUNK
+Hit Battleship: NO
+Escort 25 | Type: EB | Status: ALIVE
 Hit Battleship: NO
 
-Escorts sunk during this iteration: 5
-Cumulative damage on Battleship: 31.00%
+Escorts sunk during this iteration: 2
+Cumulative damage on Battleship: 60.00%
 Battleship Status: SURVIVED
 
 --------------------------------
 Iteration 3
 --------------------------------
-Battleship Position: (1495.53, 3117.75)
+Battleship Position: (727.20, 3373.10)
 Battleship Angle Range: 0.00 - 90.00 degrees
 
 --- Battleship Attack Order ---
-Attack 1 -> Escort 5 | Type: EB
-
---- Attack Timing ---
-Escort 5 | Fire Time: 0.00 s | Hit Time: 14.70 s
+No escorts within Battleship attack range.
 
 --- Escort Attack Details ---
-Escort 1 | Type: EC | Status: SUNK
+Escort 1 | Type: EA | Status: SUNK
 Hit Battleship: NO
 Escort 2 | Type: EC | Status: SUNK
 Hit Battleship: NO
-Escort 3 | Type: EB | Status: SUNK
+Escort 3 | Type: EC | Status: SUNK
 Hit Battleship: NO
 Escort 4 | Type: EE | Status: ALIVE
 Hit Battleship: NO
-Escort 5 | Type: EB | Status: SUNK
+Escort 5 | Type: EE | Status: ALIVE
 Hit Battleship: NO
-Escort 6 | Type: EA | Status: ALIVE
+Escort 6 | Type: EE | Status: SUNK
 Hit Battleship: NO
-Escort 7 | Type: EE | Status: SUNK
+Escort 7 | Type: ED | Status: SUNK
 Hit Battleship: NO
-Escort 8 | Type: EE | Status: ALIVE
+Escort 8 | Type: EB | Status: ALIVE
 Hit Battleship: NO
-Escort 9 | Type: EC | Status: SUNK
+Escort 9 | Type: EE | Status: SUNK
 Hit Battleship: NO
-Escort 10 | Type: EA | Status: ALIVE
+Escort 10 | Type: EC | Status: ALIVE
 Hit Battleship: NO
-Escort 11 | Type: EA | Status: SUNK
+Escort 11 | Type: EC | Status: SUNK
 Hit Battleship: NO
-Escort 12 | Type: ED | Status: SUNK
+Escort 12 | Type: EE | Status: SUNK
 Hit Battleship: NO
-Escort 13 | Type: EC | Status: SUNK
+Escort 13 | Type: EB | Status: SUNK
 Hit Battleship: NO
-Escort 14 | Type: EE | Status: ALIVE
+Escort 14 | Type: EC | Status: SUNK
 Hit Battleship: NO
-Escort 15 | Type: EB | Status: SUNK
+Escort 15 | Type: EC | Status: ALIVE
 Hit Battleship: NO
-Escort 16 | Type: ED | Status: ALIVE
+Escort 16 | Type: EE | Status: SUNK
 Hit Battleship: NO
-Escort 17 | Type: EB | Status: SUNK
+Escort 17 | Type: EA | Status: SUNK
 Hit Battleship: NO
-Escort 18 | Type: EB | Status: ALIVE
+Escort 18 | Type: ED | Status: SUNK
 Hit Battleship: NO
-Escort 19 | Type: EC | Status: ALIVE
+Escort 19 | Type: ED | Status: SUNK
 Hit Battleship: NO
-Escort 20 | Type: ED | Status: ALIVE
+Escort 20 | Type: EB | Status: ALIVE
 Hit Battleship: NO
-Escort 21 | Type: EA | Status: SUNK
+Escort 21 | Type: ED | Status: SUNK
 Hit Battleship: NO
-Escort 22 | Type: EE | Status: SUNK
+Escort 22 | Type: EE | Status: ALIVE
 Hit Battleship: NO
-Escort 23 | Type: ED | Status: SUNK
+Escort 23 | Type: EA | Status: SUNK
+Hit Battleship: NO
+Escort 24 | Type: EA | Status: SUNK
+Hit Battleship: NO
+Escort 25 | Type: EB | Status: ALIVE
 Hit Battleship: NO
 
-Escorts sunk during this iteration: 1
-Cumulative damage on Battleship: 31.00%
+Escorts sunk during this iteration: 0
+Cumulative damage on Battleship: 60.00%
 Battleship Status: SURVIVED
 
 --------------------------------
 Iteration 4
 --------------------------------
-Battleship Position: (1380.07, 1680.13)
+Battleship Position: (3313.22, 321.23)
 Battleship Angle Range: 0.00 - 90.00 degrees
 
 --- Battleship Attack Order ---
-Attack 1 -> Escort 6 | Type: EA
-Attack 2 -> Escort 10 | Type: EA
-Attack 3 -> Escort 14 | Type: EE
-Attack 4 -> Escort 16 | Type: ED
-Attack 5 -> Escort 19 | Type: EC
+Attack 1 -> Escort 25 | Type: EB
+Attack 2 -> Escort 4 | Type: EE
+Attack 3 -> Escort 10 | Type: EC
 
 --- Attack Timing ---
-Escort 6 | Fire Time: 0.00 s | Hit Time: 5.49 s
-Escort 10 | Fire Time: 9.00 s | Hit Time: 18.25 s
-Escort 14 | Fire Time: 18.00 s | Hit Time: 32.39 s
-Escort 16 | Fire Time: 27.00 s | Hit Time: 36.53 s
-Escort 19 | Fire Time: 36.00 s | Hit Time: 44.97 s
+Escort 25 | Fire Time: 0.00 s | Hit Time: 7.06 s
+Escort 4 | Fire Time: 4.00 s | Hit Time: 5.65 s
+Escort 10 | Fire Time: 8.00 s | Hit Time: 9.12 s
 
 --- Escort Attack Details ---
-Escort 1 | Type: EC | Status: SUNK
+Escort 1 | Type: EA | Status: SUNK
 Hit Battleship: NO
 Escort 2 | Type: EC | Status: SUNK
 Hit Battleship: NO
-Escort 3 | Type: EB | Status: SUNK
+Escort 3 | Type: EC | Status: SUNK
 Hit Battleship: NO
-Escort 4 | Type: EE | Status: ALIVE
+Escort 4 | Type: EE | Status: SUNK
 Hit Battleship: NO
-Escort 5 | Type: EB | Status: SUNK
+Escort 5 | Type: EE | Status: ALIVE
 Hit Battleship: NO
-Escort 6 | Type: EA | Status: SUNK
+Escort 6 | Type: EE | Status: SUNK
 Hit Battleship: NO
-Escort 7 | Type: EE | Status: SUNK
+Escort 7 | Type: ED | Status: SUNK
 Hit Battleship: NO
-Escort 8 | Type: EE | Status: ALIVE
+Escort 8 | Type: EB | Status: ALIVE
 Hit Battleship: NO
-Escort 9 | Type: EC | Status: SUNK
+Escort 9 | Type: EE | Status: SUNK
 Hit Battleship: NO
-Escort 10 | Type: EA | Status: SUNK
-Hit Battleship: YES | Hit Time: 8.76 s | Impact Power: 0.08
-Escort 11 | Type: EA | Status: SUNK
+Escort 10 | Type: EC | Status: SUNK
 Hit Battleship: NO
-Escort 12 | Type: ED | Status: SUNK
+Escort 11 | Type: EC | Status: SUNK
 Hit Battleship: NO
-Escort 13 | Type: EC | Status: SUNK
+Escort 12 | Type: EE | Status: SUNK
 Hit Battleship: NO
-Escort 14 | Type: EE | Status: SUNK
+Escort 13 | Type: EB | Status: SUNK
 Hit Battleship: NO
-Escort 15 | Type: EB | Status: SUNK
+Escort 14 | Type: EC | Status: SUNK
 Hit Battleship: NO
-Escort 16 | Type: ED | Status: SUNK
+Escort 15 | Type: EC | Status: ALIVE
 Hit Battleship: NO
-Escort 17 | Type: EB | Status: SUNK
+Escort 16 | Type: EE | Status: SUNK
 Hit Battleship: NO
-Escort 18 | Type: EB | Status: ALIVE
+Escort 17 | Type: EA | Status: SUNK
 Hit Battleship: NO
-Escort 19 | Type: EC | Status: SUNK
+Escort 18 | Type: ED | Status: SUNK
 Hit Battleship: NO
-Escort 20 | Type: ED | Status: ALIVE
+Escort 19 | Type: ED | Status: SUNK
 Hit Battleship: NO
-Escort 21 | Type: EA | Status: SUNK
+Escort 20 | Type: EB | Status: ALIVE
 Hit Battleship: NO
-Escort 22 | Type: EE | Status: SUNK
+Escort 21 | Type: ED | Status: SUNK
 Hit Battleship: NO
-Escort 23 | Type: ED | Status: SUNK
+Escort 22 | Type: EE | Status: ALIVE
 Hit Battleship: NO
+Escort 23 | Type: EA | Status: SUNK
+Hit Battleship: NO
+Escort 24 | Type: EA | Status: SUNK
+Hit Battleship: NO
+Escort 25 | Type: EB | Status: SUNK
+Hit Battleship: YES | Hit Time: 9.67 s | Impact Power: 0.06
 
-Escorts sunk during this iteration: 5
-Cumulative damage on Battleship: 39.00%
+Escorts sunk during this iteration: 3
+Cumulative damage on Battleship: 66.00%
 Battleship Status: SURVIVED
 
 --- Simulation 2 Gun Jam Settings ---
@@ -384,285 +403,302 @@ Movement Simulation 2
 --------------------------------
 Iteration 1
 --------------------------------
-Battleship Position: (1427.02, 3165.95)
+Battleship Position: (1368.70, 2409.31)
 Battleship Angle Range: 0.00 - 90.00 degrees
 
 --- Battleship Attack Order ---
-Attack 1 -> Escort 21 | Type: EA
-Attack 2 -> Escort 11 | Type: EA
-Attack 3 -> Escort 3 | Type: EB
-Attack 4 -> Escort 7 | Type: EE
-Attack 5 -> Escort 12 | Type: ED
-Attack 6 -> Escort 15 | Type: EB
-Attack 7 -> Escort 22 | Type: EE
-Attack 8 -> Escort 23 | Type: ED
+Attack 1 -> Escort 3 | Type: EC
+Attack 2 -> Escort 11 | Type: EC
+Attack 3 -> Escort 18 | Type: ED
+Attack 4 -> Escort 23 | Type: EA
+Attack 5 -> Escort 1 | Type: EA
+Attack 6 -> Escort 2 | Type: EC
+Attack 7 -> Escort 13 | Type: EB
+Attack 8 -> Escort 12 | Type: EE
+Attack 9 -> Escort 6 | Type: EE
+Attack 10 -> Escort 7 | Type: ED
+Attack 11 -> Escort 9 | Type: EE
+Attack 12 -> Escort 14 | Type: EC
+Attack 13 -> Escort 16 | Type: EE
+Attack 14 -> Escort 21 | Type: ED
+Attack 15 -> Escort 24 | Type: EA
 
 --- Attack Timing ---
-Escort 21 | Fire Time: 0.00 s | Hit Time: 6.23 s
-Escort 11 | Fire Time: 9.00 s | Hit Time: 23.21 s
-Escort 3 | Fire Time: 18.00 s | Hit Time: 19.84 s
-Escort 7 | Fire Time: 27.00 s | Hit Time: 39.52 s
-Escort 12 | Fire Time: 36.00 s | Hit Time: 48.40 s
-Escort 15 | Fire Time: 45.00 s | Hit Time: 52.01 s
-Escort 22 | Fire Time: 54.00 s | Hit Time: 64.19 s
-Escort 23 | Fire Time: 63.00 s | Hit Time: 66.02 s
+Escort 3 | Fire Time: 0.00 s | Hit Time: 2.70 s
+Escort 11 | Fire Time: 4.00 s | Hit Time: 8.82 s
+Escort 18 | Fire Time: 8.00 s | Hit Time: 10.67 s
+Escort 23 | Fire Time: 12.00 s | Hit Time: 22.82 s
+Escort 1 | Fire Time: 16.00 s | Hit Time: 27.45 s
+Escort 2 | Fire Time: 20.00 s | Hit Time: 28.16 s
+Escort 13 | Fire Time: 24.00 s | Hit Time: 33.80 s
+Escort 12 | Fire Time: 28.00 s | Hit Time: 35.56 s
+Escort 6 | Fire Time: 32.00 s | Hit Time: 44.14 s
+Escort 7 | Fire Time: 36.00 s | Hit Time: 48.14 s
+Escort 9 | Fire Time: 40.00 s | Hit Time: 53.24 s
+Escort 14 | Fire Time: 44.00 s | Hit Time: 58.44 s
+Escort 16 | Fire Time: 48.00 s | Hit Time: 61.90 s
+Escort 21 | Fire Time: 52.00 s | Hit Time: 61.63 s
+Escort 24 | Fire Time: 56.00 s | Hit Time: 58.62 s
 
 --- Escort Attack Details ---
-Escort 1 | Type: EC | Status: ALIVE
-Hit Battleship: NO
-Escort 2 | Type: EC | Status: ALIVE
-Hit Battleship: NO
-Escort 3 | Type: EB | Status: SUNK
-Hit Battleship: NO
+Escort 1 | Type: EA | Status: SUNK
+Hit Battleship: YES | Hit Time: 9.37 s | Impact Power: 0.08
+Escort 2 | Type: EC | Status: SUNK
+Hit Battleship: YES | Hit Time: 10.86 s | Impact Power: 0.07
+Escort 3 | Type: EC | Status: SUNK
+Hit Battleship: YES | Hit Time: 5.47 s | Impact Power: 0.07
 Escort 4 | Type: EE | Status: ALIVE
 Hit Battleship: NO
-Escort 5 | Type: EB | Status: ALIVE
+Escort 5 | Type: EE | Status: ALIVE
 Hit Battleship: NO
-Escort 6 | Type: EA | Status: ALIVE
-Hit Battleship: YES | Hit Time: 18.77 s | Impact Power: 0.08
-Escort 7 | Type: EE | Status: SUNK
+Escort 6 | Type: EE | Status: SUNK
 Hit Battleship: NO
-Escort 8 | Type: EE | Status: ALIVE
+Escort 7 | Type: ED | Status: SUNK
 Hit Battleship: NO
-Escort 9 | Type: EC | Status: ALIVE
+Escort 8 | Type: EB | Status: ALIVE
 Hit Battleship: NO
-Escort 10 | Type: EA | Status: ALIVE
+Escort 9 | Type: EE | Status: SUNK
 Hit Battleship: NO
-Escort 11 | Type: EA | Status: SUNK
-Hit Battleship: YES | Hit Time: 10.33 s | Impact Power: 0.08
-Escort 12 | Type: ED | Status: SUNK
+Escort 10 | Type: EC | Status: ALIVE
 Hit Battleship: NO
-Escort 13 | Type: EC | Status: ALIVE
+Escort 11 | Type: EC | Status: SUNK
+Hit Battleship: YES | Hit Time: 7.26 s | Impact Power: 0.07
+Escort 12 | Type: EE | Status: SUNK
+Hit Battleship: YES | Hit Time: 21.73 s | Impact Power: 0.04
+Escort 13 | Type: EB | Status: SUNK
+Hit Battleship: YES | Hit Time: 11.37 s | Impact Power: 0.06
+Escort 14 | Type: EC | Status: SUNK
 Hit Battleship: NO
-Escort 14 | Type: EE | Status: ALIVE
+Escort 15 | Type: EC | Status: ALIVE
 Hit Battleship: NO
-Escort 15 | Type: EB | Status: SUNK
+Escort 16 | Type: EE | Status: SUNK
 Hit Battleship: NO
-Escort 16 | Type: ED | Status: ALIVE
+Escort 17 | Type: EA | Status: ALIVE
+Hit Battleship: YES | Hit Time: 11.28 s | Impact Power: 0.08
+Escort 18 | Type: ED | Status: SUNK
+Hit Battleship: YES | Hit Time: 8.69 s | Impact Power: 0.05
+Escort 19 | Type: ED | Status: ALIVE
 Hit Battleship: NO
-Escort 17 | Type: EB | Status: ALIVE
+Escort 20 | Type: EB | Status: ALIVE
 Hit Battleship: NO
-Escort 18 | Type: EB | Status: ALIVE
+Escort 21 | Type: ED | Status: SUNK
 Hit Battleship: NO
-Escort 19 | Type: EC | Status: ALIVE
+Escort 22 | Type: EE | Status: ALIVE
 Hit Battleship: NO
-Escort 20 | Type: ED | Status: ALIVE
+Escort 23 | Type: EA | Status: SUNK
+Hit Battleship: YES | Hit Time: 9.18 s | Impact Power: 0.08
+Escort 24 | Type: EA | Status: SUNK
 Hit Battleship: NO
-Escort 21 | Type: EA | Status: SUNK
-Hit Battleship: YES | Hit Time: 7.34 s | Impact Power: 0.08
-Escort 22 | Type: EE | Status: SUNK
-Hit Battleship: NO
-Escort 23 | Type: ED | Status: SUNK
+Escort 25 | Type: EB | Status: ALIVE
 Hit Battleship: NO
 
-Escorts sunk during this iteration: 8
-Cumulative damage on Battleship: 24.00%
+Escorts sunk during this iteration: 15
+Cumulative damage on Battleship: 60.00%
 Battleship Status: SURVIVED
 
 --------------------------------
 Iteration 2
 --------------------------------
-Battleship Position: (3965.61, 2556.84)
+Battleship Position: (759.52, 2789.68)
 Battleship Angle Range: 0.00 - 90.00 degrees
 
 --- Battleship Attack Order ---
-Attack 1 -> Escort 13 | Type: EC
-Attack 2 -> Escort 1 | Type: EC
-Attack 3 -> Escort 2 | Type: EC
-Attack 4 -> Escort 9 | Type: EC
-Attack 5 -> Escort 17 | Type: EB
+Attack 1 -> Escort 17 | Type: EA
+Attack 2 -> Escort 19 | Type: ED
 
 --- Attack Timing ---
-Escort 13 | Fire Time: 0.00 s | Hit Time: 4.72 s
-Escort 1 | Fire Time: 9.00 s | Hit Time: 9.63 s
-Escort 2 | Fire Time: 18.00 s | Hit Time: 33.54 s
-Escort 9 | Fire Time: 27.00 s | Hit Time: 28.70 s
-Escort 17 | Fire Time: 36.00 s | Hit Time: 40.61 s
+Escort 17 | Fire Time: 0.00 s | Hit Time: 13.52 s
+Escort 19 | Fire Time: 4.00 s | Hit Time: 11.00 s
 
 --- Escort Attack Details ---
-Escort 1 | Type: EC | Status: SUNK
+Escort 1 | Type: EA | Status: SUNK
 Hit Battleship: NO
 Escort 2 | Type: EC | Status: SUNK
 Hit Battleship: NO
-Escort 3 | Type: EB | Status: SUNK
+Escort 3 | Type: EC | Status: SUNK
 Hit Battleship: NO
 Escort 4 | Type: EE | Status: ALIVE
 Hit Battleship: NO
-Escort 5 | Type: EB | Status: ALIVE
+Escort 5 | Type: EE | Status: ALIVE
 Hit Battleship: NO
-Escort 6 | Type: EA | Status: ALIVE
+Escort 6 | Type: EE | Status: SUNK
 Hit Battleship: NO
-Escort 7 | Type: EE | Status: SUNK
+Escort 7 | Type: ED | Status: SUNK
 Hit Battleship: NO
-Escort 8 | Type: EE | Status: ALIVE
+Escort 8 | Type: EB | Status: ALIVE
 Hit Battleship: NO
-Escort 9 | Type: EC | Status: SUNK
+Escort 9 | Type: EE | Status: SUNK
 Hit Battleship: NO
-Escort 10 | Type: EA | Status: ALIVE
+Escort 10 | Type: EC | Status: ALIVE
 Hit Battleship: NO
-Escort 11 | Type: EA | Status: SUNK
+Escort 11 | Type: EC | Status: SUNK
 Hit Battleship: NO
-Escort 12 | Type: ED | Status: SUNK
+Escort 12 | Type: EE | Status: SUNK
 Hit Battleship: NO
-Escort 13 | Type: EC | Status: SUNK
-Hit Battleship: YES | Hit Time: 7.28 s | Impact Power: 0.07
-Escort 14 | Type: EE | Status: ALIVE
+Escort 13 | Type: EB | Status: SUNK
 Hit Battleship: NO
-Escort 15 | Type: EB | Status: SUNK
+Escort 14 | Type: EC | Status: SUNK
 Hit Battleship: NO
-Escort 16 | Type: ED | Status: ALIVE
+Escort 15 | Type: EC | Status: ALIVE
 Hit Battleship: NO
-Escort 17 | Type: EB | Status: SUNK
+Escort 16 | Type: EE | Status: SUNK
 Hit Battleship: NO
-Escort 18 | Type: EB | Status: ALIVE
+Escort 17 | Type: EA | Status: SUNK
 Hit Battleship: NO
-Escort 19 | Type: EC | Status: ALIVE
+Escort 18 | Type: ED | Status: SUNK
 Hit Battleship: NO
-Escort 20 | Type: ED | Status: ALIVE
+Escort 19 | Type: ED | Status: SUNK
 Hit Battleship: NO
-Escort 21 | Type: EA | Status: SUNK
+Escort 20 | Type: EB | Status: ALIVE
 Hit Battleship: NO
-Escort 22 | Type: EE | Status: SUNK
+Escort 21 | Type: ED | Status: SUNK
 Hit Battleship: NO
-Escort 23 | Type: ED | Status: SUNK
+Escort 22 | Type: EE | Status: ALIVE
+Hit Battleship: NO
+Escort 23 | Type: EA | Status: SUNK
+Hit Battleship: NO
+Escort 24 | Type: EA | Status: SUNK
+Hit Battleship: NO
+Escort 25 | Type: EB | Status: ALIVE
 Hit Battleship: NO
 
-Escorts sunk during this iteration: 5
-Cumulative damage on Battleship: 31.00%
+Escorts sunk during this iteration: 2
+Cumulative damage on Battleship: 60.00%
 Battleship Status: SURVIVED
 
 --------------------------------
 Iteration 3
 --------------------------------
-Battleship Position: (1495.53, 3117.75)
+Battleship Position: (727.20, 3373.10)
 Battleship Angle Range: 0.00 - 90.00 degrees
 
 --- Battleship Attack Order ---
-Attack 1 -> Escort 5 | Type: EB
-
---- Attack Timing ---
-Escort 5 | Fire Time: 0.00 s | Hit Time: 14.70 s
+No escorts within Battleship attack range.
 
 --- Escort Attack Details ---
-Escort 1 | Type: EC | Status: SUNK
+Escort 1 | Type: EA | Status: SUNK
 Hit Battleship: NO
 Escort 2 | Type: EC | Status: SUNK
 Hit Battleship: NO
-Escort 3 | Type: EB | Status: SUNK
+Escort 3 | Type: EC | Status: SUNK
 Hit Battleship: NO
 Escort 4 | Type: EE | Status: ALIVE
 Hit Battleship: NO
-Escort 5 | Type: EB | Status: SUNK
+Escort 5 | Type: EE | Status: ALIVE
 Hit Battleship: NO
-Escort 6 | Type: EA | Status: ALIVE
+Escort 6 | Type: EE | Status: SUNK
 Hit Battleship: NO
-Escort 7 | Type: EE | Status: SUNK
+Escort 7 | Type: ED | Status: SUNK
 Hit Battleship: NO
-Escort 8 | Type: EE | Status: ALIVE
+Escort 8 | Type: EB | Status: ALIVE
 Hit Battleship: NO
-Escort 9 | Type: EC | Status: SUNK
+Escort 9 | Type: EE | Status: SUNK
 Hit Battleship: NO
-Escort 10 | Type: EA | Status: ALIVE
+Escort 10 | Type: EC | Status: ALIVE
 Hit Battleship: NO
-Escort 11 | Type: EA | Status: SUNK
+Escort 11 | Type: EC | Status: SUNK
 Hit Battleship: NO
-Escort 12 | Type: ED | Status: SUNK
+Escort 12 | Type: EE | Status: SUNK
 Hit Battleship: NO
-Escort 13 | Type: EC | Status: SUNK
+Escort 13 | Type: EB | Status: SUNK
 Hit Battleship: NO
-Escort 14 | Type: EE | Status: ALIVE
+Escort 14 | Type: EC | Status: SUNK
 Hit Battleship: NO
-Escort 15 | Type: EB | Status: SUNK
+Escort 15 | Type: EC | Status: ALIVE
 Hit Battleship: NO
-Escort 16 | Type: ED | Status: ALIVE
+Escort 16 | Type: EE | Status: SUNK
 Hit Battleship: NO
-Escort 17 | Type: EB | Status: SUNK
+Escort 17 | Type: EA | Status: SUNK
 Hit Battleship: NO
-Escort 18 | Type: EB | Status: ALIVE
+Escort 18 | Type: ED | Status: SUNK
 Hit Battleship: NO
-Escort 19 | Type: EC | Status: ALIVE
+Escort 19 | Type: ED | Status: SUNK
 Hit Battleship: NO
-Escort 20 | Type: ED | Status: ALIVE
+Escort 20 | Type: EB | Status: ALIVE
 Hit Battleship: NO
-Escort 21 | Type: EA | Status: SUNK
+Escort 21 | Type: ED | Status: SUNK
 Hit Battleship: NO
-Escort 22 | Type: EE | Status: SUNK
+Escort 22 | Type: EE | Status: ALIVE
 Hit Battleship: NO
-Escort 23 | Type: ED | Status: SUNK
+Escort 23 | Type: EA | Status: SUNK
+Hit Battleship: NO
+Escort 24 | Type: EA | Status: SUNK
+Hit Battleship: NO
+Escort 25 | Type: EB | Status: ALIVE
 Hit Battleship: NO
 
-Escorts sunk during this iteration: 1
-Cumulative damage on Battleship: 31.00%
+Escorts sunk during this iteration: 0
+Cumulative damage on Battleship: 60.00%
 Battleship Status: SURVIVED
 
 --------------------------------
 Iteration 4
 --------------------------------
-Battleship Position: (1380.07, 1680.13)
+Battleship Position: (3313.22, 321.23)
 Battleship Angle Range: 23.00 - 90.00 degrees
 
 --- Battleship Attack Order ---
-Attack 1 -> Escort 6 | Type: EA
-Attack 2 -> Escort 10 | Type: EA
-Attack 3 -> Escort 14 | Type: EE
-Attack 4 -> Escort 16 | Type: ED
-Attack 5 -> Escort 19 | Type: EC
+Attack 1 -> Escort 25 | Type: EB
+Attack 2 -> Escort 4 | Type: EE
+Attack 3 -> Escort 10 | Type: EC
 
 --- Attack Timing ---
-Escort 6 | Fire Time: 0.00 s | Hit Time: 7.47 s
-Escort 10 | Fire Time: 9.00 s | Hit Time: 18.46 s
-Escort 14 | Fire Time: 18.00 s | Hit Time: 32.39 s
-Escort 16 | Fire Time: 27.00 s | Hit Time: 36.57 s
-Escort 19 | Fire Time: 36.00 s | Hit Time: 45.33 s
+Escort 25 | Fire Time: 0.00 s | Hit Time: 8.29 s
+Escort 4 | Fire Time: 4.00 s | Hit Time: 8.07 s
+Escort 10 | Fire Time: 8.00 s | Hit Time: 11.36 s
 
 --- Escort Attack Details ---
-Escort 1 | Type: EC | Status: SUNK
+Escort 1 | Type: EA | Status: SUNK
 Hit Battleship: NO
 Escort 2 | Type: EC | Status: SUNK
 Hit Battleship: NO
-Escort 3 | Type: EB | Status: SUNK
+Escort 3 | Type: EC | Status: SUNK
 Hit Battleship: NO
-Escort 4 | Type: EE | Status: ALIVE
+Escort 4 | Type: EE | Status: SUNK
 Hit Battleship: NO
-Escort 5 | Type: EB | Status: SUNK
+Escort 5 | Type: EE | Status: ALIVE
 Hit Battleship: NO
-Escort 6 | Type: EA | Status: SUNK
+Escort 6 | Type: EE | Status: SUNK
 Hit Battleship: NO
-Escort 7 | Type: EE | Status: SUNK
+Escort 7 | Type: ED | Status: SUNK
 Hit Battleship: NO
-Escort 8 | Type: EE | Status: ALIVE
+Escort 8 | Type: EB | Status: ALIVE
 Hit Battleship: NO
-Escort 9 | Type: EC | Status: SUNK
+Escort 9 | Type: EE | Status: SUNK
 Hit Battleship: NO
-Escort 10 | Type: EA | Status: SUNK
-Hit Battleship: YES | Hit Time: 8.76 s | Impact Power: 0.08
-Escort 11 | Type: EA | Status: SUNK
+Escort 10 | Type: EC | Status: SUNK
 Hit Battleship: NO
-Escort 12 | Type: ED | Status: SUNK
+Escort 11 | Type: EC | Status: SUNK
 Hit Battleship: NO
-Escort 13 | Type: EC | Status: SUNK
+Escort 12 | Type: EE | Status: SUNK
 Hit Battleship: NO
-Escort 14 | Type: EE | Status: SUNK
+Escort 13 | Type: EB | Status: SUNK
 Hit Battleship: NO
-Escort 15 | Type: EB | Status: SUNK
+Escort 14 | Type: EC | Status: SUNK
 Hit Battleship: NO
-Escort 16 | Type: ED | Status: SUNK
+Escort 15 | Type: EC | Status: ALIVE
 Hit Battleship: NO
-Escort 17 | Type: EB | Status: SUNK
+Escort 16 | Type: EE | Status: SUNK
 Hit Battleship: NO
-Escort 18 | Type: EB | Status: ALIVE
+Escort 17 | Type: EA | Status: SUNK
 Hit Battleship: NO
-Escort 19 | Type: EC | Status: SUNK
+Escort 18 | Type: ED | Status: SUNK
 Hit Battleship: NO
-Escort 20 | Type: ED | Status: ALIVE
+Escort 19 | Type: ED | Status: SUNK
 Hit Battleship: NO
-Escort 21 | Type: EA | Status: SUNK
+Escort 20 | Type: EB | Status: ALIVE
 Hit Battleship: NO
-Escort 22 | Type: EE | Status: SUNK
+Escort 21 | Type: ED | Status: SUNK
 Hit Battleship: NO
-Escort 23 | Type: ED | Status: SUNK
+Escort 22 | Type: EE | Status: ALIVE
 Hit Battleship: NO
+Escort 23 | Type: EA | Status: SUNK
+Hit Battleship: NO
+Escort 24 | Type: EA | Status: SUNK
+Hit Battleship: NO
+Escort 25 | Type: EB | Status: SUNK
+Hit Battleship: YES | Hit Time: 9.67 s | Impact Power: 0.06
 
-Escorts sunk during this iteration: 5
-Cumulative damage on Battleship: 39.00%
+Escorts sunk during this iteration: 3
+Cumulative damage on Battleship: 66.00%
 Battleship Status: SURVIVED

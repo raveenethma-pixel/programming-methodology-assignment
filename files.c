@@ -555,3 +555,32 @@ void savePart2BPart1BIteration(Battleship *B,EscortShip E[],int iteration,Battle
     }
     fclose(fp);
 }
+void savePart2BPart1CResult(const char title[],Battleship *B,EscortShip E[],int N,BattleDetails *details,BattleResult result,int escortHitCount[])
+{
+    FILE *fp = openTextFile("part2B_results.txt", "a");
+    if(fp == NULL){
+        return;
+    }
+    fprintf(fp, "\n\n========================================\n");
+    fprintf(fp, "%s\n", title);
+    fprintf(fp, "========================================\n");
+    fprintf(fp, "Battleship Position: (%.2f, %.2f)\n", B->x, B->y);
+    fprintf(fp, "Battleship Angle Range: %.2f - %.2f\n",B->angleMin, B->angleMax);
+    writeAttackDetails(fp, E, details);
+    fprintf(fp, "\n--- Continuous Escort Attacks ---\n");
+    int totalHits = 0;
+
+    for(int i = 0; i < N; i++){
+        if(escortHitCount[i] > 0){
+            fprintf(fp,"Escort %d | Type: %s | Hits on B: %d\n", E[i].id, E[i].type, escortHitCount[i]);
+            totalHits += escortHitCount[i];
+        }
+    }
+    fprintf(fp, "\nTotal Escort Hits: %d\n", totalHits);
+    fprintf(fp, "Escorts Sunk: %d\n", result.sunkCount);
+    fprintf(fp,"Cumulative Damage on B: %.2f%%\n", B->damage * 100.0);
+
+    fprintf(fp,"Battleship Status: %s\n",result.battleshipDestroyed ? "SUNK" : "SURVIVED");
+    fprintf(fp,"Battle End Time: %.2f seconds\n",result.battleEndTime);
+    fclose(fp);
+}

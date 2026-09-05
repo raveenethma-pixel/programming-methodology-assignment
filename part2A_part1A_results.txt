@@ -1,24 +1,22 @@
 --- Part 2-A / Part 1-A Results ---
 
 Battleship Type: U
-Battleship Position: (234.00, 234.00)
-Battleship Reload Time T_B: 9.00 seconds
+Battleship Position: (345.00, 345.00)
+Battleship Reload Time T_B: 4.00 seconds
 
 --- Battleship Attack Order ---
-Attack 1 -> Escort 10 | Type: EA
-Attack 2 -> Escort 6 | Type: EA
-Attack 3 -> Escort 16 | Type: ED
-Attack 4 -> Escort 18 | Type: EB
-Attack 5 -> Escort 19 | Type: EC
+Attack 1 -> Escort 17 | Type: EA
+Attack 2 -> Escort 6 | Type: EE
+Attack 3 -> Escort 7 | Type: ED
+Attack 4 -> Escort 14 | Type: EC
 
 --- Attack Timing ---
-Escort 10 | Fire Time: 0.00 s | Hit Time: 7.68 s
-Escort 6 | NOT FIRED AT
-Escort 16 | NOT FIRED AT
-Escort 18 | NOT FIRED AT
-Escort 19 | NOT FIRED AT
+Escort 17 | Fire Time: 0.00 s | Hit Time: 12.89 s
+Escort 6 | Fire Time: 4.00 s | Hit Time: 13.76 s
+Escort 7 | Fire Time: 8.00 s | Hit Time: 20.03 s
+Escort 14 | NOT FIRED AT
 
-Total Escorts Sunk: 1
+Total Escorts Sunk: 3
 Battleship Status: SUNK
-Sunk by Escort 10 | Type: EA
-Battleship Sink Time: 8.08 seconds
+Sunk by Escort 17 | Type: EA
+Battleship Sink Time: 9.74 seconds
