@@ -541,6 +541,11 @@ void simulatePart2C(Battleship *B,EscortShip E[],int N,double D)
     int t;
     double jamAngle;
     getJamSettings(k,&t,&jamAngle);
+    fp=fopen("part2C_results.txt","a");
+    if(fp){
+        fprintf(fp,"\nSimulation 2: Gun jams after iteration %d | Jammed angle: %.2f - 90.00\n",t,jamAngle);
+    fclose(fp);
+    }
 
     resetBattlefield(B,E,originalB,originalE,N);
 

@@ -26,7 +26,7 @@ static void showInstructions(void);
 
 static void showStatisticsMenu(void);
 
-int main()
+int main(void)
 {
     srand(time(NULL));
 

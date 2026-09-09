@@ -119,6 +119,7 @@ void saveInitialConditions(Battleship *B, EscortShip E[], int N, double D)
 }
 //Final conditions file part 1 A
 void saveFinalConditions(Battleship *B,EscortShip E[],int N,int sinkingEscort,double earliestEscortHitTime,int sunkCount){
+    (void)N;
     FILE *fp = fopen("partA1_final_conditions.txt", "w");
     if(fp == NULL)
     {
@@ -331,6 +332,7 @@ void savePart1CMovementSim2Iteration( Battleship *B,EscortShip E[],int N,int ite
 }
 void savePart2APart1AResults(Battleship *B,EscortShip E[],int N,double reloadTime, BattleDetails *details, BattleResult result)
 {
+    (void)N;
     FILE *fp = fopen("part2A_part1A_results.txt", "w");
 
     if(fp == NULL){
@@ -379,6 +381,7 @@ void startPart2APart1BResults( const char filename[], Position path[],int k,doub
 }
 void savePart2APart1BIteration(const char filename[],Battleship *B, EscortShip E[],int N,int iteration,BattleDetails *details,BattleResult result)
 {
+    (void)N;                                
     FILE *fp = fopen(filename, "a");
 
     if(fp == NULL){
