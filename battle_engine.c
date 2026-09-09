@@ -342,7 +342,7 @@ BattleResult simulateBattleStep( Battleship *B, EscortShip E[], int N, BattleRul
     }
     return result;
 }
-
+// Reset the battlefield to its original state.
 void resetBattlefield( Battleship *B, EscortShip E[], Battleship originalB, EscortShip originalE[],int N)
 {
     *B = originalB;

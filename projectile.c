@@ -10,7 +10,7 @@ double calculate_distance(double x1, double y1, double x2, double y2){
     return sqrt(dx * dx + dy * dy);
 }
 
-//Range
+//If I fire a shell with this velocity and this angle, how far will it travel horizontally before landing?
 double calculateProjectileRange(double velocity, double angle){
     // Angle in radians
     double radians = angle * (PI / 180.0);
@@ -19,7 +19,7 @@ double calculateProjectileRange(double velocity, double angle){
     return range;
 }
 
-//Max attack range(45 or the one closest to 45)
+//finds the maximum distance a ship can fire by using vMax and the allowed angle closest to 45°.
 double calculateMaxAttackRange(double vMax,double angleMin,double angleMax){
     double bestAngle;
     if(angleMin<=45.0 && angleMax>=45.0){
@@ -33,7 +33,8 @@ double calculateMaxAttackRange(double vMax,double angleMin,double angleMax){
     }
     return calculateProjectileRange(vMax,bestAngle);
 }
- 
+
+//finds the minimum distance a ship can fire by using vMin and the smaller range produced by angleMin or angleMax.
 double calculateMinAttackRange(double vMin,double angleMin,double angleMax){
     double rangeAtMinAngle=calculateProjectileRange(vMin,angleMin);
     double rangeAtMaxAngle=calculateProjectileRange(vMin,angleMax);
@@ -45,6 +46,7 @@ double calculateMinAttackRange(double vMin,double angleMin,double angleMax){
     }
 }
 
+//Determine if an escort ship can hit the battleship based on their positions and attack ranges.
 int canEscortHitBattleship(EscortShip *E, Battleship *B){
     double distance=calculate_distance(E->x,E->y,B->x,B->y);
     double maxRange=calculateMaxAttackRange(E->vMax,E->angleMin,E->angleMax);
@@ -56,6 +58,8 @@ int canEscortHitBattleship(EscortShip *E, Battleship *B){
         return 0;
     }
 }
+
+//Determine if the battleship can hit an escort ship based on their positions and attack ranges.
 int canBattleshipHitEscort(Battleship *B, EscortShip *E){
     double distance=calculate_distance(B->x,B->y,E->x,E->y);
     double maxRange=calculateMaxAttackRange(B->vMax,B->angleMin,B->angleMax);
@@ -66,13 +70,15 @@ int canBattleshipHitEscort(Battleship *B, EscortShip *E){
         return 0;
     }
 }
+
+//Calculate the time it takes for a projectile to travel a certain distance at a given velocity and angle.
 double calculateFlightTime(double distance,double velocity,double angle){
     double radians = angle * (PI / 180.0);
     double time = distance / (velocity * cos(radians));
     return time;
 }
 
-
+//Calculate the required velocity to hit a target at a certain distance and angle.
 double calculateRequiredVelocity(double distance, double angle){
     double radians = angle * (PI / 180.0);
     double sinValue = sin(2*radians);
@@ -83,7 +89,7 @@ double calculateRequiredVelocity(double distance, double angle){
    return velocity;
 }  
 
-
+//Calculate the minimum time it takes for a projectile to hit a target at a certain distance, given the velocity and angle constraints.
 double calculateMinimumHitTime(double distance, double vMin, double vMax, double angleMin, double angleMax){
     double minimumTime = -1.0; // Initialize to -1 to indicate no valid time found
     for(double angle = angleMin; angle <= angleMax; angle += 0.1){ //start from the minimum angle and go to the maximum angle

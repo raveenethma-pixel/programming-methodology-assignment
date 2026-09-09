@@ -12,6 +12,7 @@
 #include "part1C.h"
 #include "part2A.h"
 #include "part2B.h"
+#include "part2C.h"
 
 #define MAX_ESCORTS 100
 
@@ -38,7 +39,7 @@ int main()
     int N = 0;
     double D = 0.0;
 
-    int setupDone = 0;
+    int setupDone = 0;//0 = no battlefield exists yet
     int mainChoice;
 
     do{
@@ -70,7 +71,7 @@ int main()
                     }
 
                     else if(startChoice == 2){
-                        if(!setupDone){
+                        if(!setupDone){ //to run this you need to setup the battlefield first
                             printf("\nPlease setup the battlefield first.\n");
                         }
                         else{
@@ -93,7 +94,7 @@ int main()
             case 4:{
                 char confirm;
                 printf("\nAre you sure you want to exit? (y/n): ");
-                scanf(" %c", &confirm);
+                scanf(" %c", &confirm);//the space before %c is to  to kip any leading whitespace characters, including newlines, from the input buffer before reading the character.
                 if(confirm == 'y' || confirm == 'Y'){
                     printf("\nExiting simulator.\n");
                     break;
@@ -115,7 +116,7 @@ static int getMenuChoice(int min, int max)
         printf("Enter choice: ");
         if(scanf("%d", &choice) != 1){
             printf("Invalid input. Enter a number.\n");
-            while(getchar() != '\n');
+            while(getchar() != '\n'); //If you immediately call scanf() again, it sees the same bad input again.So this loop clears the input buffer until a newline is found, effectively discarding the invalid input.so the next scanf get fresh input from the user.
             continue;
         }
 
@@ -126,10 +127,11 @@ static int getMenuChoice(int min, int max)
         return choice;
     }
 }
+//here we pass E not &E.the reason is that E is an array.
 static void setupBattlefield( Battleship *B,EscortShip E[],int *N,double *D,Battleship *originalB,EscortShip originalE[])
 {
     do{
-        printf("\nEnter battlefield size D: ");
+        printf("\nEnter battlefield size D: "); //get the battlefield size from the user and store it in the variable D
 
         if(scanf("%lf", D) != 1){
             printf("Invalid input. Enter a number.\n");
@@ -144,7 +146,7 @@ static void setupBattlefield( Battleship *B,EscortShip E[],int *N,double *D,Batt
     }while(*D <= 0);
 
     do{
-        printf("Enter the number of escort ships N (1-%d): ",MAX_ESCORTS);
+        printf("Enter the number of escort ships N (1-%d): ",MAX_ESCORTS); //N = number of ships
 
         if(scanf("%d", N) != 1){
             printf("Invalid input. Enter an integer.\n");
@@ -161,7 +163,7 @@ static void setupBattlefield( Battleship *B,EscortShip E[],int *N,double *D,Batt
     initializeBattleship(B, *D);
     initializeEscortShips(E,*N,*D,B->vMax);
 
-    *originalB = *B;
+    *originalB = *B;  //get the battlefield to the original state 
 
     for(int i = 0; i < *N; i++){
         originalE[i] = E[i];
@@ -171,7 +173,7 @@ static void setupBattlefield( Battleship *B,EscortShip E[],int *N,double *D,Batt
     printf("\n--- Escort Ships ---\n");
 
     for(int i = 0; i < *N; i++){
-
+        //escort ship details
         printf("ID: %d | Type: %s | Position: (%.2f,%.2f) | Velocity: (%.2f-%.2f) | Angle: (%.2f-%.2f) | Impact Power: %.2f\n",
             E[i].id,
             E[i].type,
@@ -214,6 +216,7 @@ static void setupBattlefield( Battleship *B,EscortShip E[],int *N,double *D,Batt
    
     printf("\nBattlefield setup completed.\n");
 }
+//tell which part to run and call the corresponding function to run that part
 static void runSimulationMenu( Battleship *B, EscortShip E[], int N, double D, Battleship originalB, EscortShip originalE[])
 {
     int choice;
@@ -225,9 +228,10 @@ static void runSimulationMenu( Battleship *B, EscortShip E[], int N, double D, B
         printf("3. Part 1-C\n");
         printf("4. Part 2-A\n");
         printf("5. Part 2-B\n");
-        printf("6. Return\n");
+        printf("6. Part 2-C\n");
+        printf("7. Return\n");
 
-        choice = getMenuChoice(1, 6);
+        choice = getMenuChoice(1, 7);
 
         switch(choice){
 
@@ -263,11 +267,15 @@ static void runSimulationMenu( Battleship *B, EscortShip E[], int N, double D, B
                 break;
 
             case 6:
+                resetBattlefield(B,E,originalB,originalE,N);
+                simulatePart2C(B,E,N,D);
+                break;
+            case 7:
                 break;
         }
-    }while(choice != 6);
+    }while(choice != 7);
 }
-
+//print the instructions for the user
 static void showInstructions(void)
 {
     printf("\n========================================\n");
@@ -283,7 +291,7 @@ static void showInstructions(void)
     printf("2. Select Setup Battlefield before running a simulation.\n");
     printf("3. Enter the battlefield size, number of escorts and Battleship settings.\n");
     printf("4. Select Run Simulation.\n");
-    printf("5. Choose Part 1-A, 1-B, 1-C, 2-A or 2-B.\n");
+    printf("5. Choose Part 1-A, 1-B, 1-C, 2-A, 2-B or 2-C.\n");
     printf("6. Follow any additional prompts for movement, reload times or gun jamming.\n");
 
     printf("\nSimulation Parts:\n");
@@ -292,6 +300,7 @@ static void showInstructions(void)
     printf("Part 1-C : Cumulative damage and movement simulations.\n");
     printf("Part 2-A : Adds Battleship reload time and attack-order strategy.\n");
     printf("Part 2-B : Adds continuous Escort firing and Escort reload times.\n");
+    printf("Part 2-C : Adds impact-power degradation after repeated gun firings.\n");
 
     printf("\nResults:\n");
     printf("Detailed simulation results are saved in text files.\n");
@@ -310,6 +319,7 @@ static void showInstructions(void)
     printf("ED = F-classEscort Ships| Gun = SK C/32 naval gun| Impact power = 0.05 \n");
     printf("EE = Japanese Kaibōkan| Gun = (4.7 inch) naval guns| Impact power = 0.04 \n");
 }
+//tell the user to select which part of the simulation to view and display the corresponding results
 static void showStatisticsMenu(void)
 {
     int choice;
@@ -323,9 +333,10 @@ static void showStatisticsMenu(void)
         printf("3. Part 1-C Results\n");
         printf("4. Part 2-A Results\n");
         printf("5. Part 2-B Results\n");
-        printf("6. Return to Main Menu\n");
+        printf("6. Part 2-C Results\n");
+        printf("7. Return to Main Menu\n");
 
-        choice = getMenuChoice(1, 6);
+        choice = getMenuChoice(1, 7);
 
         switch(choice){
 
@@ -357,8 +368,11 @@ static void showStatisticsMenu(void)
                 break;
 
             case 6:
+                displayTextFile("part2C_results.txt");
+                break;
+            case 7:
                 break;
         }
 
-    }while(choice != 6);
+    }while(choice != 7);
 }

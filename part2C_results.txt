@@ -1,0 +1,386 @@
+========================================
+            PART 2-C RESULTS
+========================================
+
+Battleship Type: U
+Battleship Reload Time: 4.00 seconds
+Battleship Gamma: 0.0500
+
+Escort Settings
+EA | Reload Time: 4.00 seconds | Gamma: 0.0100
+EB | Reload Time: 1.00 seconds | Gamma: 0.0200
+EC | Reload Time: 1.00 seconds | Gamma: 0.0300
+ED | Reload Time: 1.00 seconds | Gamma: 0.0600
+EE | Reload Time: 1.00 seconds | Gamma: 0.0500
+
+
+========================================
+PART 2-C : STATIONARY PART 1-C
+========================================
+
+Battleship Attack Order
+1. Escort 5 (ED)
+
+Battleship
+Position: (234.00, 432.00)
+Angle Range: 0.00 - 90.00
+Fire Count: 4
+Current Impact Factor: 0.818731
+Cumulative Damage: 0.00%
+Status: SURVIVED
+
+Escort Ships
+
+Escort 1 | Type: EA
+Status: ALIVE
+Fire Count: 0
+Current Impact Factor: 0.080000
+Damage Received From B: 0.00%
+
+Escort 2 | Type: EE
+Status: ALIVE
+Fire Count: 0
+Current Impact Factor: 0.040000
+Damage Received From B: 0.00%
+
+Escort 3 | Type: EC
+Status: ALIVE
+Fire Count: 0
+Current Impact Factor: 0.070000
+Damage Received From B: 0.00%
+
+Escort 4 | Type: EB
+Status: ALIVE
+Fire Count: 0
+Current Impact Factor: 0.060000
+Damage Received From B: 0.00%
+
+Escort 5 | Type: ED
+Status: SUNK
+Fire Count: 0
+Current Impact Factor: 0.050000
+Damage Received From B: 185.61%
+
+Escort 6 | Type: EA
+Status: ALIVE
+Fire Count: 0
+Current Impact Factor: 0.080000
+Damage Received From B: 0.00%
+
+Escort 7 | Type: EB
+Status: ALIVE
+Fire Count: 0
+Current Impact Factor: 0.060000
+Damage Received From B: 0.00%
+
+Escort 8 | Type: EC
+Status: ALIVE
+Fire Count: 0
+Current Impact Factor: 0.070000
+Damage Received From B: 0.00%
+
+--- Final Result ---
+Total Escorts Sunk: 1
+Battleship Damage: 0.00%
+Battle End Time: 23.56 seconds
+
+--- Part 2-C Movement Path ---
+Point 1: (398.50, 199.07)
+Point 2: (2555.86, 1088.63)
+Point 3: (878.26, 3448.85)
+Point 4: (1047.69, 437.57)
+Point 5: (1149.35, 1938.61)
+
+
+========================================
+PART 2-C : MOVEMENT SIMULATION 1 - ITERATION 1
+========================================
+
+Battleship Attack Order
+1. Escort 5 (ED)
+
+Battleship
+Position: (398.50, 199.07)
+Angle Range: 0.00 - 90.00
+Fire Count: 5
+Current Impact Factor: 0.778801
+Cumulative Damage: 0.00%
+Status: SURVIVED
+
+Escort Ships
+
+Escort 1 | Type: EA
+Status: ALIVE
+Fire Count: 0
+Current Impact Factor: 0.080000
+Damage Received From B: 0.00%
+
+Escort 2 | Type: EE
+Status: ALIVE
+Fire Count: 0
+Current Impact Factor: 0.040000
+Damage Received From B: 0.00%
+
+Escort 3 | Type: EC
+Status: ALIVE
+Fire Count: 0
+Current Impact Factor: 0.070000
+Damage Received From B: 0.00%
+
+Escort 4 | Type: EB
+Status: ALIVE
+Fire Count: 0
+Current Impact Factor: 0.060000
+Damage Received From B: 0.00%
+
+Escort 5 | Type: ED
+Status: SUNK
+Fire Count: 0
+Current Impact Factor: 0.050000
+Damage Received From B: 185.61%
+
+Escort 6 | Type: EA
+Status: ALIVE
+Fire Count: 0
+Current Impact Factor: 0.080000
+Damage Received From B: 0.00%
+
+Escort 7 | Type: EB
+Status: ALIVE
+Fire Count: 0
+Current Impact Factor: 0.060000
+Damage Received From B: 0.00%
+
+Escort 8 | Type: EC
+Status: ALIVE
+Fire Count: 0
+Current Impact Factor: 0.070000
+Damage Received From B: 0.00%
+
+--- Final Result ---
+Total Escorts Sunk: 1
+Battleship Damage: 0.00%
+Battle End Time: 31.52 seconds
+
+
+========================================
+PART 2-C : MOVEMENT SIMULATION 1 - ITERATION 2
+========================================
+
+Battleship Attack Order
+1. Escort 3 (EC)
+2. Escort 1 (EA)
+3. Escort 2 (EE)
+
+Battleship
+Position: (2555.86, 1088.63)
+Angle Range: 0.00 - 90.00
+Fire Count: 13
+Current Impact Factor: 0.522046
+Cumulative Damage: 105.93%
+Status: SUNK
+
+Escort Ships
+
+Escort 1 | Type: EA
+Status: SUNK
+Fire Count: 6
+Current Impact Factor: 0.075341
+Damage Received From B: 124.42%
+
+Escort 2 | Type: EE
+Status: SUNK
+Fire Count: 0
+Current Impact Factor: 0.040000
+Damage Received From B: 107.09%
+
+Escort 3 | Type: EC
+Status: SUNK
+Fire Count: 10
+Current Impact Factor: 0.051857
+Damage Received From B: 144.55%
+
+Escort 4 | Type: EB
+Status: ALIVE
+Fire Count: 0
+Current Impact Factor: 0.060000
+Damage Received From B: 0.00%
+
+Escort 5 | Type: ED
+Status: SUNK
+Fire Count: 0
+Current Impact Factor: 0.050000
+Damage Received From B: 185.61%
+
+Escort 6 | Type: EA
+Status: ALIVE
+Fire Count: 0
+Current Impact Factor: 0.080000
+Damage Received From B: 0.00%
+
+Escort 7 | Type: EB
+Status: ALIVE
+Fire Count: 0
+Current Impact Factor: 0.060000
+Damage Received From B: 0.00%
+
+Escort 8 | Type: EC
+Status: ALIVE
+Fire Count: 0
+Current Impact Factor: 0.070000
+Damage Received From B: 0.00%
+
+--- Final Result ---
+Total Escorts Sunk: 3
+Battleship Damage: 105.93%
+Battle End Time: 28.02 seconds
+Battleship sunk by Escort 1 (EA)
+
+Simulation 1 Summary | Total Escorts Sunk: 4 | Final B Damage: 105.93%
+
+
+========================================
+PART 2-C : MOVEMENT SIMULATION 2 - ITERATION 1
+========================================
+
+Battleship Attack Order
+1. Escort 5 (ED)
+
+Battleship
+Position: (398.50, 199.07)
+Angle Range: 0.00 - 90.00
+Fire Count: 5
+Current Impact Factor: 0.778801
+Cumulative Damage: 0.00%
+Status: SURVIVED
+
+Escort Ships
+
+Escort 1 | Type: EA
+Status: ALIVE
+Fire Count: 0
+Current Impact Factor: 0.080000
+Damage Received From B: 0.00%
+
+Escort 2 | Type: EE
+Status: ALIVE
+Fire Count: 0
+Current Impact Factor: 0.040000
+Damage Received From B: 0.00%
+
+Escort 3 | Type: EC
+Status: ALIVE
+Fire Count: 0
+Current Impact Factor: 0.070000
+Damage Received From B: 0.00%
+
+Escort 4 | Type: EB
+Status: ALIVE
+Fire Count: 0
+Current Impact Factor: 0.060000
+Damage Received From B: 0.00%
+
+Escort 5 | Type: ED
+Status: SUNK
+Fire Count: 0
+Current Impact Factor: 0.050000
+Damage Received From B: 185.61%
+
+Escort 6 | Type: EA
+Status: ALIVE
+Fire Count: 0
+Current Impact Factor: 0.080000
+Damage Received From B: 0.00%
+
+Escort 7 | Type: EB
+Status: ALIVE
+Fire Count: 0
+Current Impact Factor: 0.060000
+Damage Received From B: 0.00%
+
+Escort 8 | Type: EC
+Status: ALIVE
+Fire Count: 0
+Current Impact Factor: 0.070000
+Damage Received From B: 0.00%
+
+--- Final Result ---
+Total Escorts Sunk: 1
+Battleship Damage: 0.00%
+Battle End Time: 31.52 seconds
+
+
+========================================
+PART 2-C : MOVEMENT SIMULATION 2 - ITERATION 2
+========================================
+
+Battleship Attack Order
+1. Escort 3 (EC)
+2. Escort 1 (EA)
+3. Escort 2 (EE)
+
+Battleship
+Position: (2555.86, 1088.63)
+Angle Range: 0.00 - 90.00
+Fire Count: 13
+Current Impact Factor: 0.522046
+Cumulative Damage: 105.93%
+Status: SUNK
+
+Escort Ships
+
+Escort 1 | Type: EA
+Status: SUNK
+Fire Count: 6
+Current Impact Factor: 0.075341
+Damage Received From B: 124.42%
+
+Escort 2 | Type: EE
+Status: SUNK
+Fire Count: 0
+Current Impact Factor: 0.040000
+Damage Received From B: 107.09%
+
+Escort 3 | Type: EC
+Status: SUNK
+Fire Count: 10
+Current Impact Factor: 0.051857
+Damage Received From B: 144.55%
+
+Escort 4 | Type: EB
+Status: ALIVE
+Fire Count: 0
+Current Impact Factor: 0.060000
+Damage Received From B: 0.00%
+
+Escort 5 | Type: ED
+Status: SUNK
+Fire Count: 0
+Current Impact Factor: 0.050000
+Damage Received From B: 185.61%
+
+Escort 6 | Type: EA
+Status: ALIVE
+Fire Count: 0
+Current Impact Factor: 0.080000
+Damage Received From B: 0.00%
+
+Escort 7 | Type: EB
+Status: ALIVE
+Fire Count: 0
+Current Impact Factor: 0.060000
+Damage Received From B: 0.00%
+
+Escort 8 | Type: EC
+Status: ALIVE
+Fire Count: 0
+Current Impact Factor: 0.070000
+Damage Received From B: 0.00%
+
+--- Final Result ---
+Total Escorts Sunk: 3
+Battleship Damage: 105.93%
+Battle End Time: 28.02 seconds
+Battleship sunk by Escort 1 (EA)
+
+Simulation 2 Summary | Total Escorts Sunk: 4 | Final B Damage: 105.93%
